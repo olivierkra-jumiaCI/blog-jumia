@@ -58,39 +58,9 @@
   </script>
 </svelte:head>
 
-<!-- TOP STRIP -->
-<div class="top-strip">
-  <div class="ts-inner">
-    <div class="ts-links">
-      <a href="/vendre/">Vendez sur Jumia</a>
-      <a href="/programme-affiliation/">Affiliation</a>
-      <a href="/blog/">Blog</a>
-      <a href="/aide/">Aide &amp; FAQ</a>
-    </div>
-    <div class="ts-right">🇨🇮 Livraison partout en Côte d'Ivoire &nbsp;·&nbsp; <a href="/points-relais/">Trouver un point relais</a></div>
-  </div>
-</div>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="hdr-inner">
-    <a href="https://www.jumia.ci" class="logo-link" aria-label="Jumia Côte d'Ivoire">
-      <img src="/logo.png" class="logo-img" alt="Jumia Côte d'Ivoire" />
-    </a>
 
-    <div class="search-wrap">
-      <input type="search" placeholder="Rechercher articles, conseils, produits…" aria-label="Rechercher dans le blog"/>
-      <button class="search-btn" aria-label="Rechercher">🔍</button>
-    </div>
 
-    <div class="hdr-actions">
-      <button class="hdr-btn"><span class="hdr-btn-ico">👤</span>Mon compte</button>
-      <button class="hdr-btn"><span class="hdr-btn-ico">❤️</span>Favoris</button>
-      <a href="https://www.jumia.ci/cart/" class="hdr-btn"><span class="hdr-btn-ico">🛒</span>Panier</a>
-      <a href="https://www.jumia.ci" class="hdr-cta">Acheter sur Jumia →</a>
-    </div>
-  </div>
-</header>
 
 <!-- CAT NAV BAR -->
 <nav class="cat-bar" aria-label="Catégories du blog">
@@ -580,29 +550,7 @@
   :global(img) {max-width:100%;display:block;}
   :global(ul) {list-style:none;}
 
-  /* TOP STRIP */
-  .top-strip{background:var(--orange);color:#fff;font-size:12px;padding:6px 0;}
-  .ts-inner{max-width:1170px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;}
-  .ts-links{display:flex;gap:20px;}
-  .ts-links a,.ts-right a{color:#fff;opacity:.9;}
-  .ts-links a:hover,.ts-right a:hover{opacity:1;text-decoration:underline;}
 
-  /* HEADER */
-  .site-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:var(--shadow);}
-  .hdr-inner{max-width:1170px;margin:0 auto;padding:0 16px;display:flex;align-items:center;height:64px;gap:16px;}
-  .logo-link{display:flex;align-items:center;flex-shrink:0;}
-  .logo-img{height:34px;width:auto;}
-  .search-wrap{flex:1;max-width:560px;display:flex;border:2px solid var(--orange);border-radius:var(--radius);overflow:hidden;}
-  .search-wrap input{flex:1;border:none;outline:none;padding:0 12px;font-size:13px;font-family:var(--font);color:var(--text);}
-  .search-wrap input::placeholder{color:var(--text-xlt);}
-  .search-btn{background:var(--orange);border:none;padding:0 16px;color:#fff;font-size:15px;cursor:pointer;transition:background .15s;}
-  .search-btn:hover{background:var(--orange-dk);}
-  .hdr-actions{display:flex;align-items:center;gap:4px;margin-left:auto;flex-shrink:0;}
-  .hdr-btn{display:flex;flex-direction:column;align-items:center;padding:5px 10px;border-radius:var(--radius);cursor:pointer;font-size:11px;color:var(--text-lt);border:none;background:none;font-family:var(--font);transition:background .12s;white-space:nowrap;}
-  .hdr-btn:hover{background:var(--bg);}
-  .hdr-btn-ico{font-size:17px;margin-bottom:2px;}
-  .hdr-cta{background:var(--orange);color:#fff;padding:8px 14px;border-radius:var(--radius);font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:background .15s;}
-  .hdr-cta:hover{background:var(--orange-dk);}
 
   /* CAT NAV BAR */
   .cat-bar{background:var(--white);border-bottom:1px solid var(--border);}
