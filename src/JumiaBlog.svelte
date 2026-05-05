@@ -476,52 +476,7 @@
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="ft-inner">
-    <div class="ft-top">
-      <div class="ft-brand">
-        <img src="/logo.png" class="logo-img-ft" alt="Jumia CI" />
-        <p>Conseils d'achat, comparatifs et bons plans pour commander malin sur Jumia CI.</p>
-      </div>
-      <div class="ft-col">
-        <h4>Catégories</h4>
-        <ul class="ft-links">
-          <li><a href="/blog/tech/">📱 Tech &amp; Smartphones</a></li>
-          <li><a href="/blog/electromenager/">🏠 Maison &amp; Électroménager</a></li>
-          <li><a href="/blog/beaute/">💄 Beauté &amp; Mode</a></li>
-          <li><a href="/blog/bebe-enfant/">👶 Bébé &amp; Enfant</a></li>
-          <li><a href="/blog/bons-plans/">🏷️ Bons Plans</a></li>
-          <li><a href="/blog/guide-achat/">📋 Guides d'achat</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h4>Guides pratiques</h4>
-        <ul class="ft-links">
-          <li><a href="/blog/livraison-guide/">🚚 Guide livraison CI</a></li>
-          <li><a href="/blog/paiement-mobile-money/">📲 Paiement Mobile Money</a></li>
-          <li><a href="/blog/acheter-occasion-jumia/">♻️ Acheter occasion</a></li>
-          <li><a href="/blog/points-relais-ci/">📍 Points relais en CI</a></li>
-          <li><a href="/blog/retour-remboursement/">🔄 Retours &amp; Remboursements</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h4>Jumia CI</h4>
-        <ul class="ft-links">
-          <li><a href="https://www.jumia.ci">🛒 Boutique Jumia CI</a></li>
-          <li><a href="/vendre/">Vendre sur Jumia</a></li>
-          <li><a href="/aide/">Centre d'aide</a></li>
-          <li><a href="/blog/a-propos/">À propos du blog</a></li>
-          <li><a href="/blog/mentions-legales/">Mentions légales</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <span>© 2026 Jumia CI — Tous droits réservés</span>
-      <a href="https://www.jumia.ci">jumia.ci</a>
-    </div>
-  </div>
-</footer>
+
 
 <style>
   :global(:root) {
@@ -716,19 +671,7 @@
   .nl-form button:hover{background:var(--orange-lt);}
   .nl-note{font-size:11px;color:rgba(255,255,255,.5);}
 
-  /* FOOTER */
-  .site-footer{background:#2B2B2B;color:rgba(255,255,255,.65);margin-top:28px;padding:28px 0 14px;}
-  .ft-inner{max-width:1170px;margin:0 auto;padding:0 16px;}
-  .ft-top{display:grid;grid-template-columns:190px 1fr 1fr 1fr;gap:28px;margin-bottom:24px;}
-  .logo-img-ft{height:26px;width:auto;margin-bottom:10px;}
-  .ft-brand p{font-size:12px;line-height:1.65;}
-  .ft-col h4{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.1);}
-  .ft-links li{margin-bottom:6px;}
-  .ft-links a{font-size:12px;color:rgba(255,255,255,.55);transition:color .12s;}
-  .ft-links a:hover{color:var(--orange);}
-  .ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:14px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35);}
-  .ft-bottom a{color:rgba(255,255,255,.45);}
-  .ft-bottom a:hover{color:var(--orange);}
+
 
   /* GAP HELPER */
   .gap{height:12px;}
