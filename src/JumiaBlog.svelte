@@ -403,13 +403,13 @@
       <div class="sb-block">
         <div class="sb-hdr">Catégories</div>
         <div class="sb-cats">
-          <a href="/blog/tech/" class="sb-cat"><span class="sb-cat-l"><span>📱</span>Tech &amp; Smartphones</span><span class="sb-cat-n">48</span></a>
-          <a href="/blog/electromenager/" class="sb-cat"><span class="sb-cat-l"><span>🏠</span>Maison &amp; Électroménager</span><span class="sb-cat-n">35</span></a>
-          <a href="/blog/beaute/" class="sb-cat"><span class="sb-cat-l"><span>💄</span>Beauté &amp; Mode</span><span class="sb-cat-n">41</span></a>
-          <a href="/blog/bebe-enfant/" class="sb-cat"><span class="sb-cat-l"><span>👶</span>Bébé &amp; Enfant</span><span class="sb-cat-n">26</span></a>
-          <a href="/blog/bons-plans/" class="sb-cat"><span class="sb-cat-l"><span>🏷️</span>Bons Plans</span><span class="sb-cat-n">33</span></a>
-          <a href="/blog/guide-achat/" class="sb-cat"><span class="sb-cat-l"><span>📋</span>Guides d'achat</span><span class="sb-cat-n">19</span></a>
-          <a href="/blog/livraison-paiement/" class="sb-cat"><span class="sb-cat-l"><span>🚚</span>Livraison &amp; Paiement</span><span class="sb-cat-n">12</span></a>
+          <a href="/blog/tech/" class="sb-cat"><span class="sb-cat-l"><span>📱</span>Tech &amp; Smartphones</span></a>
+          <a href="/blog/electromenager/" class="sb-cat"><span class="sb-cat-l"><span>🏠</span>Maison &amp; Électroménager</span></a>
+          <a href="/blog/beaute/" class="sb-cat"><span class="sb-cat-l"><span>💄</span>Beauté &amp; Mode</span></a>
+          <a href="/blog/bebe-enfant/" class="sb-cat"><span class="sb-cat-l"><span>👶</span>Bébé &amp; Enfant</span></a>
+          <a href="/blog/bons-plans/" class="sb-cat"><span class="sb-cat-l"><span>🏷️</span>Bons Plans</span></a>
+          <a href="/blog/guide-achat/" class="sb-cat"><span class="sb-cat-l"><span>📋</span>Guides d'achat</span></a>
+          <a href="/blog/livraison-paiement/" class="sb-cat"><span class="sb-cat-l"><span>🚚</span>Livraison &amp; Paiement</span></a>
         </div>
       </div>
 
@@ -616,7 +616,7 @@
   .sb-cat{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;font-size:13px;color:var(--text-lt);border-radius:var(--radius);transition:background .1s,color .1s;}
   .sb-cat:hover{background:var(--orange-lt);color:var(--orange-dk);}
   .sb-cat-l{display:flex;align-items:center;gap:6px;}
-  .sb-cat-n{font-size:11px;color:var(--text-xlt);background:var(--bg);padding:1px 6px;border-radius:10px;}
+
   /* popular */
   .sb-pop{display:flex;flex-direction:column;}
   .sb-pop-item{display:flex;gap:8px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(--border);transition:background .1s;}
