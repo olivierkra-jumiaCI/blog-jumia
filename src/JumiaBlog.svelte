@@ -231,11 +231,7 @@
       <h1>Blog <span>Jumia CI</span></h1>
       <p>Conseils d'achat, comparatifs produits et bons plans — pour commander malin sur Jumia CI, à Abidjan comme en province.</p>
     </div>
-    <div class="bb-stats">
-      <div class="bb-stat"><div class="bb-stat-n">240+</div><div class="bb-stat-l">Articles</div></div>
-      <div class="bb-stat"><div class="bb-stat-n">7</div><div class="bb-stat-l">Catégories</div></div>
-      <div class="bb-stat"><div class="bb-stat-n">50k+</div><div class="bb-stat-l">Lecteurs / mois</div></div>
-    </div>
+
   </div>
 
   <!-- TOPIC PILLS -->
