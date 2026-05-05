@@ -75,15 +75,7 @@
 <header class="site-header">
   <div class="hdr-inner">
     <a href="https://www.jumia.ci" class="logo-link" aria-label="Jumia Côte d'Ivoire">
-      <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 5h12v34c0 7-4 12-12 12C5 51 1 46 1 39h12c0 3 0 4 0 4s1-1 0-4V5z" fill="#F68B1E"/>
-        <path d="M31 5h12v28c0 4 3 6 6 6s6-2 6-6V5h12v28c0 9-7 16-18 16S31 42 31 33V5z" fill="#F68B1E"/>
-        <path d="M73 5h13l9 22 9-22h13v46H105V26L95 48 85 26v25H73V5z" fill="#F68B1E"/>
-        <path d="M119 5h12v46h-12V5z" fill="#F68B1E"/>
-        <path d="M141 5h13l16 46h-13l-3-8h-14l-3 8h-12L141 5zm3 28h9l-4.5-14L144 33z" fill="#F68B1E"/>
-        <circle cx="211" cy="28" r="22" fill="#F68B1E"/>
-        <polygon points="211,13 215,23 226,23 217,30 220,40 211,34 202,40 205,30 196,23 207,23" fill="white"/>
-      </svg>
+      <img src="/logo.png" class="logo-img" alt="Jumia Côte d'Ivoire" />
     </a>
 
     <div class="search-wrap">
@@ -523,15 +515,7 @@
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
-        <svg style="height:26px;width:auto;" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 5h12v34c0 7-4 12-12 12C5 51 1 46 1 39h12c0 3 0 4 0 4s1-1 0-4V5z" fill="#F68B1E"/>
-          <path d="M31 5h12v28c0 4 3 6 6 6s6-2 6-6V5h12v28c0 9-7 16-18 16S31 42 31 33V5z" fill="#F68B1E"/>
-          <path d="M73 5h13l9 22 9-22h13v46H105V26L95 48 85 26v25H73V5z" fill="#F68B1E"/>
-          <path d="M119 5h12v46h-12V5z" fill="#F68B1E"/>
-          <path d="M141 5h13l16 46h-13l-3-8h-14l-3 8h-12L141 5zm3 28h9l-4.5-14L144 33z" fill="#F68B1E"/>
-          <circle cx="211" cy="28" r="22" fill="#F68B1E"/>
-          <polygon points="211,13 215,23 226,23 217,30 220,40 211,34 202,40 205,30 196,23 207,23" fill="#2B2B2B"/>
-        </svg>
+        <img src="/logo.png" class="logo-img-ft" alt="Jumia CI" />
         <p>Conseils d'achat, comparatifs et bons plans pour commander malin sur Jumia CI.</p>
       </div>
       <div class="ft-col">
@@ -607,7 +591,7 @@
   .site-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:var(--shadow);}
   .hdr-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;height:64px;gap:16px;}
   .logo-link{display:flex;align-items:center;flex-shrink:0;}
-  .logo-svg{height:34px;width:auto;}
+  .logo-img{height:34px;width:auto;}
   .search-wrap{flex:1;max-width:560px;display:flex;border:2px solid var(--orange);border-radius:var(--radius);overflow:hidden;}
   .search-wrap input{flex:1;border:none;outline:none;padding:0 12px;font-size:13px;font-family:var(--font);color:var(--text);}
   .search-wrap input::placeholder{color:var(--text-xlt);}
@@ -796,7 +780,7 @@
   .site-footer{background:#2B2B2B;color:rgba(255,255,255,.65);margin-top:28px;padding:28px 0 14px;}
   .ft-inner{max-width:1200px;margin:0 auto;padding:0 16px;}
   .ft-top{display:grid;grid-template-columns:190px 1fr 1fr 1fr;gap:28px;margin-bottom:24px;}
-  .ft-brand svg{height:26px;margin-bottom:10px;}
+  .logo-img-ft{height:26px;width:auto;margin-bottom:10px;}
   .ft-brand p{font-size:12px;line-height:1.65;}
   .ft-col h4{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.1);}
   .ft-links li{margin-bottom:6px;}
