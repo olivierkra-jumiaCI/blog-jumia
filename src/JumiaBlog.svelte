@@ -593,11 +593,7 @@
   .bb-left h1{font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px;}
   .bb-left h1 span{color:var(--orange);}
   .bb-left p{font-size:13px;color:var(--text-lt);max-width:500px;line-height:1.5;}
-  .bb-stats{display:flex;gap:20px;flex-shrink:0;}
-  .bb-stat{text-align:center;padding:8px 14px;border-left:1px solid var(--border);}
-  .bb-stat:first-child{border-left:none;}
-  .bb-stat-n{font-size:22px;font-weight:700;color:var(--orange);line-height:1;}
-  .bb-stat-l{font-size:11px;color:var(--text-xlt);margin-top:2px;}
+
 
   /* TOPIC PILLS */
   .pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
