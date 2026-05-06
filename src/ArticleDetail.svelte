@@ -16,7 +16,7 @@
 <!-- HEADER -->
 <div class="jumia-header">
   <div class="header-top">
-    <a href="/" on:click={goHome} class="logo-link" aria-label="Jumia Côte d'Ivoire">
+    <a href="/" onclick={goHome} class="logo-link" aria-label="Jumia Côte d'Ivoire">
       <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M13 5h12v34c0 7-4 12-12 12C5 51 1 46 1 39h12c0 3 0 4 0 4s1-1 0-4V5z" fill="white"/>
         <path d="M31 5h12v28c0 4 3 6 6 6s6-2 6-6V5h12v28c0 9-7 16-18 16S31 42 31 33V5z" fill="white"/>
@@ -35,7 +35,7 @@
     </div>
   </div>
   <nav class="nav-cats">
-    <a href="/" on:click={goHome} class="cat-all">☰ Catégories</a>
+    <a href="/" onclick={goHome} class="cat-all">☰ Catégories</a>
     <a href="/blog/tech/" class="active">📱 Tech &amp; Smartphones</a>
     <a href="/blog/electromenager/">🏠 Maison &amp; Électro</a>
     <a href="/blog/beaute/">💄 Beauté &amp; Mode</a>
@@ -47,7 +47,7 @@
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="/" on:click={goHome}>Accueil</a> › <a href="/" on:click={goHome}>Blog</a> › <a href="/blog/tech/">Tech &amp; Smartphones</a> › Smartphones à moins de 100 000 FCFA
+  <a href="/" onclick={goHome}>Accueil</a> › <a href="/" onclick={goHome}>Blog</a> › <a href="/blog/tech/">Tech &amp; Smartphones</a> › Smartphones à moins de 100 000 FCFA
 </div>
 
 <!-- PAGE -->
@@ -348,13 +348,13 @@
     <div class="sb-block">
       <div class="sb-hdr">📱 Dans cet article</div>
       <div style="padding:6px 0;">
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">📊 Pourquoi cette tranche de prix</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">📋 Tableau comparatif</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🔍 Zoom sur chaque modèle</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🏅 Verdicts par profil</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🚚 Paiement &amp; livraison</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">👉 Mon choix final</a>
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">❓ FAQ</a>
+        <a href="#" class="sb-nav-link">📊 Pourquoi cette tranche de prix</a>
+        <a href="#" class="sb-nav-link">📋 Tableau comparatif</a>
+        <a href="#" class="sb-nav-link">🔍 Zoom sur chaque modèle</a>
+        <a href="#" class="sb-nav-link">🏅 Verdicts par profil</a>
+        <a href="#" class="sb-nav-link">🚚 Paiement &amp; livraison</a>
+        <a href="#" class="sb-nav-link">👉 Mon choix final</a>
+        <a href="#" class="sb-nav-link">❓ FAQ</a>
       </div>
     </div>
 
@@ -560,6 +560,8 @@ details p { margin-top: 10px; font-size: 14px; color: #555; line-height: 1.65; }
 .sb-block { background: #fff; border: 1px solid #e8e8e8; border-radius: 4px; overflow: hidden; }
 .sb-hdr { padding: 9px 12px; border-bottom: 1px solid #eee; background: #f9f9f9; font-size: 13px; font-weight: 700; color: #333; border-left: 4px solid #F68B1E; }
 .sb-body { padding: 10px 12px; }
+.sb-nav-link { display: flex; align-items: center; gap: 8px; padding: 7px 12px; font-size: 12px; color: #666; transition: background .1s; }
+.sb-nav-link:hover { background: #FFF8E7; color: #F68B1E; text-decoration: none; }
 .sb-pop { display: flex; flex-direction: column; }
 .sb-pop-item { display: flex; gap: 8px; align-items: flex-start; padding: 8px 12px; border-bottom: 1px solid #f0f0f0; transition: background .1s; }
 .sb-pop-item:last-child { border-bottom: none; }
