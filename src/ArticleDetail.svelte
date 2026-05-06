@@ -13,37 +13,7 @@
   <link rel="canonical" href="https://www.jumia.ci/blog/tech/smartphones-moins-100000-fcfa-2026/" />
 </svelte:head>
 
-<!-- HEADER -->
-<div class="jumia-header">
-  <div class="header-top">
-    <a href="/" onclick={goHome} class="logo-link" aria-label="Jumia Côte d'Ivoire">
-      <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 5h12v34c0 7-4 12-12 12C5 51 1 46 1 39h12c0 3 0 4 0 4s1-1 0-4V5z" fill="white"/>
-        <path d="M31 5h12v28c0 4 3 6 6 6s6-2 6-6V5h12v28c0 9-7 16-18 16S31 42 31 33V5z" fill="white"/>
-        <path d="M73 5h13l9 22 9-22h13v46H105V26L95 48 85 26v25H73V5z" fill="white"/>
-        <path d="M119 5h12v46h-12V5z" fill="white"/>
-        <path d="M141 5h13l16 46h-13l-3-8h-14l-3 8h-12L141 5zm3 28h9l-4.5-14L144 33z" fill="white"/>
-        <circle cx="211" cy="28" r="22" fill="white"/>
-        <polygon points="211,13 215,23 226,23 217,30 220,40 211,34 202,40 205,30 196,23 207,23" fill="#F68B1E"/>
-      </svg>
-    </a>
-    <div class="search-bar">Rechercher sur Jumia CI…</div>
-    <div class="header-icons">
-      <span>👤 Compte</span>
-      <span>❤️ Favoris</span>
-      <span>🛒 Panier</span>
-    </div>
-  </div>
-  <nav class="nav-cats">
-    <a href="/" onclick={goHome} class="cat-all">☰ Catégories</a>
-    <a href="/blog/tech/" class="active">📱 Tech &amp; Smartphones</a>
-    <a href="/blog/electromenager/">🏠 Maison &amp; Électro</a>
-    <a href="/blog/beaute/">💄 Beauté &amp; Mode</a>
-    <a href="/blog/bebe-enfant/">👶 Bébé &amp; Enfant</a>
-    <a href="/blog/bons-plans/">🏷️ Bons Plans</a>
-    <a href="/blog/guide-achat/">📋 Guides d'achat</a>
-  </nav>
-</div>
+
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
@@ -415,50 +385,7 @@
 
 </div><!-- /page-layout -->
 
-<!-- FOOTER -->
-<footer>
-  <div class="foot-grid">
-    <div>
-      <h4>Aide &amp; Contact</h4>
-      <ul>
-        <li><a href="/aide/">Centre d'aide</a></li>
-        <li><a href="/contact/">Contactez-nous</a></li>
-        <li><a href="/comment-commander/">Comment commander</a></li>
-        <li><a href="/retours/">Retours et remboursements</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Plus sur Jumia</h4>
-      <ul>
-        <li><a href="/a-propos/">À propos de nous</a></li>
-        <li><a href="/blog/">Blog Jumia CI</a></li>
-        <li><a href="/conditions/">Conditions d'utilisation</a></li>
-        <li><a href="/confidentialite/">Politique de confidentialité</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Faire des affaires</h4>
-      <ul>
-        <li><a href="/vendre/">Vendez sur Jumia</a></li>
-        <li><a href="/jforce/">Devenez JForce</a></li>
-        <li><a href="/programme-affiliation/">Programme partenaires</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Blog Jumia CI</h4>
-      <ul>
-        <li><a href="/blog/tech/">Tech &amp; Smartphones</a></li>
-        <li><a href="/blog/electromenager/">Maison &amp; Électro</a></li>
-        <li><a href="/blog/beaute/">Beauté &amp; Mode</a></li>
-        <li><a href="/blog/bons-plans/">Bons Plans</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bot">
-    <span>© 2026 Jumia CI — Tous droits réservés</span>
-    <a href="https://www.jumia.ci">jumia.ci</a>
-  </div>
-</footer>
+
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -466,20 +393,7 @@
 a { color: #F68B1E; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* HEADER */
-.jumia-header { position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
-.header-top { background: #F68B1E; padding: 0 20px; display: flex; align-items: center; gap: 16px; height: 64px; }
-.logo-link { display: flex; align-items: center; flex-shrink: 0; }
-.logo-svg { height: 32px; width: auto; }
-.search-bar { flex: 1; max-width: 600px; background: #fff; border-radius: 4px; padding: 10px 14px; color: #aaa; font-size: 13px; font-family: inherit; border: none; cursor: text; }
-.header-icons { display: flex; gap: 16px; color: #fff; font-size: 12px; font-weight: 600; margin-left: auto; }
-.header-icons span { cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.header-icons span::before { font-size: 17px; }
-.nav-cats { background: #fff; border-bottom: 1px solid #eee; padding: 0 20px; display: flex; gap: 0; overflow-x: auto; font-size: 13px; font-weight: 600; }
-.nav-cats a { color: #444; white-space: nowrap; padding: 0 14px; height: 40px; display: flex; align-items: center; border-bottom: 3px solid transparent; transition: color .15s, border-color .15s; }
-.nav-cats a:hover, .nav-cats a.active { color: #F68B1E; border-bottom-color: #F68B1E; text-decoration: none; }
-.nav-cats .cat-all { background: #F68B1E; color: #fff; padding: 0 16px; }
-.nav-cats .cat-all:hover { background: #E07B10; color: #fff; border-bottom-color: transparent; }
+
 
 /* BREADCRUMB */
 .breadcrumb { max-width: 1100px; margin: 12px auto; padding: 0 20px; font-size: 12px; color: #999; }
@@ -611,15 +525,7 @@ details p { margin-top: 10px; font-size: 14px; color: #555; line-height: 1.65; }
 .prod-cta { display: block; background: #F68B1E; color: #fff; padding: 6px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-top: 6px; transition: background .15s; }
 .prod-cta:hover { background: #E07B10; text-decoration: none; }
 
-/* FOOTER */
-footer { background: #1A1A1A; color: #ccc; margin-top: 40px; padding: 32px 20px 14px; }
-.foot-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-.foot-grid h4 { color: #fff; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
-.foot-grid ul { list-style: none; }
-.foot-grid li { margin-bottom: 7px; font-size: 12px; }
-.foot-grid a { color: #aaa; }
-.foot-grid a:hover { color: #F68B1E; }
-.foot-bot { max-width: 1100px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #333; display: flex; justify-content: space-between; font-size: 11px; color: #666; }
+
 
 .disclaimer { background: #FFF8E7; border-left: 4px solid #F68B1E; padding: 12px 16px; margin: 0 0 20px; border-radius: 0 4px 4px 0; font-size: 14px; line-height: 1.6; }
 
