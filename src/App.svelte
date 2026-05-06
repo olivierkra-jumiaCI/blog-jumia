@@ -20,22 +20,36 @@
   });
 </script>
 
-{#if currentPath === '/blog/' || currentPath === '/blog'}
-  <JumiaBlog onNavigate={handleNavigate} />
-{:else if currentPath === '/blog/tech/smartphones-100000-fcfa-2026/' || currentPath === '/blog/tech/smartphones-100000-fcfa-2026'}
-  <ArticleDetail onNavigate={handleNavigate} />
-{:else}
-  <!-- Redirection par défaut vers l'accueil du blog si le chemin ne match pas -->
-  <JumiaBlog onNavigate={handleNavigate} />
-{/if}
+<div class="app-container">
+  {#if currentPath === '/blog/' || currentPath === '/blog'}
+    <JumiaBlog onNavigate={handleNavigate} />
+  {:else if currentPath === '/blog/tech/smartphones-100000-fcfa-2026/' || currentPath === '/blog/tech/smartphones-100000-fcfa-2026'}
+    <ArticleDetail onNavigate={handleNavigate} />
+  {:else}
+    <JumiaBlog onNavigate={handleNavigate} />
+  {/if}
+</div>
 
 <style>
   :global(html), :global(body) {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     font-family: 'Open Sans', Arial, sans-serif;
     background-color: #f5f5f5;
-    max-width: 1170px;
     overflow-x: hidden;
+  }
+
+  .app-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    background-color: #fff; /* Fond blanc pour le contenu principal */
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+
+  @media (max-width: 1170px) {
+    .app-container {
+      box-shadow: none;
+    }
   }
 </style>

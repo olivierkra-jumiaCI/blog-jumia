@@ -555,15 +555,24 @@ details p { margin-top: 10px; font-size: 14px; color: #555; line-height: 1.65; }
 .disclaimer { background: #FFF8E7; border-left: 4px solid #F68B1E; padding: 12px 16px; margin: 0 0 20px; border-radius: 0 4px 4px 0; font-size: 14px; line-height: 1.6; }
 
 @media (max-width: 1024px) {
-  .page-layout { grid-template-columns: 1fr; }
+  .page-layout { grid-template-columns: 1fr; padding: 0 16px 40px; }
   .prod-grid { grid-template-columns: repeat(3, 1fr); }
+  .cat-bar-inner, .breadcrumb { padding: 0 16px; }
 }
 @media (max-width: 720px) {
   .cat-bar { display: none; }
-  h1 { font-size: 22px; }
-  .cards { grid-template-columns: 1fr 1fr; }
+  .breadcrumb { margin: 10px auto; font-size: 11px; }
+  .article-wrap { border: none; border-radius: 0; }
+  .article { padding: 0 16px 24px; }
+  h1 { font-size: 20px; margin: 16px 0 12px; }
+  .byline { font-size: 12px; }
+  .cards { grid-template-columns: 1fr; }
   .prod-grid { grid-template-columns: 1fr 1fr; }
   .verdict-grid { grid-template-columns: 1fr; }
-  .article { padding: 0 16px 28px; }
+  .cta { width: 100%; text-align: center; }
+}
+@media (max-width: 480px) {
+  .prod-grid { grid-template-columns: 1fr; }
+  .article h2 { font-size: 18px; }
 }
 </style>
