@@ -68,11 +68,7 @@
           </div>
         </div>
 
-        <div class="img-placeholder">
-          <span class="prompt-label">📸 Image principale à générer (Hero — 16:9)</span>
-          Une femme ivoirienne de 30 ans, peau noire, souriante, assise dans un salon moderne à Abidjan. Elle compare deux smartphones Android posés sur la table devant elle. Ambiance chaleureuse, lumière naturelle, tenue décontractée. Style photo réaliste, qualité magazine.
-          <span class="prompt-text">Adobe Firefly / Midjourney : "Ivorian woman 30 years old dark skin smiling sitting modern living room Abidjan comparing two Android smartphones on table, warm natural light, casual outfit, realistic photo magazine quality, --ar 16:9"</span>
-        </div>
+        <img src="/article_hero_smartphones_ci.png" alt="Femme ivoirienne comparant deux smartphones Android à moins de 100 000 FCFA en Côte d'Ivoire" style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="eager"/>
 
         <div class="disclaimer">
           💡 <strong>Les prix dans cet article sont donnés à titre indicatif</strong> et correspondent au moment de la rédaction. Sur Jumia CI, les prix changent régulièrement. Clique sur le lien de chaque produit pour voir le prix du jour.
@@ -149,11 +145,7 @@
         </div>
         <p class="table-note">* Prix indicatifs relevés sur Jumia CI au moment de la rédaction. Clique sur le lien de chaque modèle pour voir le prix du jour.</p>
 
-        <div class="img-placeholder">
-          <span class="prompt-label">📸 Image 2 à générer — Comparaison de modèles (4:3)</span>
-          Gros plan de deux mains à peau noire tenant chacune un smartphone Android différent, côte à côte sur un bureau en bois. Fond épuré, éclairage doux. Style photo produit réaliste.
-          <span class="prompt-text">Adobe Firefly : "Close-up two dark-skinned hands each holding a different Android smartphone side by side wooden desk, clean background, soft lighting, realistic product photo, --ar 4:3"</span>
-        </div>
+        <img src="/smartphone_comparison_hands.png" alt="Comparaison de deux smartphones Android tenus en main par une personne à peau noire" style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="lazy"/>
 
         <div class="tip">
           <strong>💡 Le topo de Vanessa</strong>
@@ -230,11 +222,7 @@
           Méfie-toi des offres à prix très cassé sur des modèles "dernière génération". Si un Galaxy S25 ou un iPhone 15 se retrouve à 100 000 FCFA, c'est soit une contrefaçon, soit un reconditionné non déclaré. Reste sur les modèles et les boutiques officielles que je cite ici.
         </div>
 
-        <div class="img-placeholder">
-          <span class="prompt-label">📸 Image 3 à générer — Livraison Jumia (4:3)</span>
-          Une femme ivoirienne, peau noire, récupère un colis Jumia à un point relais. Elle règle avec son téléphone en mobile money. Quartier ivoirien, journée ensoleillée. Photo réaliste.
-          <span class="prompt-text">Adobe Firefly : "Ivorian woman dark skin receiving Jumia package at relay point, paying with mobile money on phone, Ivorian neighborhood sunny day, realistic photo, --ar 4:3"</span>
-        </div>
+        <img src="/jumia_delivery_payment.png" alt="Femme ivoirienne récupérant sa commande Jumia CI en point relais avec paiement mobile money" style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="lazy"/>
 
         <h2>Comment payer et se faire livrer sur Jumia CI</h2>
 
