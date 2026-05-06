@@ -1,0 +1,649 @@
+<script>
+  export let onNavigate;
+
+  function goHome(e) {
+    e.preventDefault();
+    onNavigate('/blog/');
+  }
+</script>
+
+<svelte:head>
+  <title>Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026 | Jumia CI</title>
+  <meta name="description" content="Vanessa compare les meilleurs smartphones disponibles sur Jumia CI en 2026 : Galaxy A17, Tecno Spark 50, Redmi Note 15, Camon 50 Pro, Infinix Note Edge. Prix réels, pour qui, SAV en CI." />
+  <link rel="canonical" href="https://www.jumia.ci/blog/tech/smartphones-moins-100000-fcfa-2026/" />
+</svelte:head>
+
+<!-- HEADER -->
+<div class="jumia-header">
+  <div class="header-top">
+    <a href="/" on:click={goHome} class="logo-link" aria-label="Jumia Côte d'Ivoire">
+      <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 5h12v34c0 7-4 12-12 12C5 51 1 46 1 39h12c0 3 0 4 0 4s1-1 0-4V5z" fill="white"/>
+        <path d="M31 5h12v28c0 4 3 6 6 6s6-2 6-6V5h12v28c0 9-7 16-18 16S31 42 31 33V5z" fill="white"/>
+        <path d="M73 5h13l9 22 9-22h13v46H105V26L95 48 85 26v25H73V5z" fill="white"/>
+        <path d="M119 5h12v46h-12V5z" fill="white"/>
+        <path d="M141 5h13l16 46h-13l-3-8h-14l-3 8h-12L141 5zm3 28h9l-4.5-14L144 33z" fill="white"/>
+        <circle cx="211" cy="28" r="22" fill="white"/>
+        <polygon points="211,13 215,23 226,23 217,30 220,40 211,34 202,40 205,30 196,23 207,23" fill="#F68B1E"/>
+      </svg>
+    </a>
+    <div class="search-bar">Rechercher sur Jumia CI…</div>
+    <div class="header-icons">
+      <span>👤 Compte</span>
+      <span>❤️ Favoris</span>
+      <span>🛒 Panier</span>
+    </div>
+  </div>
+  <nav class="nav-cats">
+    <a href="/" on:click={goHome} class="cat-all">☰ Catégories</a>
+    <a href="/blog/tech/" class="active">📱 Tech &amp; Smartphones</a>
+    <a href="/blog/electromenager/">🏠 Maison &amp; Électro</a>
+    <a href="/blog/beaute/">💄 Beauté &amp; Mode</a>
+    <a href="/blog/bebe-enfant/">👶 Bébé &amp; Enfant</a>
+    <a href="/blog/bons-plans/">🏷️ Bons Plans</a>
+    <a href="/blog/guide-achat/">📋 Guides d'achat</a>
+  </nav>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/" on:click={goHome}>Accueil</a> › <a href="/" on:click={goHome}>Blog</a> › <a href="/blog/tech/">Tech &amp; Smartphones</a> › Smartphones à moins de 100 000 FCFA
+</div>
+
+<!-- PAGE -->
+<div class="page-layout">
+
+  <!-- ARTICLE -->
+  <div>
+    <div class="article-wrap">
+      <div class="article">
+
+        <h1>Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026</h1>
+
+        <div class="byline">
+          <div class="avatar">V</div>
+          <div>
+            <strong>Vanessa · Team Jumia CI</strong><br>
+            <span>Publié le 5 mai 2026 · 7 min de lecture</span>
+          </div>
+        </div>
+
+        <div class="img-placeholder">
+          <span class="prompt-label">📸 Image principale à générer (Hero — 16:9)</span>
+          Une femme ivoirienne de 30 ans, peau noire, souriante, assise dans un salon moderne à Abidjan. Elle compare deux smartphones Android posés sur la table devant elle. Ambiance chaleureuse, lumière naturelle, tenue décontractée. Style photo réaliste, qualité magazine.
+          <span class="prompt-text">Adobe Firefly / Midjourney : "Ivorian woman 30 years old dark skin smiling sitting modern living room Abidjan comparing two Android smartphones on table, warm natural light, casual outfit, realistic photo magazine quality, --ar 16:9"</span>
+        </div>
+
+        <div class="disclaimer">
+          💡 <strong>Les prix dans cet article sont donnés à titre indicatif</strong> et correspondent au moment de la rédaction. Sur Jumia CI, les prix changent régulièrement. Clique sur le lien de chaque produit pour voir le prix du jour.
+        </div>
+
+        <p>Bon, je vais être directe avec toi. La semaine dernière, le téléphone du roi a rendu l'âme — écran fissuré, batterie à plat en 2h, plus rien ne marchait. Et lui, bien sûr, il voulait directement un Samsung Galaxy S. J'ai dit non. On a trois enfants, un loyer, et l'école qui reprend dans 4 mois. Donc j'ai sorti mon tableur, j'ai passé 3 soirées sur le catalogue Jumia CI, et je t'explique tout ce que j'ai trouvé.</p>
+
+        <p>En avant-goût : on a trouvé le téléphone idéal pour le roi en dessous de 100 000 FCFA, et il est plus content que s'il avait eu un flagship à 500 000 FCFA. Je t'explique pourquoi.</p>
+
+        <h2>Pourquoi cette tranche de prix est la plus intéressante en 2026</h2>
+
+        <p>En dessous de 70 000 FCFA, tu as des téléphones corrects pour les usages basiques — mais tu feras des concessions réelles sur la fluidité, la photo et la durée de vie. Au-dessus de 200 000 FCFA, tu paies surtout la marque et des fonctionnalités que la majorité des gens n'utilisent jamais.</p>
+
+        <p>Entre 80 000 et 110 000 FCFA en 2026, tu accèdes à :</p>
+        <ul>
+          <li>4 à 8 Go de RAM — les applis tournent sans ramer</li>
+          <li>128 à 256 Go de stockage — 2 à 3 ans de photos de famille sans se soucier de la place</li>
+          <li>Batterie 5 000 mAh minimum — une journée entière, même avec les coupures de courant</li>
+          <li>4G solide sur les réseaux Orange, MTN et Moov CI</li>
+          <li>Double SIM — quasi obligatoire en CI pour jongler entre opérateurs</li>
+        </ul>
+
+        <h2>Mon tableau comparatif — les 5 modèles que j'ai regardés de près</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Modèle</th>
+                <th>Prix indicatif*</th>
+                <th>RAM / Stockage</th>
+                <th>Batterie</th>
+                <th>Pour qui ?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Samsung Galaxy A17</strong></td>
+                <td class="price">Aux alentours de 88 000 FCFA</td>
+                <td>4 Go + 128 Go</td>
+                <td>5 000 mAh</td>
+                <td>Premier Samsung, cadeau, SAV fiable</td>
+              </tr>
+              <tr>
+                <td><strong>Tecno Spark 50</strong> <span class="tag-top">Meilleur rapport</span></td>
+                <td class="price">Aux alentours de 92 000 FCFA</td>
+                <td>8 Go + 256 Go</td>
+                <td>5 000 mAh</td>
+                <td>Grande famille, usage quotidien intense</td>
+              </tr>
+              <tr>
+                <td><strong>Xiaomi Redmi Note 15</strong></td>
+                <td class="price">Aux alentours de 104 000 FCFA</td>
+                <td>6 Go + 128 Go</td>
+                <td>5 000 mAh</td>
+                <td>Meilleures performances pour le prix</td>
+              </tr>
+              <tr>
+                <td><strong>Tecno Camon 50 Pro</strong> <span class="tag-top">Photo</span></td>
+                <td class="price">Aux alentours de 195 000 FCFA</td>
+                <td>8 Go + 256 Go</td>
+                <td>5 000 mAh</td>
+                <td>Photos, réseaux sociaux, créateurs de contenu</td>
+              </tr>
+              <tr>
+                <td><strong>Infinix Note Edge</strong></td>
+                <td class="price">Aux alentours de 145 500 FCFA</td>
+                <td>8 Go + 256 Go</td>
+                <td>5 000 mAh + charge 45W</td>
+                <td>Polyvalent, charge rapide, gros utilisateur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">* Prix indicatifs relevés sur Jumia CI au moment de la rédaction. Clique sur le lien de chaque modèle pour voir le prix du jour.</p>
+
+        <div class="img-placeholder">
+          <span class="prompt-label">📸 Image 2 à générer — Comparaison de modèles (4:3)</span>
+          Gros plan de deux mains à peau noire tenant chacune un smartphone Android différent, côte à côte sur un bureau en bois. Fond épuré, éclairage doux. Style photo produit réaliste.
+          <span class="prompt-text">Adobe Firefly : "Close-up two dark-skinned hands each holding a different Android smartphone side by side wooden desk, clean background, soft lighting, realistic product photo, --ar 4:3"</span>
+        </div>
+
+        <div class="tip">
+          <strong>💡 Le topo de Vanessa</strong>
+          <p>Sur Jumia CI, les prix des téléphones bougent avec les ventes flash et les promos du weekend. Ne traîne pas trop si tu repères un bon prix — les stocks au bon tarif peuvent partir vite. Le roi a failli rater son téléphone à prix réduit pour ça.</p>
+        </div>
+
+        <h2>Ce que j'ai regardé pour chaque modèle</h2>
+
+        <h3>Samsung Galaxy A17 — la sécurité avant tout</h3>
+        <p>Le Galaxy A17 aux alentours de 88 000 FCFA, c'est l'entrée Samsung la plus accessible en ce moment. Caméra 50 MP, batterie 5 000 mAh. Et surtout — 6 ans de mises à jour de sécurité garanties selon Samsung. En clair : en 2032, ce téléphone sera encore sécurisé.</p>
+        <p>Si le roi utilise son téléphone pour le travail, les dépôts Wave et les appels clients, c'est lui que je recommande en priorité. Le SAV Samsung en CI est présent dans les grandes villes et à l'intérieur du pays — Bouaké, Korhogo, San Pédro — ce qui compte vraiment quand quelque chose se passe.</p>
+        <p><a href="https://www.jumia.ci/mlp-boutique-samsung/" target="_blank" rel="noopener">Voir le prix du jour sur Jumia CI → Boutique officielle Samsung</a></p>
+
+        <h3>Tecno Spark 50 — les meilleures specs pour le prix</h3>
+        <p>8 Go de RAM et 256 Go de stockage aux alentours de 92 000 FCFA. Sur le papier, c'est imbattable dans cette tranche. Tecno connaît nos usages : grosse batterie parce qu'on a des coupures, grand écran parce qu'on regarde des vidéos, double SIM parce qu'on jongle entre opérateurs.</p>
+        <p>Le petit bémol honnête : les mises à jour Android arrivent parfois en retard par rapport à Samsung. Si la sécurité logicielle est ta priorité, penche-toi vers Samsung. Mais pour un usage familial quotidien — WhatsApp, Facebook, appels, photos des enfants — le Tecno Spark 50 fait très bien le job.</p>
+        <p><a href="https://www.jumia.ci/tecno/" target="_blank" rel="noopener">Voir le prix du jour sur Jumia CI → Boutique officielle Tecno</a></p>
+
+        <h3>Xiaomi Redmi Note 15 — le challenger silencieux</h3>
+        <p>Aux alentours de 104 000 FCFA, le Redmi Note 15 propose ce que j'ai vu de mieux en termes de fluidité dans cette tranche. Le processeur est réactif et la caméra se défend bien même en intérieur. Si tu cherches les meilleures performances brutes pour le prix, c'est lui.</p>
+        <p>Ce que je te dis franchement : le SAV Xiaomi en CI est moins dense que Samsung ou Tecno. Dans les grandes villes ça va, mais si tu es à l'intérieur du pays, vérifie qu'il y a un point de réparation agréé près de toi avant d'acheter.</p>
+        <p><a href="https://www.jumia.ci/mlp-boutique-xiaomi/" target="_blank" rel="noopener">Voir le prix du jour sur Jumia CI → Boutique officielle Xiaomi</a></p>
+
+        <h3>Tecno Camon 50 Pro — pour ceux qui vivent par la photo</h3>
+        <p>Si tu veux de belles photos pour Facebook, des vidéos de tes enfants, ou du contenu pour tes réseaux, c'est le Camon 50 Pro qui sort du lot. La caméra est clairement au-dessus des autres modèles cités ici. Il dépasse les 100 000 FCFA — aux alentours de 195 000 FCFA — mais si la photo est ta priorité, c'est une vraie valeur.</p>
+        <p><a href="https://www.jumia.ci/tecno/" target="_blank" rel="noopener">Voir le prix du jour sur Jumia CI → Boutique officielle Tecno</a></p>
+
+        <h3>Infinix Note Edge — pour celui qui est toujours en déplacement</h3>
+        <p>La charge 45W, c'est ce qui différencie vraiment l'Infinix Note Edge. Rentrer à la maison avec 10% de batterie et repartir rechargé en moins d'une heure — ça change la vie. Pour quelqu'un qui est dehors toute la journée, c'est un vrai argument. Aux alentours de 145 500 FCFA, c'est au-dessus de notre tranche mais ça se justifie largement.</p>
+        <p><a href="https://www.jumia.ci/mlp-boutique-infinix/" target="_blank" rel="noopener">Voir le prix du jour sur Jumia CI → Boutique officielle Infinix</a></p>
+
+        <div class="tip">
+          <strong>💡 Le topo de Vanessa</strong>
+          <p>Vérifie TOUJOURS si le chargeur est inclus dans la boîte. Certaines marques ont commencé à le vendre séparément. Lis bien la description sur la fiche Jumia — un chargeur compatible coûte 5 000 à 8 000 FCFA en plus, ce n'est pas anodin.</p>
+        </div>
+
+        <h2>Mes verdicts par profil</h2>
+
+        <div class="verdict-grid">
+          <div class="verdict-card">
+            <div class="name">Samsung Galaxy A17</div>
+            <div class="for-who">Pour : le cadeau ou l'usage pro fiable</div>
+            <p>SAV présent partout en CI, 6 ans de mises à jour, marque reconnue. Pour offrir à ta maman, ta tante, ton père — ou pour quelqu'un qui utilise son téléphone pour le travail.</p>
+          </div>
+          <div class="verdict-card">
+            <div class="name">Tecno Spark 50</div>
+            <div class="for-who">Pour : le meilleur rapport specs/prix</div>
+            <p>8 Go de RAM et 256 Go de stockage à 92 000 FCFA, c'est difficile à battre. Pour un usage familial intensif sans se ruiner.</p>
+          </div>
+          <div class="verdict-card">
+            <div class="name">Tecno Camon 50 Pro</div>
+            <div class="for-who">Pour : les amoureux de la photo</div>
+            <p>La meilleure caméra de cette sélection. Si Facebook et les photos de famille sont ta priorité, c'est lui sans hésiter.</p>
+          </div>
+          <div class="verdict-card">
+            <div class="name">Infinix Note Edge</div>
+            <div class="for-who">Pour : celui qui est toujours en mouvement</div>
+            <p>La charge 45W change vraiment la vie au quotidien. Pour quelqu'un qui ne peut pas se permettre de tomber en rade à midi.</p>
+          </div>
+        </div>
+
+        <h2>Ce qu'il faut vérifier sur la fiche Jumia avant de valider</h2>
+
+        <ul>
+          <li><strong>Double SIM :</strong> vérifie que les deux slots acceptent des nano-SIM pour jongler entre Orange, MTN ou Moov.</li>
+          <li><strong>Bandes 4G :</strong> tous les modèles cités fonctionnent sur les réseaux ivoiriens, mais si tu es dans une zone secondaire, vérifie la compatibilité avec ton opérateur local.</li>
+          <li><strong>Le chargeur dans la boîte :</strong> lis bien la description complète avant de valider.</li>
+          <li><strong>Boutique officielle :</strong> pour la garantie constructeur, commande depuis la boutique officielle de la marque sur Jumia CI.</li>
+          <li><strong>Neuf vs reconditionné :</strong> c'est clairement mentionné sur la fiche. Pour un premier achat ou un cadeau, prends du neuf.</li>
+        </ul>
+
+        <div class="alert">
+          <strong>⚠️ Le piège classique</strong><br>
+          Méfie-toi des offres à prix très cassé sur des modèles "dernière génération". Si un Galaxy S25 ou un iPhone 15 se retrouve à 100 000 FCFA, c'est soit une contrefaçon, soit un reconditionné non déclaré. Reste sur les modèles et les boutiques officielles que je cite ici.
+        </div>
+
+        <div class="img-placeholder">
+          <span class="prompt-label">📸 Image 3 à générer — Livraison Jumia (4:3)</span>
+          Une femme ivoirienne, peau noire, récupère un colis Jumia à un point relais. Elle règle avec son téléphone en mobile money. Quartier ivoirien, journée ensoleillée. Photo réaliste.
+          <span class="prompt-text">Adobe Firefly : "Ivorian woman dark skin receiving Jumia package at relay point, paying with mobile money on phone, Ivorian neighborhood sunny day, realistic photo, --ar 4:3"</span>
+        </div>
+
+        <h2>Comment payer et se faire livrer sur Jumia CI</h2>
+
+        <p>Que tu sois à Abidjan, à Bouaké, à Man ou à San Pédro, Jumia livre partout en Côte d'Ivoire.</p>
+
+        <ul>
+          <li><strong>Cash à la livraison :</strong> tu paies quand tu récupères ta commande. Parfait pour un premier achat.</li>
+          <li><strong>Mobile money à la livraison :</strong> Wave, Orange Money ou MTN MoMo — tu règles depuis ton téléphone à la réception.</li>
+          <li><strong>Prépaiement mobile money :</strong> Wave, Orange Money ou MTN MoMo avant la livraison. Souvent plus rapide pour la préparation — et tu bénéficies jusqu'à 5 000 FCFA de réduction sur les frais de livraison si ta commande est d'au moins 7 500 FCFA et retirée en agence. Sur un téléphone, c'est pratiquement toujours le cas.</li>
+        </ul>
+
+        <p>Pour la livraison :</p>
+        <ul>
+          <li><strong>À Abidjan :</strong> livraison à domicile ou retrait en point relais Jumia — à toi de choisir.</li>
+          <li><strong>À l'intérieur du pays :</strong> retrait en point relais uniquement (Bouaké, Yamoussoukro, Korhogo, San Pédro, Man, Daloa et autres villes). Compte 3 à 5 jours ouvrables.</li>
+        </ul>
+
+        <p>J'ai choisi le prépaiement Wave pour la commande du roi. Préparée le soir même, récupérée au point relais le lendemain. Il a testé sur place, tout était nickel.</p>
+
+        <div class="cta-block">
+          <a class="cta" href="https://www.jumia.ci/telephones-smartphones/" target="_blank" rel="noopener">Voir tous les smartphones sur Jumia CI →</a>
+        </div>
+
+        <h2>Mon choix final — et pourquoi</h2>
+
+        <p>J'ai pris le <strong>Samsung Galaxy A17</strong> (aux alentours de 88 000 FCFA au moment où j'écrivais) pour le roi. Pas le meilleur rapport specs brutes du tableau — le Tecno Spark 50 avait plus de RAM et de stockage pour un prix comparable. Mais le roi utilise son téléphone pour son travail, pour ses clients, pour ses dépôts Wave. Si ça tombe en panne, on a besoin d'un SAV fiable et accessible, même s'il voyage à l'intérieur du pays. Samsung, c'est ce que ça offre en CI.</p>
+
+        <p>Il est content. Moi aussi. Et on a gardé du budget pour une coque solide et un verre trempé — parce que ce monsieur-là, il ne fait pas attention à ses affaires. C'est pas dôhi.</p>
+
+        <h2>FAQ — tes questions sur les smartphones en CI</h2>
+
+        <details>
+          <summary>Quelle différence entre 4 Go et 8 Go de RAM concrètement ?</summary>
+          <p>Avec 4 Go, tu peux avoir une dizaine d'applis ouvertes en même temps sans problème — WhatsApp, Chrome, Facebook, Maps. Avec 8 Go, tu ajoutes des jeux comme Free Fire en arrière-plan sans que le téléphone rame. Pour un usage familial standard, 4 Go suffisent largement. Pour un ado ou un gros utilisateur, vise 8 Go.</p>
+        </details>
+
+        <details>
+          <summary>Jumia livre bien dans les villes secondaires ?</summary>
+          <p>Oui. Jumia livre dans tout le pays via ses points relais — Bouaké, Yamoussoukro, Korhogo, San Pédro, Man, Daloa et plus encore. Délai généralement de 3 à 5 jours ouvrables hors Abidjan. Vérifie le point relais le plus proche de chez toi directement sur le site.</p>
+        </details>
+
+        <details>
+          <summary>Quelle garantie pour les téléphones achetés sur Jumia ?</summary>
+          <p>La garantie standard est de 12 à 24 mois selon les marques. Pour les boutiques officielles Samsung, Tecno, Infinix et Xiaomi sur Jumia CI, la garantie est directement gérée par la marque. Vérifie toujours sur la fiche produit — si tu vois moins de 12 mois ou pas de mention de garantie, pose la question avant de commander.</p>
+        </details>
+
+        <details>
+          <summary>Vaut-il mieux acheter maintenant ou attendre les promos ?</summary>
+          <p>Si tu as besoin du téléphone maintenant, achète maintenant. Les stocks au bon prix peuvent partir vite. En revanche, si tu peux attendre, note les dates Jumia Anniversaire (juin) et Black Friday (novembre) — les réductions peuvent atteindre 20 à 30% sur certains modèles.</p>
+        </details>
+
+        <details>
+          <summary>Samsung ou Tecno — lequel dure le plus longtemps ?</summary>
+          <p>Les deux peuvent durer 3 ans avec une bonne utilisation. L'avantage Samsung : 6 ans de mises à jour de sécurité garanties, SAV plus dense en CI. L'avantage Tecno : specs souvent supérieures pour le même prix, conçu pour nos usages. Pour un usage pro ou un cadeau, je penche Samsung. Pour le quotidien familial avec le meilleur rapport qualité-prix, Tecno.</p>
+        </details>
+
+        <p class="signature">Vanessa, chercheuse des vrais kens.</p>
+
+      </div>
+    </div>
+
+    <!-- ARTICLES LIÉS -->
+    <div class="related-section" style="margin-top:20px;">
+      <div class="related-hdr">Continue avec Vanessa</div>
+      <div class="cards">
+        <a href="/blog/electromenager/climatiseur-ci-2026/" class="card">
+          <div class="card-img" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">❄️</div>
+          <div class="card-body"><h4>Climatiseur en CI : comment choisir sans se faire arnaquer</h4><small>Vanessa · 6 min</small></div>
+        </a>
+        <a href="/blog/beaute/maquillage-peaux-noires/" class="card">
+          <div class="card-img" style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);">💄</div>
+          <div class="card-body"><h4>Maquillage pour peaux noires : mes produits préférés sur Jumia CI</h4><small>Vanessa · 5 min</small></div>
+        </a>
+        <a href="/blog/tech/ordinateur-etudiant-ci-2026/" class="card">
+          <div class="card-img" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">💻</div>
+          <div class="card-body"><h4>PC portable pour étudiant ivoirien : le guide complet 2026</h4><small>Vanessa · 8 min</small></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- PRODUITS -->
+    <div class="products-section" style="margin-top:24px;">
+      <div class="products-hdr">Les téléphones dont parle Vanessa</div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-img">📱</div>
+          <h5>Samsung Galaxy A17</h5>
+          <div class="prod-price">Aux alentours de 88 000 FCFA</div>
+          <a href="https://www.jumia.ci/mlp-boutique-samsung/" class="prod-cta" target="_blank" rel="noopener">Boutique Samsung →</a>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">📱</div>
+          <h5>Tecno Spark 50</h5>
+          <div class="prod-price">Aux alentours de 92 000 FCFA</div>
+          <a href="https://www.jumia.ci/tecno/" class="prod-cta" target="_blank" rel="noopener">Boutique Tecno →</a>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">📱</div>
+          <h5>Xiaomi Redmi Note 15</h5>
+          <div class="prod-price">Aux alentours de 104 000 FCFA</div>
+          <a href="https://www.jumia.ci/mlp-boutique-xiaomi/" class="prod-cta" target="_blank" rel="noopener">Boutique Xiaomi →</a>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">📷</div>
+          <h5>Tecno Camon 50 Pro</h5>
+          <div class="prod-price">Aux alentours de 195 000 FCFA</div>
+          <a href="https://www.jumia.ci/tecno/" class="prod-cta" target="_blank" rel="noopener">Boutique Tecno →</a>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img">⚡</div>
+          <h5>Infinix Note Edge</h5>
+          <div class="prod-price">Aux alentours de 145 500 FCFA</div>
+          <a href="https://www.jumia.ci/mlp-boutique-infinix/" class="prod-cta" target="_blank" rel="noopener">Boutique Infinix →</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main col -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sb-block">
+      <div class="sb-hdr">📱 Dans cet article</div>
+      <div style="padding:6px 0;">
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">📊 Pourquoi cette tranche de prix</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">📋 Tableau comparatif</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🔍 Zoom sur chaque modèle</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🏅 Verdicts par profil</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">🚚 Paiement &amp; livraison</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">👉 Mon choix final</a>
+        <a href="#" style="display:flex;align-items:center;gap:8px;padding:7px 12px;font-size:12px;color:#666;transition:background .1s;" onmouseover="this.style.background='#FFF8E7'" onmouseout="this.style.background=''">❓ FAQ</a>
+      </div>
+    </div>
+
+    <div class="sb-cta-block">
+      <div style="font-size:26px;margin-bottom:7px;">📱</div>
+      <h3>Voir les smartphones sur Jumia CI</h3>
+      <p>Tous les modèles cités, aux meilleurs prix du moment.</p>
+      <a href="https://www.jumia.ci/telephones-smartphones/" target="_blank" rel="noopener">Voir les smartphones →</a>
+    </div>
+
+    <div class="sb-block">
+      <div class="sb-hdr">Les plus lus</div>
+      <div class="sb-pop">
+        <a href="/blog/electromenager/climatiseur-ci/" class="sb-pop-item"><span class="sb-pop-n">01</span><div><div class="sb-pop-t">Climatiseur en CI sans se faire arnaquer</div><div class="sb-pop-m">Vanessa · 6 min</div></div></a>
+        <a href="/blog/beaute/maquillage-peaux-noires/" class="sb-pop-item"><span class="sb-pop-n">02</span><div><div class="sb-pop-t">Maquillage pour peaux noires sur Jumia CI</div><div class="sb-pop-m">Vanessa · 5 min</div></div></a>
+        <a href="/blog/electromenager/onduleur-inverter/" class="sb-pop-item"><span class="sb-pop-n">03</span><div><div class="sb-pop-t">Onduleur vs inverter pour les délestages</div><div class="sb-pop-m">Vanessa · 7 min</div></div></a>
+        <a href="/blog/bebe/poussette-abidjan/" class="sb-pop-item"><span class="sb-pop-n">04</span><div><div class="sb-pop-t">Choisir une poussette pour Abidjan</div><div class="sb-pop-m">Vanessa · 6 min</div></div></a>
+      </div>
+    </div>
+
+    <div class="sb-block">
+      <div class="sb-hdr">Livraison &amp; Paiement</div>
+      <div class="sb-body">
+        <div class="sb-del-row"><span class="sb-del-ico">🚚</span><div><strong>Livraison domicile</strong>Abidjan uniquement</div></div>
+        <div class="sb-del-row"><span class="sb-del-ico">📍</span><div><strong>Point relais</strong>Partout en CI — Bouaké, Yamoussoukro, Korhogo…</div></div>
+        <div class="sb-del-row"><span class="sb-del-ico">📲</span><div><strong>Mobile Money</strong>Wave · Orange Money · MTN MoMo</div></div>
+        <div class="sb-del-row"><span class="sb-del-ico">💸</span><div><strong>Réduction livraison</strong>Jusqu'à 5 000 FCFA sur commande prépayée ≥ 7 500 FCFA retirée en agence</div></div>
+      </div>
+    </div>
+
+    <div class="sb-block">
+      <div class="sb-hdr">✉️ Newsletter</div>
+      <div class="sb-body sb-nl">
+        <h3>Bons plans chaque semaine</h3>
+        <p>Les meilleurs articles directement dans ta boîte mail. Zéro spam.</p>
+        <input type="text" placeholder="Ton prénom"/>
+        <input type="email" placeholder="Ton email"/>
+        <button>S'inscrire gratuitement</button>
+      </div>
+    </div>
+
+    <div class="sb-block">
+      <div class="sb-hdr">Mots-clés</div>
+      <div class="sb-body">
+        <div class="sb-tags">
+          <a href="/blog/tag/samsung/" class="sb-tag">Samsung A17</a>
+          <a href="/blog/tag/tecno/" class="sb-tag">Tecno Spark 50</a>
+          <a href="/blog/tag/xiaomi/" class="sb-tag">Redmi Note 15</a>
+          <a href="/blog/tag/infinix/" class="sb-tag">Infinix Note Edge</a>
+          <a href="/blog/tag/smartphone-ci/" class="sb-tag">Smartphone CI</a>
+          <a href="/blog/tag/100000-fcfa/" class="sb-tag">100 000 FCFA</a>
+          <a href="/blog/tag/android-2026/" class="sb-tag">Android 2026</a>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /page-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Aide &amp; Contact</h4>
+      <ul>
+        <li><a href="/aide/">Centre d'aide</a></li>
+        <li><a href="/contact/">Contactez-nous</a></li>
+        <li><a href="/comment-commander/">Comment commander</a></li>
+        <li><a href="/retours/">Retours et remboursements</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Plus sur Jumia</h4>
+      <ul>
+        <li><a href="/a-propos/">À propos de nous</a></li>
+        <li><a href="/blog/">Blog Jumia CI</a></li>
+        <li><a href="/conditions/">Conditions d'utilisation</a></li>
+        <li><a href="/confidentialite/">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Faire des affaires</h4>
+      <ul>
+        <li><a href="/vendre/">Vendez sur Jumia</a></li>
+        <li><a href="/jforce/">Devenez JForce</a></li>
+        <li><a href="/programme-affiliation/">Programme partenaires</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Blog Jumia CI</h4>
+      <ul>
+        <li><a href="/blog/tech/">Tech &amp; Smartphones</a></li>
+        <li><a href="/blog/electromenager/">Maison &amp; Électro</a></li>
+        <li><a href="/blog/beaute/">Beauté &amp; Mode</a></li>
+        <li><a href="/blog/bons-plans/">Bons Plans</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Jumia CI — Tous droits réservés</span>
+    <a href="https://www.jumia.ci">jumia.ci</a>
+  </div>
+</footer>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:global(body) { font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif; color: #2b2b2b; background: #f5f5f5; line-height: 1.6; font-size: 14px; }
+a { color: #F68B1E; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* HEADER */
+.jumia-header { position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.header-top { background: #F68B1E; padding: 0 20px; display: flex; align-items: center; gap: 16px; height: 64px; }
+.logo-link { display: flex; align-items: center; flex-shrink: 0; }
+.logo-svg { height: 32px; width: auto; }
+.search-bar { flex: 1; max-width: 600px; background: #fff; border-radius: 4px; padding: 10px 14px; color: #aaa; font-size: 13px; font-family: inherit; border: none; cursor: text; }
+.header-icons { display: flex; gap: 16px; color: #fff; font-size: 12px; font-weight: 600; margin-left: auto; }
+.header-icons span { cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.header-icons span::before { font-size: 17px; }
+.nav-cats { background: #fff; border-bottom: 1px solid #eee; padding: 0 20px; display: flex; gap: 0; overflow-x: auto; font-size: 13px; font-weight: 600; }
+.nav-cats a { color: #444; white-space: nowrap; padding: 0 14px; height: 40px; display: flex; align-items: center; border-bottom: 3px solid transparent; transition: color .15s, border-color .15s; }
+.nav-cats a:hover, .nav-cats a.active { color: #F68B1E; border-bottom-color: #F68B1E; text-decoration: none; }
+.nav-cats .cat-all { background: #F68B1E; color: #fff; padding: 0 16px; }
+.nav-cats .cat-all:hover { background: #E07B10; color: #fff; border-bottom-color: transparent; }
+
+/* BREADCRUMB */
+.breadcrumb { max-width: 1100px; margin: 12px auto; padding: 0 20px; font-size: 12px; color: #999; }
+.breadcrumb a { color: #777; }
+.breadcrumb a:hover { color: #F68B1E; }
+
+/* LAYOUT */
+.page-layout { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; display: grid; grid-template-columns: 1fr 260px; gap: 20px; align-items: start; }
+
+/* ARTICLE */
+.article-wrap { background: #fff; border: 1px solid #e8e8e8; border-radius: 4px; overflow: hidden; }
+.article { padding: 0 28px 36px; }
+h1 { font-size: 28px; font-weight: 800; line-height: 1.25; margin: 22px 0 16px; color: #1a1a1a; }
+.byline { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; font-size: 13px; color: #777; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #F68B1E, #ffd166); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 17px; flex-shrink: 0; }
+.byline strong { color: #333; }
+.article p { font-size: 15px; margin-bottom: 16px; color: #2b2b2b; line-height: 1.75; }
+.article h2 { font-size: 20px; font-weight: 800; margin: 30px 0 12px; padding-left: 12px; border-left: 4px solid #F68B1E; line-height: 1.3; color: #1a1a1a; }
+.article h3 { font-size: 17px; font-weight: 700; margin: 22px 0 8px; color: #222; }
+.article ul, .article ol { margin: 0 0 16px 20px; }
+.article li { margin-bottom: 7px; font-size: 15px; line-height: 1.65; }
+.article strong { color: #1a1a1a; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 16px 0 24px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border: 1px solid #eee; border-radius: 6px; overflow: hidden; }
+thead { background: #fff7ec; }
+th { text-align: left; padding: 10px 12px; font-weight: 700; color: #333; border-bottom: 2px solid #F68B1E; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; font-size: 14px; }
+tbody tr:hover { background: #fffaf4; }
+.price { color: #F68B1E; font-weight: 700; white-space: nowrap; }
+.tag-top { background: #F68B1E; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 10px; white-space: nowrap; }
+.tag-mid { background: #eee; color: #555; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 10px; white-space: nowrap; }
+.table-note { font-size: 12px; color: #aaa; font-style: italic; margin-top: -16px; margin-bottom: 20px; }
+
+/* TIP / TOPO */
+.tip { background: #FFF8E7; border-left: 4px solid #F68B1E; padding: 14px 18px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+.tip strong { display: block; margin-bottom: 6px; color: #b25b00; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+.tip p { font-size: 15px; margin: 0 0 8px; }
+.tip p:last-child { margin: 0; }
+.tip ul { margin: 6px 0 0 18px; }
+.tip ul li { font-size: 15px; margin-bottom: 5px; }
+
+/* ALERT */
+.alert { background: #FFF0F0; border-left: 4px solid #e53e3e; padding: 14px 18px; margin: 20px 0; border-radius: 0 4px 4px 0; font-size: 15px; line-height: 1.65; }
+.alert strong { color: #c53030; }
+
+/* VERDICT GRID */
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 24px; }
+.verdict-card { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 14px 16px; border-top: 4px solid #F68B1E; }
+.verdict-card .name { font-weight: 800; font-size: 15px; color: #1a1a1a; margin-bottom: 3px; }
+.verdict-card .for-who { font-size: 12px; color: #F68B1E; font-weight: 600; margin-bottom: 7px; }
+.verdict-card p { font-size: 13px; color: #555; margin: 0; line-height: 1.55; }
+
+/* CTA */
+.cta { display: inline-block; background: #F68B1E; color: #fff; padding: 12px 24px; border-radius: 4px; font-weight: 700; font-size: 15px; margin: 6px 0; transition: background .15s; }
+.cta:hover { background: #d97706; color: #fff; text-decoration: none; }
+.cta-block { text-align: center; margin: 24px 0; }
+
+/* IMAGE PLACEHOLDERS */
+.img-placeholder { width: 100%; background: #f9f9f9; border: 2px dashed #ddd; border-radius: 8px; padding: 18px; margin: 20px 0; font-size: 13px; color: #999; line-height: 1.6; }
+.img-placeholder .prompt-label { display: block; font-weight: 700; color: #F68B1E; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.img-placeholder .prompt-text { display: block; background: #fff; border: 1px solid #eee; border-radius: 4px; padding: 9px 11px; font-family: monospace; font-size: 11px; color: #555; margin-top: 6px; }
+
+/* FAQ */
+details { background: #f9f9f9; border: 1px solid #eee; border-radius: 4px; margin-bottom: 8px; padding: 12px 16px; }
+details summary { font-weight: 700; cursor: pointer; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: "+"; font-size: 20px; color: #F68B1E; font-weight: 400; }
+details[open] summary::after { content: "−"; }
+details p { margin-top: 10px; font-size: 14px; color: #555; line-height: 1.65; }
+
+/* SIGNATURE */
+.signature { font-size: 13px; color: #aaa; font-style: italic; margin-top: 28px; padding-top: 16px; border-top: 1px solid #f0f0f0; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 12px; }
+.sb-block { background: #fff; border: 1px solid #e8e8e8; border-radius: 4px; overflow: hidden; }
+.sb-hdr { padding: 9px 12px; border-bottom: 1px solid #eee; background: #f9f9f9; font-size: 13px; font-weight: 700; color: #333; border-left: 4px solid #F68B1E; }
+.sb-body { padding: 10px 12px; }
+.sb-pop { display: flex; flex-direction: column; }
+.sb-pop-item { display: flex; gap: 8px; align-items: flex-start; padding: 8px 12px; border-bottom: 1px solid #f0f0f0; transition: background .1s; }
+.sb-pop-item:last-child { border-bottom: none; }
+.sb-pop-item:hover { background: #FFF8E7; }
+.sb-pop-n { font-size: 16px; font-weight: 700; color: #ddd; line-height: 1; flex-shrink: 0; width: 20px; }
+.sb-pop-t { font-size: 12px; font-weight: 600; color: #333; margin-bottom: 2px; line-height: 1.35; }
+.sb-pop-t:hover { color: #E07B10; }
+.sb-pop-m { font-size: 11px; color: #aaa; }
+.sb-cta-block { background: #F68B1E; border-radius: 4px; padding: 14px; text-align: center; }
+.sb-cta-block h3 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; }
+.sb-cta-block p { font-size: 12px; color: rgba(255,255,255,.85); margin-bottom: 10px; line-height: 1.5; }
+.sb-cta-block a { display: block; background: #fff; color: #E07B10; font-size: 13px; font-weight: 700; padding: 8px; border-radius: 4px; }
+.sb-cta-block a:hover { background: #FFF8E7; text-decoration: none; }
+.sb-nl h3 { font-size: 13px; font-weight: 700; color: #333; margin-bottom: 4px; }
+.sb-nl p { font-size: 12px; color: #777; margin-bottom: 8px; line-height: 1.5; }
+.sb-nl input { width: 100%; border: 1px solid #e0e0e0; border-radius: 4px; padding: 7px 9px; font-size: 12px; font-family: inherit; outline: none; margin-bottom: 5px; }
+.sb-nl input:focus { border-color: #F68B1E; }
+.sb-nl button { width: 100%; background: #F68B1E; color: #fff; border: none; border-radius: 4px; padding: 8px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+.sb-nl button:hover { background: #E07B10; }
+.sb-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.sb-tag { background: #f5f5f5; border: 1px solid #e0e0e0; color: #666; font-size: 11px; padding: 3px 8px; border-radius: 2px; transition: all .12s; }
+.sb-tag:hover { background: #FFF8E7; color: #E07B10; border-color: #F68B1E; text-decoration: none; }
+.sb-del-row { display: flex; align-items: flex-start; gap: 7px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 12px; color: #666; }
+.sb-del-row:last-child { border-bottom: none; padding-bottom: 0; }
+.sb-del-row strong { display: block; color: #333; font-size: 12px; margin-bottom: 1px; }
+.sb-del-ico { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+/* RELATED */
+.related-hdr { font-size: 18px; font-weight: 800; margin-bottom: 14px; color: #1a1a1a; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card { background: #fff; border: 1px solid #eee; border-radius: 6px; overflow: hidden; transition: box-shadow .15s; }
+.card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+.card-img { height: 110px; display: flex; align-items: center; justify-content: center; font-size: 42px; }
+.card-body { padding: 12px; }
+.card-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; color: #222; }
+.card-body h4:hover { color: #E07B10; }
+.card-body small { color: #aaa; font-size: 11px; }
+
+/* PRODUCTS GRID */
+.products-hdr { font-size: 18px; font-weight: 800; margin-bottom: 14px; color: #1a1a1a; }
+.prod-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.prod-card { background: #fff; border: 1px solid #eee; border-radius: 4px; padding: 12px; text-align: center; transition: box-shadow .15s; }
+.prod-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,.09); }
+.prod-img { height: 80px; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+.prod-card h5 { font-size: 12px; font-weight: 600; margin: 6px 0 4px; line-height: 1.3; min-height: 30px; color: #222; }
+.prod-price { font-size: 12px; color: #aaa; margin-bottom: 5px; }
+.prod-cta { display: block; background: #F68B1E; color: #fff; padding: 6px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-top: 6px; transition: background .15s; }
+.prod-cta:hover { background: #E07B10; text-decoration: none; }
+
+/* FOOTER */
+footer { background: #1A1A1A; color: #ccc; margin-top: 40px; padding: 32px 20px 14px; }
+.foot-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.foot-grid h4 { color: #fff; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+.foot-grid ul { list-style: none; }
+.foot-grid li { margin-bottom: 7px; font-size: 12px; }
+.foot-grid a { color: #aaa; }
+.foot-grid a:hover { color: #F68B1E; }
+.foot-bot { max-width: 1100px; margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #333; display: flex; justify-content: space-between; font-size: 11px; color: #666; }
+
+.disclaimer { background: #FFF8E7; border-left: 4px solid #F68B1E; padding: 12px 16px; margin: 0 0 20px; border-radius: 0 4px 4px 0; font-size: 14px; line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .page-layout { grid-template-columns: 1fr; }
+  .prod-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  h1 { font-size: 22px; }
+  .header-icons { display: none; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .prod-grid { grid-template-columns: 1fr 1fr; }
+  .verdict-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .article { padding: 0 16px 28px; }
+}
+</style>

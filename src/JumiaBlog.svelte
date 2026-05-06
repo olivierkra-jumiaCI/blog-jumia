@@ -92,7 +92,7 @@
               </div>
               <div class="mega-feat">
                 <div class="mega-feat-lbl">✦ À la une</div>
-                <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="mega-feat-row">
+                <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="mega-feat-row" on:click|preventDefault={() => onNavigate('/blog/tech/smartphones-100000-fcfa-2026/')}>
                   <div class="mega-feat-ico">📱</div>
                   <div class="mega-feat-text"><h4>Smartphones à moins de 100 000 FCFA : comparatif honnête 2026</h4><p>Vanessa · 5 min · 3 mai 2026</p></div>
                 </a>
@@ -251,7 +251,7 @@
 
     <main>
       <!-- HERO -->
-      <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card">
+      <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" on:click|preventDefault={() => onNavigate('/blog/tech/smartphones-100000-fcfa-2026/')}>
         <div class="hc-img" style="background:linear-gradient(135deg,#FEF3E7,#FFD89B);">📱<span class="badge">Nouveau</span></div>
         <div class="hc-body">
           <div class="hc-cat">📱 Smartphones · Comparatif 2026</div>
