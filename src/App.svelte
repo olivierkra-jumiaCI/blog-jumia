@@ -40,16 +40,17 @@
   }
 
   .app-container {
+    width: 100%;
     max-width: 1170px;
     margin: 0 auto;
-    background-color: #fff; /* Fond blanc pour le contenu principal */
+    background-color: #fff;
     min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    box-sizing: border-box;
   }
 
-  @media (max-width: 1170px) {
+  @media (min-width: 1171px) {
     .app-container {
-      box-shadow: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
   }
 </style>

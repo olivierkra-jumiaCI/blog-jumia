@@ -504,8 +504,15 @@
     line-height:1.5;
     overflow-x: hidden;
     width: 100%;
+    -webkit-text-size-adjust: 100%;
   }
-  :global(a) {text-decoration:none;color:inherit; word-break: break-word;}
+  :global(h1), :global(h2), :global(h3), :global(h4), :global(p), :global(li) {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+  :global(a) {text-decoration:none;color:inherit; overflow-wrap: break-word;}
   :global(img) {max-width:100%;display:block;height: auto;}
   :global(ul) {list-style:none;}
 
