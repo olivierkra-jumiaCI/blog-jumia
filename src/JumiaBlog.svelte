@@ -496,9 +496,17 @@
   }
   :global(*), :global(*::before), :global(*::after) {box-sizing:border-box;margin:0;padding:0;}
   :global(html) {scroll-behavior:smooth;}
-  :global(body) {font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;}
-  :global(a) {text-decoration:none;color:inherit;}
-  :global(img) {max-width:100%;display:block;}
+  :global(body) {
+    font-family:var(--font);
+    background:var(--bg);
+    color:var(--text);
+    font-size:14px;
+    line-height:1.5;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  :global(a) {text-decoration:none;color:inherit; word-break: break-word;}
+  :global(img) {max-width:100%;display:block;height: auto;}
   :global(ul) {list-style:none;}
 
 

@@ -419,7 +419,7 @@ a:hover { text-decoration: underline; }
 
 /* CAT NAV BAR */
 .cat-bar { background: #fff; border-bottom: 1px solid #e0e0e0; }
-.cat-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; align-items: stretch; }
+.cat-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0 16px; display: flex; align-items: stretch; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .cat-all { display: flex; align-items: center; gap: 8px; background: #F68B1E; color: #fff; padding: 0 16px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; user-select: none; }
 .cat-list { display: flex; align-items: stretch; list-style: none; margin: 0; padding: 0; }
 .cat-item { position: relative; }
