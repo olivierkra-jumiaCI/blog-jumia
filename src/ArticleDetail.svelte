@@ -13,7 +13,20 @@
   <link rel="canonical" href="https://www.jumia.ci/blog/tech/smartphones-moins-100000-fcfa-2026/" />
 </svelte:head>
 
-
+<!-- CAT NAV BAR -->
+<nav class="cat-bar" aria-label="Catégories du blog">
+  <div class="cat-bar-inner">
+    <div class="cat-all" onclick={goHome} role="button" tabindex="0" onkeydown={e => e.key === 'Enter' && goHome(e)}>☰ &nbsp;Toutes les catégories</div>
+    <ul class="cat-list">
+      <li class="cat-item"><a href="/blog/tech/" class="cat-link active" onclick={goHome}>📱 Tech &amp; Smartphones</a></li>
+      <li class="cat-item"><a href="/blog/electromenager/" class="cat-link" onclick={goHome}>🏠 Maison &amp; Électro</a></li>
+      <li class="cat-item"><a href="/blog/beaute/" class="cat-link" onclick={goHome}>💄 Beauté &amp; Mode</a></li>
+      <li class="cat-item"><a href="/blog/bebe-enfant/" class="cat-link" onclick={goHome}>👶 Bébé &amp; Enfant</a></li>
+      <li class="cat-item"><a href="/blog/bons-plans/" class="cat-link" onclick={goHome}>🏷️ Bons Plans</a></li>
+      <li class="cat-item"><a href="/blog/guide-achat/" class="cat-link" onclick={goHome}>📋 Guides d'achat</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
@@ -395,7 +408,19 @@ a:hover { text-decoration: underline; }
 
 
 
+
+/* CAT NAV BAR */
+.cat-bar { background: #fff; border-bottom: 1px solid #e0e0e0; }
+.cat-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; align-items: stretch; }
+.cat-all { display: flex; align-items: center; gap: 8px; background: #F68B1E; color: #fff; padding: 0 16px; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; user-select: none; }
+.cat-list { display: flex; align-items: stretch; list-style: none; margin: 0; padding: 0; }
+.cat-item { position: relative; }
+.cat-link { display: flex; align-items: center; gap: 4px; padding: 0 13px; height: 40px; font-size: 13px; font-weight: 600; color: #333; white-space: nowrap; cursor: pointer; border-bottom: 3px solid transparent; transition: border-color .15s, color .15s; }
+.cat-link:hover, .cat-item:hover > .cat-link { color: #F68B1E; border-bottom-color: #F68B1E; text-decoration: none; }
+.cat-link.active { color: #F68B1E; border-bottom-color: #F68B1E; }
+
 /* BREADCRUMB */
+
 .breadcrumb { max-width: 1100px; margin: 12px auto; padding: 0 20px; font-size: 12px; color: #999; }
 .breadcrumb a { color: #777; }
 .breadcrumb a:hover { color: #F68B1E; }
@@ -534,12 +559,11 @@ details p { margin-top: 10px; font-size: 14px; color: #555; line-height: 1.65; }
   .prod-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 720px) {
+  .cat-bar { display: none; }
   h1 { font-size: 22px; }
-  .header-icons { display: none; }
   .cards { grid-template-columns: 1fr 1fr; }
   .prod-grid { grid-template-columns: 1fr 1fr; }
   .verdict-grid { grid-template-columns: 1fr; }
-  .foot-grid { grid-template-columns: 1fr 1fr; }
   .article { padding: 0 16px 28px; }
 }
 </style>
