@@ -1,6 +1,5 @@
 <script>
-  export let onNavigate;
-  export let onLogin;
+  let { onNavigate, onLogin } = $props();
 
   let email = $state('');
   let password = $state('');

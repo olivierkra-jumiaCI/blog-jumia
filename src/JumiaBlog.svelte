@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  export let onNavigate;
+  let { onNavigate } = $props();
 
   onMount(() => {
     const catLinks = document.querySelectorAll('.cat-link');

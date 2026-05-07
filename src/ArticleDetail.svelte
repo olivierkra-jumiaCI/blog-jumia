@@ -1,5 +1,5 @@
 <script>
-  export let onNavigate;
+  let { onNavigate } = $props();
 
   function goHome(e) {
     e.preventDefault();

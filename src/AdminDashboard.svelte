@@ -1,6 +1,5 @@
 <script>
-  export let onNavigate;
-  export let onLogout;
+  let { onNavigate, onLogout } = $props();
 
   // Données mockées pour le moment
   let articles = $state([
