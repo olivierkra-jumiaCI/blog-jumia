@@ -79,6 +79,7 @@
           </div>
         {/each}
       </div>
+    </div>
     <!-- ZONE MAISON -->
     <div class="zone-card">
       <div class="zone-badge">Zone 4</div>

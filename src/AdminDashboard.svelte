@@ -1,3 +1,4 @@
+<script>
   import AdminHomeSettings from './AdminHomeSettings.svelte';
   let { onNavigate, onLogout } = $props();
 
