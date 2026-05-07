@@ -4,6 +4,7 @@
   import { collection, getDocs, deleteDoc, doc, orderBy, query, getDoc } from 'firebase/firestore';
   import AdminHomeSettings from './AdminHomeSettings.svelte';
   import AdminUsers from './AdminUsers.svelte';
+  import AdminMedia from './AdminMedia.svelte';
   let { onNavigate, onLogout } = $props();
 
   let currentTab = $state('articles');
@@ -64,7 +65,7 @@
           <a href="/admin/users" class={currentTab === 'users' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'users'}>Gestion Comptes</a>
         {/if}
 
-        <a href="/admin/media" on:click|preventDefault>Médiathèque (Bientôt)</a>
+        <a href="/admin/media" class={currentTab === 'media' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'media'}>Médiathèque</a>
       </nav>
     {/if}
     <div class="logout">
@@ -117,6 +118,8 @@
       <AdminHomeSettings {articles} />
     {:else if currentTab === 'users' && userRole === 'admin'}
       <AdminUsers />
+    {:else if currentTab === 'media'}
+      <AdminMedia />
     {/if}
   </main>
 </div>
