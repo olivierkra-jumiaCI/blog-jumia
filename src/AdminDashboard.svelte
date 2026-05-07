@@ -1,5 +1,7 @@
-<script>
+  import AdminHomeSettings from './AdminHomeSettings.svelte';
   let { onNavigate, onLogout } = $props();
+
+  let currentTab = $state('articles');
 
   // Données mockées pour le moment
   let articles = $state([
@@ -20,7 +22,8 @@
   <aside class="sidebar">
     <div class="logo">JUMIA <span style="font-size: 12px; color: #777;">Admin</span></div>
     <nav>
-      <a href="/admin" class="active" on:click|preventDefault={() => onNavigate('/admin')}>Articles</a>
+      <a href="/admin" class={currentTab === 'articles' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'articles'}>Articles</a>
+      <a href="/admin/home" class={currentTab === 'home' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'home'}>Gestion Accueil</a>
       <a href="/admin/media" on:click|preventDefault>Médiathèque (Bientôt)</a>
     </nav>
     <div class="logout">
@@ -29,42 +32,46 @@
   </aside>
 
   <main class="content">
-    <header class="topbar">
-      <h1>Tous les articles</h1>
-      <button class="btn-primary" on:click={newArticle}>+ Nouvel Article</button>
-    </header>
+    {#if currentTab === 'articles'}
+      <header class="topbar">
+        <h1>Tous les articles</h1>
+        <button class="btn-primary" on:click={newArticle}>+ Nouvel Article</button>
+      </header>
 
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Titre</th>
-            <th>Catégorie</th>
-            <th>Statut</th>
-            <th>Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {#each articles as article}
+      <div class="table-container">
+        <table>
+          <thead>
             <tr>
-              <td><strong>{article.title}</strong></td>
-              <td><span class="badge category">{article.category}</span></td>
-              <td>
-                <span class="badge status {article.status === 'Publié' ? 'pub' : 'draft'}">
-                  {article.status}
-                </span>
-              </td>
-              <td>{article.date}</td>
-              <td>
-                <button class="btn-action edit" on:click={() => editArticle(article.id)}>Éditer</button>
-                <button class="btn-action delete">Supprimer</button>
-              </td>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Statut</th>
+              <th>Date</th>
+              <th>Actions</th>
             </tr>
-          {/each}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {#each articles as article}
+              <tr>
+                <td><strong>{article.title}</strong></td>
+                <td><span class="badge category">{article.category}</span></td>
+                <td>
+                  <span class="badge status {article.status === 'Publié' ? 'pub' : 'draft'}">
+                    {article.status}
+                  </span>
+                </td>
+                <td>{article.date}</td>
+                <td>
+                  <button class="btn-action edit" on:click={() => editArticle(article.id)}>Éditer</button>
+                  <button class="btn-action delete">Supprimer</button>
+                </td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    {:else if currentTab === 'home'}
+      <AdminHomeSettings {articles} />
+    {/if}
   </main>
 </div>
 
