@@ -1,18 +1,22 @@
 <script>
+  import { auth } from './lib/firebase';
+  import { signInWithEmailAndPassword } from 'firebase/auth';
   let { onNavigate, onLogin } = $props();
 
   let email = $state('');
   let password = $state('');
   let error = $state('');
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
-    // Simuler une connexion pour le moment
-    if (email === 'admin@jumia.ci' && password === 'admin') {
+    error = '';
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       onLogin();
       onNavigate('/admin');
-    } else {
-      error = 'Email ou mot de passe incorrect. (Utilisez admin@jumia.ci / admin)';
+    } catch (err) {
+      console.error(err);
+      error = 'Email ou mot de passe incorrect.';
     }
   }
 </script>

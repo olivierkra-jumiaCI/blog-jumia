@@ -1,6 +1,12 @@
 <script>
+  import { db } from './lib/firebase';
+  import { collection, addDoc, updateDoc, doc, getDoc, serverTimestamp } from 'firebase/firestore';
   import { onMount } from 'svelte';
   let { onNavigate } = $props();
+
+  function togglePreview() {
+    showPreview = !showPreview;
+  }
   
   let title = $state('');
   let slug = $state('');
@@ -10,6 +16,7 @@
   let contentHtml = $state('');
   let quillInstance;
   let showPreview = $state(false);
+  let articleId = $state(null);
 
   // Générer automatiquement le slug à partir du titre
   $effect(() => {
@@ -20,19 +27,23 @@
     }
   });
 
-  onMount(() => {
-    // Vérifier si on édite un article existant (Simulation)
+  onMount(async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    if (id === '1') {
-      title = "Smartphones à moins de 100 000 FCFA en Côte d'Ivoire";
-      slug = "smartphones-100000-fcfa-2026";
-      category = "Tech & Smartphones";
-      status = "Publié";
-      // Simulation de chargement de contenu Quill
-      setTimeout(() => {
-        if (quillInstance) quillInstance.root.innerHTML = "<h2>Contenu de test</h2><p>Voici un article de test avec du <strong>gras</strong>.</p><pre class='ql-syntax' spellcheck='false'>console.log('Hello Jumia');</pre>";
-      }, 500);
+    
+    if (id) {
+      articleId = id;
+      const docRef = doc(db, "articles", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        title = data.title;
+        slug = data.slug;
+        category = data.category;
+        status = data.status;
+        coverImage = data.coverImage;
+        contentHtml = data.content;
+      }
     }
 
     if (window.Quill) {
@@ -53,16 +64,37 @@
       quillInstance.on('text-change', () => {
         contentHtml = quillInstance.root.innerHTML;
       });
+
+      if (contentHtml) {
+        quillInstance.root.innerHTML = contentHtml;
+      }
     }
   });
 
-  function togglePreview() {
-    showPreview = !showPreview;
-  }
+  async function save() {
+    const articleData = {
+      title,
+      slug,
+      category,
+      status,
+      coverImage,
+      content: contentHtml,
+      updatedAt: serverTimestamp()
+    };
 
-  function save() {
-    alert(`Article sauvegardé !\nLien partageable : /blog/${category.toLowerCase().split(' ')[0]}/${slug}`);
-    onNavigate('/admin');
+    try {
+      if (articleId) {
+        await updateDoc(doc(db, "articles", articleId), articleData);
+      } else {
+        articleData.createdAt = serverTimestamp();
+        await addDoc(collection(db, "articles"), articleData);
+      }
+      alert("Article enregistré avec succès !");
+      onNavigate('/admin');
+    } catch (err) {
+      console.error(err);
+      alert("Erreur lors de l'enregistrement.");
+    }
   }
 </script>
 

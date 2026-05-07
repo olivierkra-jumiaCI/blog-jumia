@@ -1,14 +1,47 @@
 <script>
+  import { onMount } from 'svelte';
+  import { db, auth } from './lib/firebase';
+  import { collection, getDocs, deleteDoc, doc, orderBy, query, getDoc } from 'firebase/firestore';
   import AdminHomeSettings from './AdminHomeSettings.svelte';
+  import AdminUsers from './AdminUsers.svelte';
   let { onNavigate, onLogout } = $props();
 
   let currentTab = $state('articles');
+  let articles = $state([]);
+  let userRole = $state('writer'); // Par défaut rédacteur
+  let isLoading = $state(true);
 
-  // Données mockées pour le moment
-  let articles = $state([
-    { id: 1, title: "Smartphones à moins de 100 000 FCFA en Côte d'Ivoire", category: "Tech", status: "Publié", date: "3 mai 2026" },
-    { id: 2, title: "Climatiseur en Côte d'Ivoire : comment choisir", category: "Maison", status: "Brouillon", date: "-" }
-  ]);
+  async function checkRole() {
+    const user = auth.currentUser;
+    if (user) {
+      const docSnap = await getDoc(doc(db, "users", user.uid));
+      if (docSnap.exists()) {
+        userRole = docSnap.data().role;
+      }
+    }
+    isLoading = false;
+  }
+
+  async function loadArticles() {
+    const q = query(collection(db, "articles"), orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
+    articles = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+  }
+
+  onMount(async () => {
+    await checkRole();
+    loadArticles();
+  });
+
+  async function deleteArticle(id) {
+    if (confirm("Voulez-vous vraiment supprimer cet article ?")) {
+      await deleteDoc(doc(db, "articles", id));
+      loadArticles();
+    }
+  }
 
   function editArticle(id) {
     onNavigate(`/admin/editor?id=${id}`);
@@ -22,18 +55,30 @@
 <div class="admin-layout">
   <aside class="sidebar">
     <div class="logo">JUMIA <span style="font-size: 12px; color: #777;">Admin</span></div>
-    <nav>
-      <a href="/admin" class={currentTab === 'articles' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'articles'}>Articles</a>
-      <a href="/admin/home" class={currentTab === 'home' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'home'}>Gestion Accueil</a>
-      <a href="/admin/media" on:click|preventDefault>Médiathèque (Bientôt)</a>
-    </nav>
+    {#if !isLoading}
+      <nav>
+        <a href="/admin" class={currentTab === 'articles' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'articles'}>Articles</a>
+        
+        {#if userRole === 'admin'}
+          <a href="/admin/home" class={currentTab === 'home' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'home'}>Gestion Accueil</a>
+          <a href="/admin/users" class={currentTab === 'users' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'users'}>Gestion Comptes</a>
+        {/if}
+
+        <a href="/admin/media" on:click|preventDefault>Médiathèque (Bientôt)</a>
+      </nav>
+    {/if}
     <div class="logout">
+      <div class="user-info" style="font-size: 12px; color: #777; margin-bottom: 10px; padding: 0 5px;">
+        Connecté en tant que : <strong>{userRole === 'admin' ? 'Administrateur' : 'Rédacteur'}</strong>
+      </div>
       <button on:click={onLogout}>Déconnexion</button>
     </div>
   </aside>
 
   <main class="content">
-    {#if currentTab === 'articles'}
+    {#if isLoading}
+      <p>Chargement...</p>
+    {:else if currentTab === 'articles'}
       <header class="topbar">
         <h1>Tous les articles</h1>
         <button class="btn-primary" on:click={newArticle}>+ Nouvel Article</button>
@@ -46,7 +91,6 @@
               <th>Titre</th>
               <th>Catégorie</th>
               <th>Statut</th>
-              <th>Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -60,18 +104,19 @@
                     {article.status}
                   </span>
                 </td>
-                <td>{article.date}</td>
                 <td>
                   <button class="btn-action edit" on:click={() => editArticle(article.id)}>Éditer</button>
-                  <button class="btn-action delete">Supprimer</button>
+                  <button class="btn-action delete" on:click={() => deleteArticle(article.id)}>Supprimer</button>
                 </td>
               </tr>
             {/each}
           </tbody>
         </table>
       </div>
-    {:else if currentTab === 'home'}
+    {:else if currentTab === 'home' && userRole === 'admin'}
       <AdminHomeSettings {articles} />
+    {:else if currentTab === 'users' && userRole === 'admin'}
+      <AdminUsers />
     {/if}
   </main>
 </div>
