@@ -240,6 +240,8 @@
     <a href="/blog/" class="pill on">Tous</a>
     <a href="/blog/tech/" class="pill">📱 Tech</a>
     <a href="/blog/electromenager/" class="pill">🏠 Maison</a>
+    <a href="/blog/agriculture/" class="pill">🌾 Agriculture</a>
+    <a href="/blog/sport/" class="pill">⚽ Sport</a>
     <a href="/blog/beaute/" class="pill">💄 Beauté</a>
     <a href="/blog/bebe-enfant/" class="pill">👶 Bébé</a>
     <a href="/blog/bons-plans/" class="pill">🏷️ Bons Plans</a>

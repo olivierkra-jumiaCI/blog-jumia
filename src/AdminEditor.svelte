@@ -3,14 +3,37 @@
   let { onNavigate } = $props();
   
   let title = $state('');
-  let category = $state('Tech');
+  let slug = $state('');
+  let category = $state('Tech & Smartphones');
   let status = $state('Brouillon');
   let coverImage = $state('');
   let contentHtml = $state('');
   let quillInstance;
 
+  // Générer automatiquement le slug à partir du titre
+  $effect(() => {
+    if (title && !slug) {
+      slug = title.toLowerCase()
+        .replace(/[^\w ]+/g, '')
+        .replace(/ +/g, '-');
+    }
+  });
+
   onMount(() => {
-    // Initialiser Quill si on est dans le navigateur
+    // Vérifier si on édite un article existant (Simulation)
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id === '1') {
+      title = "Smartphones à moins de 100 000 FCFA en Côte d'Ivoire";
+      slug = "smartphones-100000-fcfa-2026";
+      category = "Tech & Smartphones";
+      status = "Publié";
+      // Simulation de chargement de contenu Quill
+      setTimeout(() => {
+        if (quillInstance) quillInstance.root.innerHTML = "<p>Contenu chargé...</p>";
+      }, 500);
+    }
+
     if (window.Quill) {
       quillInstance = new window.Quill('#editor', {
         theme: 'snow',
@@ -32,7 +55,7 @@
   });
 
   function save() {
-    alert("Article sauvegardé (Simulation) !");
+    alert(`Article sauvegardé !\nLien partageable : /blog/${category.toLowerCase().split(' ')[0]}/${slug}`);
     onNavigate('/admin');
   }
 </script>
@@ -66,16 +89,24 @@
           <input type="text" id="title" bind:value={title} placeholder="Saisissez le titre..." />
         </div>
         <div class="form-group flex-1">
+          <label for="slug">Lien de l'article (Slug)</label>
+          <input type="text" id="slug" bind:value={slug} placeholder="lien-de-l-article" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group flex-1">
           <label for="category">Catégorie</label>
           <select id="category" bind:value={category}>
             <option>Tech & Smartphones</option>
             <option>Maison & Électro</option>
             <option>Beauté & Mode</option>
             <option>Bébé & Enfant</option>
+            <option>Agriculture & élevage</option>
+            <option>Sport & bien être</option>
             <option>Bons Plans</option>
           </select>
         </div>
-      </div>
 
       <div class="form-row">
         <div class="form-group flex-2">
