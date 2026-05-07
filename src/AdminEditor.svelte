@@ -17,6 +17,20 @@
   let quillInstance;
   let showPreview = $state(false);
   let articleId = $state(null);
+  let isHtmlMode = $state(false);
+
+  function toggleHtmlMode() {
+    if (!isHtmlMode) {
+      // Passage en mode HTML : on récupère le contenu de Quill
+      contentHtml = quillInstance.root.innerHTML;
+    } else {
+      // Retour au mode Visuel : on injecte le HTML dans Quill
+      setTimeout(() => {
+        if (quillInstance) quillInstance.root.innerHTML = contentHtml;
+      }, 50);
+    }
+    isHtmlMode = !isHtmlMode;
+  }
 
   // Générer automatiquement le slug à partir du titre
   $effect(() => {
@@ -118,6 +132,9 @@
     <header class="topbar">
       <h1>Éditer l'article</h1>
       <div class="actions">
+        <button class="btn-secondary" on:click={toggleHtmlMode}>
+          {isHtmlMode ? '📝 Mode Visuel' : '<> Mode HTML'}
+        </button>
         <button class="btn-secondary" on:click={togglePreview}>👁️ Prévisualiser</button>
         <button class="btn-secondary" on:click={() => onNavigate('/admin')}>Annuler</button>
         <button class="btn-primary" on:click={save}>Enregistrer</button>
@@ -165,8 +182,18 @@
 
       <div class="form-group">
         <label>Contenu de l'article</label>
-        <div class="quill-wrapper">
-          <div id="editor"></div>
+        <div class="editor-container">
+          {#if isHtmlMode}
+            <textarea 
+              class="html-editor" 
+              bind:value={contentHtml} 
+              placeholder="Collez votre code HTML ici..."
+            ></textarea>
+          {:else}
+            <div class="quill-wrapper">
+              <div id="editor"></div>
+            </div>
+          {/if}
         </div>
       </div>
     </div>
@@ -265,6 +292,28 @@
   }
   .btn-secondary:hover { background: #f7fafc; }
 
+  .editor-container {
+    margin-top: 10px;
+  }
+  .html-editor {
+    width: 100%;
+    height: 550px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Fira Code', monospace;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    resize: vertical;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+  }
+  .quill-wrapper {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+  }
   .editor-container {
     background: #fff;
     border-radius: 8px;
