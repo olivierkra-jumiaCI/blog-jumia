@@ -252,7 +252,7 @@
     <main>
       <!-- HERO -->
       <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
-        <div class="hc-img" style="background:linear-gradient(135deg,#FEF3E7,#FFD89B);">📱<span class="badge">Nouveau</span></div>
+        <div class="hc-img" style="padding:0;overflow:hidden;"><img src="/hero_smartphones_cover.jpg" alt="Femme ivoirienne comparant des smartphones à moins de 100 000 FCFA" style="width:100%;height:100%;object-fit:cover;" loading="eager"/><span class="badge">Nouveau</span></div>
         <div class="hc-body">
           <div class="hc-cat">📱 Smartphones · Comparatif 2026</div>
           <div class="hc-title">Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026</div>
@@ -577,7 +577,7 @@
   /* HERO CARD */
   .hero-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;display:grid;grid-template-columns:1fr 300px;transition:box-shadow .18s;}
   .hero-card:hover{box-shadow:var(--shadow-hov);}
-  .hc-img{background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:68px;min-height:200px;position:relative;}
+  .hc-img{background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:68px;min-height:200px;height:100%;position:relative;overflow:hidden;}
   .hc-body{padding:18px;display:flex;flex-direction:column;justify-content:center;}
   .hc-cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);margin-bottom:7px;}
   .hc-title{font-size:19px;font-weight:700;line-height:1.3;color:var(--text);margin-bottom:9px;}
