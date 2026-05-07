@@ -9,6 +9,7 @@
   let coverImage = $state('');
   let contentHtml = $state('');
   let quillInstance;
+  let showPreview = $state(false);
 
   // Générer automatiquement le slug à partir du titre
   $effect(() => {
@@ -30,7 +31,7 @@
       status = "Publié";
       // Simulation de chargement de contenu Quill
       setTimeout(() => {
-        if (quillInstance) quillInstance.root.innerHTML = "<p>Contenu chargé...</p>";
+        if (quillInstance) quillInstance.root.innerHTML = "<h2>Contenu de test</h2><p>Voici un article de test avec du <strong>gras</strong>.</p><pre class='ql-syntax' spellcheck='false'>console.log('Hello Jumia');</pre>";
       }, 500);
     }
 
@@ -40,7 +41,8 @@
         modules: {
           toolbar: [
             [{ 'header': [2, 3, false] }],
-            ['bold', 'italic', 'underline'],
+            ['bold', 'italic', 'underline', 'strike'],
+            ['blockquote', 'code-block'],
             ['link', 'image', 'video'],
             [{ 'list': 'ordered'}, { 'list': 'bullet' }],
             ['clean']
@@ -54,6 +56,10 @@
     }
   });
 
+  function togglePreview() {
+    showPreview = !showPreview;
+  }
+
   function save() {
     alert(`Article sauvegardé !\nLien partageable : /blog/${category.toLowerCase().split(' ')[0]}/${slug}`);
     onNavigate('/admin');
@@ -63,6 +69,9 @@
 <svelte:head>
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <!-- Pour la coloration syntaxique dans l'éditeur -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </svelte:head>
 
 <div class="admin-layout">
@@ -77,12 +86,14 @@
     <header class="topbar">
       <h1>Éditer l'article</h1>
       <div class="actions">
+        <button class="btn-secondary" on:click={togglePreview}>👁️ Prévisualiser</button>
         <button class="btn-secondary" on:click={() => onNavigate('/admin')}>Annuler</button>
         <button class="btn-primary" on:click={save}>Enregistrer</button>
       </div>
     </header>
 
     <div class="editor-container">
+      <!-- ... (form rows) ... -->
       <div class="form-row">
         <div class="form-group flex-2">
           <label for="title">Titre de l'article</label>
@@ -130,7 +141,31 @@
   </main>
 </div>
 
+{#if showPreview}
+  <div class="preview-overlay" on:click={togglePreview}>
+    <div class="preview-modal" on:click|stopPropagation>
+      <div class="pm-header">
+        <h2>Aperçu du brouillon</h2>
+        <button class="btn-close" on:click={togglePreview}>&times;</button>
+      </div>
+      <div class="pm-body">
+        <div class="article-preview">
+          {#if coverImage}
+            <img src={coverImage} alt="Cover" class="prev-cover" />
+          {/if}
+          <div class="prev-cat">{category}</div>
+          <h1>{title || 'Titre de l\'article'}</h1>
+          <div class="prev-content">
+            {@html contentHtml || '<p style="color:#999">Aucun contenu...</p>'}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{/if}
+
 <style>
+  /* ... (styles existants) ... */
   .admin-layout {
     display: flex;
     min-height: 100vh;
@@ -248,5 +283,68 @@
     min-height: 550px;
     font-family: 'Open Sans', sans-serif !important;
     font-size: 15px !important;
+  }
+
+  /* PREVIEW MODAL */
+  .preview-overlay {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 40px;
+  }
+  .preview-modal {
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .pm-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pm-header h2 { font-size: 18px; margin:0; color: #333; }
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    padding: 0;
+  }
+  .pm-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+    background: #f9f9f9;
+  }
+  .article-preview {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .prev-cover { width: 100%; height: 350px; object-fit: cover; border-radius: 4px; margin-bottom: 20px; }
+  .prev-cat { color: #F68B1E; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 10px; }
+  .article-preview h1 { font-size: 32px; margin-bottom: 25px; line-height: 1.2; }
+  .prev-content { line-height: 1.7; font-size: 16px; color: #333; }
+  :global(.prev-content pre) {
+    background: #2d2d2d;
+    color: #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace;
   }
 </style>
