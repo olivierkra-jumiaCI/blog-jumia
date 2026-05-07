@@ -81,8 +81,15 @@
         </div>
       </div>
     </div>
+  </div>
+{:else}
+  <div style="padding: 100px; text-align: center;">
+    <h2>Article non trouvé</h2>
+    <button class="btn-primary" onclick={goHome}>Retour à l'accueil</button>
+  </div>
+{/if}
 
-        <p>En avant-goût : on a trouvé le téléphone idéal pour le roi en dessous de 100 000 FCFA, et il est plus content que s'il avait eu un flagship à 500 000 FCFA. Je t'explique pourquoi.</p>
+<style>
 
         <h2>Pourquoi cette tranche de prix est la plus intéressante en 2026</h2>
 
