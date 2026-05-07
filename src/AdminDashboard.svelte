@@ -106,6 +106,7 @@
                   </span>
                 </td>
                 <td>
+                  <button class="btn-action view" on:click={() => window.open(`/blog/${article.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}/${article.slug}`, '_blank')}>Voir</button>
                   <button class="btn-action edit" on:click={() => editArticle(article.id)}>Éditer</button>
                   <button class="btn-action delete" on:click={() => deleteArticle(article.id)}>Supprimer</button>
                 </td>
