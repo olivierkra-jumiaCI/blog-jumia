@@ -1,16 +1,37 @@
 <script>
+  import { onMount } from 'svelte';
+  import { db } from './lib/firebase';
+  import { collection, query, where, getDocs, limit } from 'firebase/firestore';
+
   let { onNavigate } = $props();
+  let article = $state(null);
+  let isLoading = $state(true);
 
   function goHome(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     onNavigate('/blog/');
   }
+
+  onMount(async () => {
+    const pathParts = window.location.pathname.split('/');
+    const slug = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+    
+    if (slug) {
+      const q = query(collection(db, "articles"), where("slug", "==", slug), limit(1));
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        article = querySnapshot.docs[0].data();
+      }
+    }
+    isLoading = false;
+  });
 </script>
 
 <svelte:head>
-  <title>Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026 | Jumia CI</title>
-  <meta name="description" content="Vanessa compare les meilleurs smartphones disponibles sur Jumia CI en 2026 : Galaxy A17, Tecno Spark 50, Redmi Note 15, Camon 50 Pro, Infinix Note Edge. Prix réels, pour qui, SAV en CI." />
-  <link rel="canonical" href="https://www.jumia.ci/blog/tech/smartphones-moins-100000-fcfa-2026/" />
+  {#if article}
+    <title>{article.title} | Jumia CI</title>
+    <meta name="description" content={article.title} />
+  {/if}
 </svelte:head>
 
 <!-- CAT NAV BAR -->
@@ -28,36 +49,38 @@
   </div>
 </nav>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="/" onclick={goHome}>Accueil</a> › <a href="/" onclick={goHome}>Blog</a> › <a href="/blog/tech/">Tech &amp; Smartphones</a> › Smartphones à moins de 100 000 FCFA
-</div>
+{#if isLoading}
+  <div style="padding: 100px; text-align: center;">Chargement de l'article...</div>
+{:else if article}
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/" onclick={goHome}>Accueil</a> › <a href="/" onclick={goHome}>Blog</a> › <a href="/blog/tech/">{article.category}</a> › {article.title}
+  </div>
 
-<!-- PAGE -->
-<div class="page-layout">
+  <div class="page-layout">
+    <div>
+      <div class="article-wrap">
+        <div class="article">
+          <h1>{article.title}</h1>
 
-  <!-- ARTICLE -->
-  <div>
-    <div class="article-wrap">
-      <div class="article">
+          <div class="byline">
+            <div class="avatar">J</div>
+            <div>
+              <strong>Equipe Jumia CI</strong><br>
+              <span>Publié sur le Blog Jumia</span>
+            </div>
+          </div>
 
-        <h1>Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026</h1>
+          {#if article.coverImage}
+            <img src={article.coverImage} alt={article.title} style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="eager"/>
+          {/if}
 
-        <div class="byline">
-          <div class="avatar">V</div>
-          <div>
-            <strong>Vanessa · Team Jumia CI</strong><br>
-            <span>Publié le 5 mai 2026 · 7 min de lecture</span>
+          <div class="article-content">
+            {@html article.content}
           </div>
         </div>
-
-        <img src="/article_hero_smartphones_ci.png" alt="Femme ivoirienne comparant deux smartphones Android à moins de 100 000 FCFA en Côte d'Ivoire" style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="eager"/>
-
-        <div class="disclaimer">
-          💡 <strong>Les prix dans cet article sont donnés à titre indicatif</strong> et correspondent au moment de la rédaction. Sur Jumia CI, les prix changent régulièrement. Clique sur le lien de chaque produit pour voir le prix du jour.
-        </div>
-
-        <p>Bon, je vais être directe avec toi. La semaine dernière, le téléphone du roi a rendu l'âme — écran fissuré, batterie à plat en 2h, plus rien ne marchait. Et lui, bien sûr, il voulait directement un Samsung Galaxy S. J'ai dit non. On a trois enfants, un loyer, et l'école qui reprend dans 4 mois. Donc j'ai sorti mon tableur, j'ai passé 3 soirées sur le catalogue Jumia CI, et je t'explique tout ce que j'ai trouvé.</p>
+      </div>
+    </div>
 
         <p>En avant-goût : on a trouvé le téléphone idéal pour le roi en dessous de 100 000 FCFA, et il est plus content que s'il avait eu un flagship à 500 000 FCFA. Je t'explique pourquoi.</p>
 

@@ -49,9 +49,9 @@
   {/if}
 {:else}
   <div class="app-container">
-    {#if currentPath === '/blog/' || currentPath === '/blog'}
+    {#if currentPath === '/blog/' || currentPath === '/blog' || currentPath === '/'}
       <JumiaBlog onNavigate={handleNavigate} />
-    {:else if currentPath === '/blog/tech/smartphones-100000-fcfa-2026/' || currentPath === '/blog/tech/smartphones-100000-fcfa-2026'}
+    {:else if currentPath.startsWith('/blog/')}
       <ArticleDetail onNavigate={handleNavigate} />
     {:else}
       <JumiaBlog onNavigate={handleNavigate} />
