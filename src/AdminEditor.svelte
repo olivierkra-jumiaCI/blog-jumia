@@ -107,9 +107,7 @@
             <option>Bons Plans</option>
           </select>
         </div>
-
-      <div class="form-row">
-        <div class="form-group flex-2">
+        <div class="form-group flex-1">
           <label for="cover">Image de couverture (URL)</label>
           <input type="text" id="cover" bind:value={coverImage} placeholder="https://..." />
         </div>
@@ -168,7 +166,8 @@
   .content {
     flex: 1;
     padding: 40px;
-    max-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .topbar {
     display: flex;
@@ -246,7 +245,7 @@
     border-color: #e2e8f0 !important;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    min-height: 400px;
+    min-height: 550px;
     font-family: 'Open Sans', sans-serif !important;
     font-size: 15px !important;
   }
