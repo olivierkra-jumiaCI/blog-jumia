@@ -2,13 +2,28 @@
   import { onMount } from 'svelte';
   import JumiaBlog from './JumiaBlog.svelte';
   import ArticleDetail from './ArticleDetail.svelte';
+  import AdminLogin from './AdminLogin.svelte';
+  import AdminDashboard from './AdminDashboard.svelte';
+  import AdminEditor from './AdminEditor.svelte';
 
   let currentPath = $state(window.location.pathname);
+  let isLoggedIn = $state(localStorage.getItem('isAdmin') === 'true');
 
   function handleNavigate(path) {
     currentPath = path;
     window.history.pushState({}, '', path);
     window.scrollTo(0, 0);
+  }
+
+  function handleLogin() {
+    isLoggedIn = true;
+    localStorage.setItem('isAdmin', 'true');
+  }
+
+  function handleLogout() {
+    isLoggedIn = false;
+    localStorage.removeItem('isAdmin');
+    handleNavigate('/admin/login');
   }
 
   onMount(() => {
@@ -20,15 +35,29 @@
   });
 </script>
 
-<div class="app-container">
-  {#if currentPath === '/blog/' || currentPath === '/blog'}
-    <JumiaBlog onNavigate={handleNavigate} />
-  {:else if currentPath === '/blog/tech/smartphones-100000-fcfa-2026/' || currentPath === '/blog/tech/smartphones-100000-fcfa-2026'}
-    <ArticleDetail onNavigate={handleNavigate} />
+{#if currentPath === '/admin/login'}
+  <AdminLogin onNavigate={handleNavigate} onLogin={handleLogin} />
+{:else if currentPath.startsWith('/admin')}
+  {#if isLoggedIn}
+    {#if currentPath === '/admin/editor'}
+      <AdminEditor onNavigate={handleNavigate} />
+    {:else}
+      <AdminDashboard onNavigate={handleNavigate} onLogout={handleLogout} />
+    {/if}
   {:else}
-    <JumiaBlog onNavigate={handleNavigate} />
+    <AdminLogin onNavigate={handleNavigate} onLogin={handleLogin} />
   {/if}
-</div>
+{:else}
+  <div class="app-container">
+    {#if currentPath === '/blog/' || currentPath === '/blog'}
+      <JumiaBlog onNavigate={handleNavigate} />
+    {:else if currentPath === '/blog/tech/smartphones-100000-fcfa-2026/' || currentPath === '/blog/tech/smartphones-100000-fcfa-2026'}
+      <ArticleDetail onNavigate={handleNavigate} />
+    {:else}
+      <JumiaBlog onNavigate={handleNavigate} />
+    {/if}
+  </div>
+{/if}
 
 <style>
   :global(html), :global(body) {

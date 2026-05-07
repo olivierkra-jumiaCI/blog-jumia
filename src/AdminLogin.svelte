@@ -2,9 +2,9 @@
   export let onNavigate;
   export let onLogin;
 
-  let email = '';
-  let password = '';
-  let error = '';
+  let email = $state('');
+  let password = $state('');
+  let error = $state('');
 
   function handleLogin(e) {
     e.preventDefault();

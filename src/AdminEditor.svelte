@@ -2,11 +2,11 @@
   import { onMount } from 'svelte';
   export let onNavigate;
   
-  let title = '';
-  let category = 'Tech';
-  let status = 'Brouillon';
-  let coverImage = '';
-  let contentHtml = '';
+  let title = $state('');
+  let category = $state('Tech');
+  let status = $state('Brouillon');
+  let coverImage = $state('');
+  let contentHtml = $state('');
   let quillInstance;
 
   onMount(() => {

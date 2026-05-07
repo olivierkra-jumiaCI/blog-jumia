@@ -3,10 +3,10 @@
   export let onLogout;
 
   // Données mockées pour le moment
-  let articles = [
+  let articles = $state([
     { id: 1, title: "Smartphones à moins de 100 000 FCFA en Côte d'Ivoire", category: "Tech", status: "Publié", date: "3 mai 2026" },
     { id: 2, title: "Climatiseur en Côte d'Ivoire : comment choisir", category: "Maison", status: "Brouillon", date: "-" }
-  ];
+  ]);
 
   function editArticle(id) {
     onNavigate(`/admin/editor?id=${id}`);
