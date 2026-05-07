@@ -57,9 +57,16 @@
         status = data.status;
         coverImage = data.coverImage;
         contentHtml = data.content;
+        
+        // SÉCURITÉ : Si le contenu contient des balises complexes (html, style, script)
+        // on active le mode HTML par défaut pour éviter que Quill ne nettoie le code.
+        if (contentHtml && (contentHtml.includes('<html') || contentHtml.includes('<style') || contentHtml.includes('<script'))) {
+          isHtmlMode = true;
+        }
       }
     }
 
+    // On n'initialise Quill que si on n'est pas en mode HTML forcé
     if (window.Quill) {
       quillInstance = new window.Quill('#editor', {
         theme: 'snow',
@@ -76,10 +83,13 @@
       });
       
       quillInstance.on('text-change', () => {
-        contentHtml = quillInstance.root.innerHTML;
+        if (!isHtmlMode) {
+          contentHtml = quillInstance.root.innerHTML;
+        }
       });
 
-      if (contentHtml) {
+      // On n'injecte dans Quill que si on est en mode visuel
+      if (contentHtml && !isHtmlMode) {
         quillInstance.root.innerHTML = contentHtml;
       }
     }
