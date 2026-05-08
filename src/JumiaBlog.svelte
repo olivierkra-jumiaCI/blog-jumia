@@ -87,9 +87,6 @@
 </svelte:head>
 
 
-
-
-
 <!-- CAT NAV BAR -->
 <nav class="cat-bar" aria-label="Catégories du blog">
   <div class="cat-bar-inner">
@@ -259,7 +256,6 @@
       <h1>Blog <span>Jumia CI</span></h1>
       <p>Conseils d'achat, comparatifs produits et bons plans — pour commander malin sur Jumia CI, à Abidjan comme en province.</p>
     </div>
-
   </div>
 
   <!-- TOPIC PILLS -->
@@ -332,141 +328,141 @@
             <span class="hc-cta">Lire l'article →</span>
           </div>
         </a>
+
+        <!-- SÉLECTION SEMAINE -->
+        <div class="sec-h"><span class="sec-h-title">✦ Sélection de la semaine</span><a href="/blog/tous-les-articles/" class="sec-h-link">Tous les articles →</a></div>
+        <div class="g3" style="margin-bottom:12px;">
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">❄️<span class="badge">Populaire</span></div>
+            <div class="ac-body">
+              <div class="ac-cat">🏠 Électroménager</div>
+              <a href="/blog/electromenager/climatiseur-2026/"><div class="ac-title">Climatiseur en Côte d'Ivoire : comment choisir sans se faire arnaquer</div></a>
+              <p class="ac-excerpt">BTU, inverter, marques à éviter… tout ce que j'aurais voulu savoir avant d'acheter le mien.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 28 avr.</span></div>
+            </div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">⚡</div>
+            <div class="ac-body">
+              <div class="ac-cat">⚡ Énergie</div>
+              <a href="/blog/electromenager/onduleur-inverter-2026/"><div class="ac-title">Onduleur vs inverter en CI : lequel choisir pour survivre aux délestages ?</div></a>
+              <p class="ac-excerpt">Avec les coupures de courant, beaucoup se posent la question. Voici ma réponse après deux achats ratés.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>7 min · 21 avr.</span></div>
+            </div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);">💋</div>
+            <div class="ac-body">
+              <div class="ac-cat">💄 Beauté</div>
+              <a href="/blog/beaute/maquillage-peaux-noires-2026/"><div class="ac-title">Maquillage pour peaux noires : mes produits préférés sur Jumia CI 2026</div></a>
+              <p class="ac-excerpt">Le bon fond de teint c'est pas facile à trouver. Voici ce qui m'a vraiment convaincue.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>5 min · 15 avr.</span></div>
+            </div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#FFF8E1,#FFECB3);">👶</div>
+            <div class="ac-body">
+              <div class="ac-cat">👶 Bébé</div>
+              <a href="/blog/bebe/poussette-abidjan-2026/"><div class="ac-title">Choisir une poussette pour Abidjan : les critères que personne ne mentionne</div></a>
+              <p class="ac-excerpt">Les trottoirs, les marchés, les rues en terre… j'aurais voulu qu'on me prévienne avant.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 2 mai</span></div>
+            </div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#EDE7F6,#D1C4E9);">💻</div>
+            <div class="ac-body">
+              <div class="ac-cat">💻 Ordinateurs</div>
+              <a href="/blog/tech/ordinateur-etudiant-2026/"><div class="ac-title">PC portable pour étudiant ivoirien : le guide complet 2026</div></a>
+              <p class="ac-excerpt">Budget 150 000 à 350 000 FCFA : voici ce qu'on peut vraiment avoir.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>8 min · 10 avr.</span></div>
+            </div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#FFCCBC,#FFAB91);">🏷️<span class="badge">Cette semaine</span></div>
+            <div class="ac-body">
+              <div class="ac-cat">🏷️ Bons Plans</div>
+              <a href="/blog/bons-plans/promo-mai-2026/"><div class="ac-title">Promotions mai 2026 sur Jumia CI : les 12 deals à ne pas manquer</div></a>
+              <p class="ac-excerpt">Smartphones, électro, beauté… on a sélectionné les vraies bonnes affaires de la semaine.</p>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div><span>3 min · 4 mai</span></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- TECH -->
+        <div class="sec-h"><span class="sec-h-title">📱 Tech &amp; Smartphones</span><a href="/blog/tech/" class="sec-h-link">Voir tout →</a></div>
+        <div class="g2" style="margin-bottom:12px;">
+          <article class="hcard">
+            <div class="hc-i" style="background:linear-gradient(135deg,#E8EAF6,#C5CAE9);">🍎</div>
+            <div class="hc-b"><div class="ac-cat">📱 Smartphones</div><a href="/blog/tech/iphone-occasion-ci/"><div class="ac-title">iPhone occasion sur Jumia CI : arnaque ou bonne affaire ? Les 5 vérifications à faire</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min · 19 avr. 2026</div></div>
+          </article>
+          <article class="hcard">
+            <div class="hc-i" style="background:linear-gradient(135deg,#E0F2F1,#B2DFDB);">🎧</div>
+            <div class="hc-b"><div class="ac-cat">🔌 Accessoires</div><a href="/blog/tech/ecouteurs-bluetooth-30000/"><div class="ac-title">Écouteurs Bluetooth à moins de 30 000 FCFA : les 4 qui valent vraiment le coup</div></a><div class="hc-b ac-meta-s">Vanessa · 5 min · 5 avr. 2026</div></div>
+          </article>
+          <article class="hcard">
+            <div class="hc-i" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);">📡</div>
+            <div class="hc-b"><div class="ac-cat">📡 Réseau</div><a href="/blog/tech/4g-operateurs-ci-2026/"><div class="ac-title">Orange, MTN, Moov en CI : quel opérateur a la meilleure 4G en 2026 ?</div></a><div class="hc-b ac-meta-s">Vanessa · 6 min · 1 avr. 2026</div></div>
+          </article>
+          <article class="hcard">
+            <div class="hc-i" style="background:linear-gradient(135deg,#F3E5F5,#E1BEE7);">🎮</div>
+            <div class="hc-b"><div class="ac-cat">🎮 Gaming</div><a href="/blog/tech/manette-ps5-jumia-ci/"><div class="ac-title">Manette PS5 sur Jumia CI : originale ou compatible ? Ce qu'on a testé</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min · 28 mars 2026</div></div>
+          </article>
+        </div>
+
+        <!-- MAISON -->
+        <div class="sec-h"><span class="sec-h-title">🏠 Maison &amp; Électroménager</span><a href="/blog/electromenager/" class="sec-h-link">Voir tout →</a></div>
+        <div class="g3" style="margin-bottom:12px;">
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#FFF8E1,#FFE082);">☀️</div>
+            <div class="ac-body"><div class="ac-cat">⚡ Énergie</div><a href="/blog/electromenager/panneau-solaire-ci/"><div class="ac-title">Panneau solaire pour la maison en CI : par où commencer ?</div></a><p class="ac-excerpt">Les kits à moins de 200 000 FCFA qui changent vraiment la vie pendant les délestages.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 4 mai</span></div></div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#FFCCBC,#FFAB91);">🍳</div>
+            <div class="ac-body"><div class="ac-cat">🍳 Cuisine</div><a href="/blog/electromenager/cuisiniere-gaz-electrique/"><div class="ac-title">Cuisinière gaz ou électrique en CI : le vrai choix selon ton quartier</div></a><p class="ac-excerpt">J'ai changé trois fois. Voici ce que j'aurais voulu savoir avant.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>5 min · 8 avr.</span></div></div>
+          </article>
+          <article class="acard">
+            <div class="ac-img" style="background:linear-gradient(135deg,#B3E5FC,#81D4FA);">🧺</div>
+            <div class="ac-body"><div class="ac-cat">🧺 Linge</div><a href="/blog/electromenager/machine-laver-300000/"><div class="ac-title">Machine à laver à moins de 300 000 FCFA : les 3 modèles recommandés</div></a><p class="ac-excerpt">Charge frontale ou top ? Marque locale ou internationale ? Ma réponse honnête.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 1 avr.</span></div></div>
+          </article>
+        </div>
+
+        <!-- BEAUTÉ + BÉBÉ -->
+        <div class="g2" style="margin-bottom:12px;">
+          <div>
+            <div class="sec-h" style="margin-bottom:8px;"><span class="sec-h-title">💄 Beauté &amp; Mode</span><a href="/blog/beaute/" class="sec-h-link">Tout voir →</a></div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);">💋</div><div class="hc-b"><div class="ac-cat">💄 Maquillage</div><a href="/blog/beaute/maquillage-peaux-noires/"><div class="ac-title">Maquillage peaux noires : mes produits préférés sur Jumia CI</div></a><div class="hc-b ac-meta-s">Vanessa · 5 min</div></div></article>
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#E8EAF6,#C5CAE9);">👗</div><div class="hc-b"><div class="ac-cat">👗 Mode femme</div><a href="/blog/beaute/bureau-abidjan-2026/"><div class="ac-title">S'habiller pour le bureau à Abidjan en 2026 : le guide de Vanessa</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFFDE7,#FFF9C4);">👠</div><div class="hc-b"><div class="ac-cat">👠 Chaussures</div><a href="/blog/beaute/chaussures-homme-cuir/"><div class="ac-title">Chaussures cuir homme sur Jumia CI : les modèles qui durent</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
+            </div>
+          </div>
+          <div>
+            <div class="sec-h" style="margin-bottom:8px;"><span class="sec-h-title">👶 Bébé &amp; Enfant</span><a href="/blog/bebe-enfant/" class="sec-h-link">Tout voir →</a></div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFF8E1,#FFECB3);">🛒</div><div class="hc-b"><div class="ac-cat">🍼 Bébé</div><a href="/blog/bebe/poussette-abidjan/"><div class="ac-title">Choisir une poussette pour Abidjan : les critères que personne ne mentionne</div></a><div class="hc-b ac-meta-s">Vanessa · 6 min</div></div></article>
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFF0DC,#FFD89B);">🍼</div><div class="hc-b"><div class="ac-cat">🍼 Bébé</div><a href="/blog/bebe/couches-bebe-ci/"><div class="ac-title">Couches bébé sur Jumia CI : le meilleur rapport qualité-prix 2026</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
+              <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">🎒</div><div class="hc-b"><div class="ac-cat">🎒 École</div><a href="/blog/enfant/cartable-rentree-2026/"><div class="ac-title">Cartable rentrée scolaire à moins de 15 000 FCFA : sélection 2026</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEWSLETTER BANNER -->
+        <div class="nl-banner">
+          <div><h2>Bons plans &amp; nouveaux articles chaque semaine</h2><p>Reçois les meilleurs conseils du Blog Jumia CI dans ta boîte mail. Zéro spam, désinscription en 1 clic.</p></div>
+          <div><form class="nl-form" onsubmit={(e) => e.preventDefault()}><input type="text" placeholder="Ton prénom"/><input type="email" placeholder="Ton adresse email" required/><button type="submit">✉️ S'inscrire gratuitement</button><span class="nl-note">🔒 Tes données sont protégées</span></form></div>
+        </div>
+
+        <!-- GUIDES PRATIQUES -->
+        <div class="sec-h"><span class="sec-h-title">📋 Guides pratiques Jumia CI</span><a href="/blog/guide-achat/" class="sec-h-link">Tous les guides →</a></div>
+        <div class="guide-grid">
+          <a href="/blog/livraison-guide/" class="guide-card"><div class="g-ico">🚚</div><div class="g-txt"><h3>Comment fonctionne la livraison Jumia CI ?</h3><p>Domicile, points relais, délais, frais — tout avant de commander.</p></div></a>
+          <a href="/blog/paiement-mobile-money/" class="guide-card"><div class="g-ico">📲</div><div class="g-txt"><h3>Payer avec Wave, Orange Money ou MTN MoMo</h3><p>Guide étape par étape pour ne pas bloquer au paiement.</p></div></a>
+          <a href="/blog/acheter-occasion-jumia/" class="guide-card"><div class="g-ico">♻️</div><div class="g-txt"><h3>Acheter de l'occasion sur Jumia CI sans risque</h3><p>Les 7 questions à poser au vendeur avant de valider.</p></div></a>
+          <a href="/blog/points-relais-ci/" class="guide-card"><div class="g-ico">📍</div><div class="g-txt"><h3>Trouver un point relais près de chez toi</h3><p>Abidjan, Bouaké, Yamoussoukro, San-Pédro, Korhogo…</p></div></a>
+          <a href="/blog/retour-remboursement/" class="guide-card"><div class="g-ico">🔄</div><div class="g-txt"><h3>Retourner un produit sur Jumia CI</h3><p>La procédure exacte, les délais et les cas difficiles.</p></div></a>
+          <a href="/blog/boutiques-officielles/" class="guide-card"><div class="g-ico">🏪</div><div class="g-txt"><h3>Reconnaître les boutiques officielles</h3><p>Samsung, Tecno, LG, Itel — les vraies boutiques de marque.</p></div></a>
+        </div>
       {/if}
-
-      <!-- SÉLECTION SEMAINE -->
-      <div class="sec-h"><span class="sec-h-title">✦ Sélection de la semaine</span><a href="/blog/tous-les-articles/" class="sec-h-link">Tous les articles →</a></div>
-      <div class="g3" style="margin-bottom:12px;">
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">❄️<span class="badge">Populaire</span></div>
-          <div class="ac-body">
-            <div class="ac-cat">🏠 Électroménager</div>
-            <a href="/blog/electromenager/climatiseur-2026/"><div class="ac-title">Climatiseur en Côte d'Ivoire : comment choisir sans se faire arnaquer</div></a>
-            <p class="ac-excerpt">BTU, inverter, marques à éviter… tout ce que j'aurais voulu savoir avant d'acheter le mien.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 28 avr.</span></div>
-          </div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">⚡</div>
-          <div class="ac-body">
-            <div class="ac-cat">⚡ Énergie</div>
-            <a href="/blog/electromenager/onduleur-inverter-2026/"><div class="ac-title">Onduleur vs inverter en CI : lequel choisir pour survivre aux délestages ?</div></a>
-            <p class="ac-excerpt">Avec les coupures de courant, beaucoup se posent la question. Voici ma réponse après deux achats ratés.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>7 min · 21 avr.</span></div>
-          </div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);">💋</div>
-          <div class="ac-body">
-            <div class="ac-cat">💄 Beauté</div>
-            <a href="/blog/beaute/maquillage-peaux-noires-2026/"><div class="ac-title">Maquillage pour peaux noires : mes produits préférés sur Jumia CI 2026</div></a>
-            <p class="ac-excerpt">Le bon fond de teint c'est pas facile à trouver. Voici ce qui m'a vraiment convaincue.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>5 min · 15 avr.</span></div>
-          </div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#FFF8E1,#FFECB3);">👶</div>
-          <div class="ac-body">
-            <div class="ac-cat">👶 Bébé</div>
-            <a href="/blog/bebe/poussette-abidjan-2026/"><div class="ac-title">Choisir une poussette pour Abidjan : les critères que personne ne mentionne</div></a>
-            <p class="ac-excerpt">Les trottoirs, les marchés, les rues en terre… j'aurais voulu qu'on me prévienne avant.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 2 mai</span></div>
-          </div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#EDE7F6,#D1C4E9);">💻</div>
-          <div class="ac-body">
-            <div class="ac-cat">💻 Ordinateurs</div>
-            <a href="/blog/tech/ordinateur-etudiant-2026/"><div class="ac-title">PC portable pour étudiant ivoirien : le guide complet 2026</div></a>
-            <p class="ac-excerpt">Budget 150 000 à 350 000 FCFA : voici ce qu'on peut vraiment avoir.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>8 min · 10 avr.</span></div>
-          </div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#FFCCBC,#FFAB91);">🏷️<span class="badge">Cette semaine</span></div>
-          <div class="ac-body">
-            <div class="ac-cat">🏷️ Bons Plans</div>
-            <a href="/blog/bons-plans/promo-mai-2026/"><div class="ac-title">Promotions mai 2026 sur Jumia CI : les 12 deals à ne pas manquer</div></a>
-            <p class="ac-excerpt">Smartphones, électro, beauté… on a sélectionné les vraies bonnes affaires de la semaine.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div><span>3 min · 4 mai</span></div>
-          </div>
-        </article>
-      </div>
-
-      <!-- TECH -->
-      <div class="sec-h"><span class="sec-h-title">📱 Tech &amp; Smartphones</span><a href="/blog/tech/" class="sec-h-link">Voir tout →</a></div>
-      <div class="g2" style="margin-bottom:12px;">
-        <article class="hcard">
-          <div class="hc-i" style="background:linear-gradient(135deg,#E8EAF6,#C5CAE9);">🍎</div>
-          <div class="hc-b"><div class="ac-cat">📱 Smartphones</div><a href="/blog/tech/iphone-occasion-ci/"><div class="ac-title">iPhone occasion sur Jumia CI : arnaque ou bonne affaire ? Les 5 vérifications à faire</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min · 19 avr. 2026</div></div>
-        </article>
-        <article class="hcard">
-          <div class="hc-i" style="background:linear-gradient(135deg,#E0F2F1,#B2DFDB);">🎧</div>
-          <div class="hc-b"><div class="ac-cat">🔌 Accessoires</div><a href="/blog/tech/ecouteurs-bluetooth-30000/"><div class="ac-title">Écouteurs Bluetooth à moins de 30 000 FCFA : les 4 qui valent vraiment le coup</div></a><div class="hc-b ac-meta-s">Vanessa · 5 min · 5 avr. 2026</div></div>
-        </article>
-        <article class="hcard">
-          <div class="hc-i" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);">📡</div>
-          <div class="hc-b"><div class="ac-cat">📡 Réseau</div><a href="/blog/tech/4g-operateurs-ci-2026/"><div class="ac-title">Orange, MTN, Moov en CI : quel opérateur a la meilleure 4G en 2026 ?</div></a><div class="hc-b ac-meta-s">Vanessa · 6 min · 1 avr. 2026</div></div>
-        </article>
-        <article class="hcard">
-          <div class="hc-i" style="background:linear-gradient(135deg,#F3E5F5,#E1BEE7);">🎮</div>
-          <div class="hc-b"><div class="ac-cat">🎮 Gaming</div><a href="/blog/tech/manette-ps5-jumia-ci/"><div class="ac-title">Manette PS5 sur Jumia CI : originale ou compatible ? Ce qu'on a testé</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min · 28 mars 2026</div></div>
-        </article>
-      </div>
-
-      <!-- MAISON -->
-      <div class="sec-h"><span class="sec-h-title">🏠 Maison &amp; Électroménager</span><a href="/blog/electromenager/" class="sec-h-link">Voir tout →</a></div>
-      <div class="g3" style="margin-bottom:12px;">
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#FFF8E1,#FFE082);">☀️</div>
-          <div class="ac-body"><div class="ac-cat">⚡ Énergie</div><a href="/blog/electromenager/panneau-solaire-ci/"><div class="ac-title">Panneau solaire pour la maison en CI : par où commencer ?</div></a><p class="ac-excerpt">Les kits à moins de 200 000 FCFA qui changent vraiment la vie pendant les délestages.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 4 mai</span></div></div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#FFCCBC,#FFAB91);">🍳</div>
-          <div class="ac-body"><div class="ac-cat">🍳 Cuisine</div><a href="/blog/electromenager/cuisiniere-gaz-electrique/"><div class="ac-title">Cuisinière gaz ou électrique en CI : le vrai choix selon ton quartier</div></a><p class="ac-excerpt">J'ai changé trois fois. Voici ce que j'aurais voulu savoir avant.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>5 min · 8 avr.</span></div></div>
-        </article>
-        <article class="acard">
-          <div class="ac-img" style="background:linear-gradient(135deg,#B3E5FC,#81D4FA);">🧺</div>
-          <div class="ac-body"><div class="ac-cat">🧺 Linge</div><a href="/blog/electromenager/machine-laver-300000/"><div class="ac-title">Machine à laver à moins de 300 000 FCFA : les 3 modèles recommandés</div></a><p class="ac-excerpt">Charge frontale ou top ? Marque locale ou internationale ? Ma réponse honnête.</p><div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa</span></div><span>6 min · 1 avr.</span></div></div>
-        </article>
-      </div>
-
-      <!-- BEAUTÉ + BÉBÉ -->
-      <div class="g2" style="margin-bottom:12px;">
-        <div>
-          <div class="sec-h" style="margin-bottom:8px;"><span class="sec-h-title">💄 Beauté &amp; Mode</span><a href="/blog/beaute/" class="sec-h-link">Tout voir →</a></div>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);">💋</div><div class="hc-b"><div class="ac-cat">💄 Maquillage</div><a href="/blog/beaute/maquillage-peaux-noires/"><div class="ac-title">Maquillage peaux noires : mes produits préférés sur Jumia CI</div></a><div class="hc-b ac-meta-s">Vanessa · 5 min</div></div></article>
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#E8EAF6,#C5CAE9);">👗</div><div class="hc-b"><div class="ac-cat">👗 Mode femme</div><a href="/blog/beaute/bureau-abidjan-2026/"><div class="ac-title">S'habiller pour le bureau à Abidjan en 2026 : le guide de Vanessa</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFFDE7,#FFF9C4);">👠</div><div class="hc-b"><div class="ac-cat">👠 Chaussures</div><a href="/blog/beaute/chaussures-homme-cuir/"><div class="ac-title">Chaussures cuir homme sur Jumia CI : les modèles qui durent</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
-          </div>
-        </div>
-        <div>
-          <div class="sec-h" style="margin-bottom:8px;"><span class="sec-h-title">👶 Bébé &amp; Enfant</span><a href="/blog/bebe-enfant/" class="sec-h-link">Tout voir →</a></div>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFF8E1,#FFECB3);">🛒</div><div class="hc-b"><div class="ac-cat">🍼 Bébé</div><a href="/blog/bebe/poussette-abidjan/"><div class="ac-title">Choisir une poussette pour Abidjan : les critères que personne ne mentionne</div></a><div class="hc-b ac-meta-s">Vanessa · 6 min</div></div></article>
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#FFF0DC,#FFD89B);">🍼</div><div class="hc-b"><div class="ac-cat">🍼 Bébé</div><a href="/blog/bebe/couches-bebe-ci/"><div class="ac-title">Couches bébé sur Jumia CI : le meilleur rapport qualité-prix 2026</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
-            <article class="hcard"><div class="hc-i" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">🎒</div><div class="hc-b"><div class="ac-cat">🎒 École</div><a href="/blog/enfant/cartable-rentree-2026/"><div class="ac-title">Cartable rentrée scolaire à moins de 15 000 FCFA : sélection 2026</div></a><div class="hc-b ac-meta-s">Vanessa · 4 min</div></div></article>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEWSLETTER BANNER -->
-      <div class="nl-banner">
-        <div><h2>Bons plans &amp; nouveaux articles chaque semaine</h2><p>Reçois les meilleurs conseils du Blog Jumia CI dans ta boîte mail. Zéro spam, désinscription en 1 clic.</p></div>
-        <div><form class="nl-form" onsubmit={(e) => e.preventDefault()}><input type="text" placeholder="Ton prénom"/><input type="email" placeholder="Ton adresse email" required/><button type="submit">✉️ S'inscrire gratuitement</button><span class="nl-note">🔒 Tes données sont protégées</span></form></div>
-      </div>
-
-      <!-- GUIDES PRATIQUES -->
-      <div class="sec-h"><span class="sec-h-title">📋 Guides pratiques Jumia CI</span><a href="/blog/guide-achat/" class="sec-h-link">Tous les guides →</a></div>
-      <div class="guide-grid">
-        <a href="/blog/livraison-guide/" class="guide-card"><div class="g-ico">🚚</div><div class="g-txt"><h3>Comment fonctionne la livraison Jumia CI ?</h3><p>Domicile, points relais, délais, frais — tout avant de commander.</p></div></a>
-        <a href="/blog/paiement-mobile-money/" class="guide-card"><div class="g-ico">📲</div><div class="g-txt"><h3>Payer avec Wave, Orange Money ou MTN MoMo</h3><p>Guide étape par étape pour ne pas bloquer au paiement.</p></div></a>
-        <a href="/blog/acheter-occasion-jumia/" class="guide-card"><div class="g-ico">♻️</div><div class="g-txt"><h3>Acheter de l'occasion sur Jumia CI sans risque</h3><p>Les 7 questions à poser au vendeur avant de valider.</p></div></a>
-        <a href="/blog/points-relais-ci/" class="guide-card"><div class="g-ico">📍</div><div class="g-txt"><h3>Trouver un point relais près de chez toi</h3><p>Abidjan, Bouaké, Yamoussoukro, San-Pédro, Korhogo…</p></div></a>
-        <a href="/blog/retour-remboursement/" class="guide-card"><div class="g-ico">🔄</div><div class="g-txt"><h3>Retourner un produit sur Jumia CI</h3><p>La procédure exacte, les délais et les cas difficiles.</p></div></a>
-        <a href="/blog/boutiques-officielles/" class="guide-card"><div class="g-ico">🏪</div><div class="g-txt"><h3>Reconnaître les boutiques officielles</h3><p>Samsung, Tecno, LG, Itel — les vraies boutiques de marque.</p></div></a>
-      </div>
     </main>
 
     <!-- SIDEBAR -->
@@ -694,6 +690,7 @@
   /* SEC HEADER */
   .sec-h{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:var(--radius);margin-bottom:10px;}
   .sec-h-title{font-size:14px;font-weight:700;color:var(--text);}
+  .sec-h-title:hover{color:var(--orange-dk);}
   .sec-h-link{font-size:12px;color:var(--orange);font-weight:600;}
   .sec-h-link:hover{text-decoration:underline;}
 
