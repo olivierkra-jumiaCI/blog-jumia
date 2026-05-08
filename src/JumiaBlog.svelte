@@ -238,10 +238,9 @@
   </div>
 </nav>
 
-<!-- BREADCRUMB -->
 <nav class="breadcrumb" aria-label="Fil d'ariane">
   <div class="bc-inner">
-    <a href="https://www.jumia.ci">Accueil</a>
+    <a href="/blog/" onclick={(e) => { e.preventDefault(); onNavigate('/blog/'); }}>Accueil</a>
     <span>›</span>
     <span>Blog</span>
   </div>
