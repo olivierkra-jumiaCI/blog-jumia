@@ -7,6 +7,7 @@
   
   let articles = $state([]);
   let filteredArticles = $state([]);
+  let popularArticles = $state([]);
   let selectedCategory = $state('Tous');
   let isLoading = $state(true);
 
@@ -35,6 +36,18 @@
     isLoading = false;
   }
 
+  async function fetchPopularArticles() {
+    try {
+      const q = query(collection(db, "articles"), orderBy("views", "desc"), limit(5));
+      const querySnapshot = await getDocs(q);
+      popularArticles = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    } catch (e) {
+      console.error("Erreur populaires:", e);
+      // Fallback si pas encore de champ views
+      popularArticles = articles.slice(0, 5);
+    }
+  }
+
   function selectCategory(cat) {
     selectedCategory = cat;
     applyFilter();
@@ -56,6 +69,7 @@
 
   onMount(() => {
     fetchArticles();
+    fetchPopularArticles();
 
     // Logic for mega menu (existing)
     const handleDocumentClick = (e) => {
@@ -471,17 +485,19 @@
       <div class="sb-block">
         <div class="sb-hdr">Les plus lus</div>
         <div class="sb-pop">
-          <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="sb-pop-item" onclick={(e) => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
-            <span class="sb-pop-n">01</span>
-            <div>
-              <div class="sb-pop-t">Smartphones à moins de 100 000 FCFA : mon comparatif honnête 2026</div>
-              <div class="sb-pop-m">Vanessa · 5 min</div>
-            </div>
-          </a>
-          <a href="/blog/electromenager/climatiseur-ci/" class="sb-pop-item"><span class="sb-pop-n">02</span><div><div class="sb-pop-t">Choisir son climatiseur en CI sans se faire arnaquer</div><div class="sb-pop-m">Vanessa · 6 min</div></div></a>
-          <a href="/blog/beaute/maquillage-peaux-noires/" class="sb-pop-item"><span class="sb-pop-n">03</span><div><div class="sb-pop-t">Maquillage pour peaux noires sur Jumia CI</div><div class="sb-pop-m">Vanessa · 4 min</div></div></a>
-          <a href="/blog/paiement-mobile-money/" class="sb-pop-item"><span class="sb-pop-n">04</span><div><div class="sb-pop-t">Payer avec Wave, Orange Money, MTN MoMo sur Jumia CI</div><div class="sb-pop-m">Vanessa · 3 min</div></div></a>
-          <a href="/blog/electromenager/onduleur-inverter/" class="sb-pop-item"><span class="sb-pop-n">05</span><div><div class="sb-pop-t">Onduleur vs inverter : lequel choisir pour les délestages ?</div><div class="sb-pop-m">Vanessa · 7 min</div></div></a>
+          {#each popularArticles as art, i}
+            <a href="/blog/{art.slug}" class="sb-pop-item" onclick={(e) => { e.preventDefault(); onNavigate(`/blog/${art.slug}`); }}>
+              <span class="sb-pop-n">0{i + 1}</span>
+              <div>
+                <div class="sb-pop-t">{art.title}</div>
+                <div class="sb-pop-m">Équipe Jumia · {new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</div>
+              </div>
+            </a>
+          {/each}
+          
+          {#if popularArticles.length === 0}
+            <div style="padding: 10px; font-size: 12px; color: #999;">Le classement arrive bientôt...</div>
+          {/if}
         </div>
       </div>
 

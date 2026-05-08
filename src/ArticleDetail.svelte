@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { db } from './lib/firebase';
-  import { collection, query, where, getDocs, limit } from 'firebase/firestore';
+  import { collection, query, where, getDocs, limit, updateDoc, increment } from 'firebase/firestore';
 
   let { onNavigate } = $props();
   let article = $state(null);
@@ -20,7 +20,17 @@
       const q = query(collection(db, "articles"), where("slug", "==", slug), limit(1));
       const querySnapshot = await getDocs(q);
       if (!querySnapshot.empty) {
-        article = querySnapshot.docs[0].data();
+        const docSnap = querySnapshot.docs[0];
+        article = docSnap.data();
+        
+        // Incrémenter le compteur de vues
+        try {
+          await updateDoc(docSnap.ref, {
+            views: increment(1)
+          });
+        } catch (e) {
+          console.error("Erreur incrément vues:", e);
+        }
       }
     }
     isLoading = false;
