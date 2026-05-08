@@ -467,18 +467,6 @@
     <!-- SIDEBAR -->
     <aside class="sb">
 
-      <div class="sb-block">
-        <div class="sb-hdr">Catégories</div>
-        <div class="sb-cats">
-          <a href="/blog/tech/" class="sb-cat"><span class="sb-cat-l"><span>📱</span>Tech &amp; Smartphones</span></a>
-          <a href="/blog/electromenager/" class="sb-cat"><span class="sb-cat-l"><span>🏠</span>Maison &amp; Électroménager</span></a>
-          <a href="/blog/beaute/" class="sb-cat"><span class="sb-cat-l"><span>💄</span>Beauté &amp; Mode</span></a>
-          <a href="/blog/bebe-enfant/" class="sb-cat"><span class="sb-cat-l"><span>👶</span>Bébé &amp; Enfant</span></a>
-          <a href="/blog/bons-plans/" class="sb-cat"><span class="sb-cat-l"><span>🏷️</span>Bons Plans</span></a>
-          <a href="/blog/guide-achat/" class="sb-cat"><span class="sb-cat-l"><span>📋</span>Guides d'achat</span></a>
-          <a href="/blog/livraison-paiement/" class="sb-cat"><span class="sb-cat-l"><span>🚚</span>Livraison &amp; Paiement</span></a>
-        </div>
-      </div>
 
       <div class="sb-block">
         <div class="sb-hdr">Les plus lus</div>
