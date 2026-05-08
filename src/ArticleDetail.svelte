@@ -406,15 +406,23 @@ details p { margin-top: 9px; font-size: 14px; color: #555; line-height: 1.65; ov
   .table-wrap { margin: 14px 0 20px; padding: 0; }
 }
 
-/* Suppression automatique des footers importés */
+/* Suppression RADICALE des footers importés */
 .article-content footer, 
-.article-content .footer {
+.article-content .footer,
+.article-content #footer,
+.article-content .site-footer,
+.article-content .main-footer,
+.article-content .footer-bottom,
+.article-content .footer-inner,
+.article-content .footer-wrapper {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 </style>
 
