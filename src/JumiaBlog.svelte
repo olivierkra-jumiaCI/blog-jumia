@@ -323,6 +323,16 @@
       {#if selectedCategory === 'Tous'}
         <!-- HERO (ONLY ON HOME) -->
         <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
+          <div class="hc-img" style="padding:0;overflow:hidden;"><img src="/hero_smartphones_cover.jpg" alt="Femme ivoirienne comparant des smartphones à moins de 100 000 FCFA" style="width:100%;height:100%;object-fit:cover;" loading="eager"/><span class="badge">Nouveau</span></div>
+          <div class="hc-body">
+            <div class="hc-cat">📱 Smartphones · Comparatif 2026</div>
+            <div class="hc-title">Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026</div>
+            <p class="hc-excerpt">J'ai testé 8 modèles disponibles sur Jumia CI pour trouver le meilleur rapport qualité-prix. Le résultat m'a surprise — et pas toujours dans le bon sens.</p>
+            <div class="hc-meta"><div class="avc">V</div><span>Vanessa</span><span>·</span><span>3 mai 2026</span><span>·</span><span>5 min de lecture</span></div>
+            <span class="hc-cta">Lire l'article →</span>
+          </div>
+        </a>
+      {/if}
 
       <!-- SÉLECTION SEMAINE -->
       <div class="sec-h"><span class="sec-h-title">✦ Sélection de la semaine</span><a href="/blog/tous-les-articles/" class="sec-h-link">Tous les articles →</a></div>
