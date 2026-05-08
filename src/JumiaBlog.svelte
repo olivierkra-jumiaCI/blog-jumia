@@ -611,6 +611,7 @@
     white-space: nowrap; 
     flex-shrink: 0; 
     user-select: none;
+    border: none;
   }
   .cat-list { 
     display: flex; 
@@ -628,6 +629,8 @@
     color: var(--text); 
     white-space: nowrap; 
     cursor: pointer; 
+    background: none;
+    border: none;
     border-bottom: 3px solid transparent; 
     transition: all .15s;
   }
