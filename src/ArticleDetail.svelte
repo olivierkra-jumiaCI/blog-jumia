@@ -113,30 +113,66 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; display: block; }
 
 /* ============================================
-   CAT NAV BAR (masquée sur mobile)
+   CAT NAV BAR
    ============================================ */
-.cat-bar { background: #fff; border-bottom: 1px solid #e0e0e0; display: none; }
+.cat-bar { 
+  background: #fff; 
+  border-bottom: 1px solid #e0e0e0; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .cat-bar-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 16px;
-  display: flex; align-items: stretch;
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  max-width: 1100px; 
+  margin: 0 auto; 
+  display: flex; 
+  align-items: stretch;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+/* Masquer la barre de défilement mais garder la fonctionnalité */
+.cat-bar-inner::-webkit-scrollbar {
+  display: none;
 }
 .cat-all {
-  display: flex; align-items: center; gap: 8px;
-  background: #F68B1E; color: #fff; padding: 0 14px;
-  font-size: 13px; font-weight: 700; cursor: pointer;
-  white-space: nowrap; flex-shrink: 0; user-select: none;
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  background: #F68B1E; 
+  color: #fff; 
+  padding: 0 14px;
+  font-size: 13px; 
+  font-weight: 700; 
+  cursor: pointer;
+  white-space: nowrap; 
+  flex-shrink: 0; 
+  user-select: none;
 }
-.cat-list { display: flex; align-items: stretch; list-style: none; }
+.cat-list { 
+  display: flex; 
+  align-items: stretch; 
+  list-style: none; 
+}
 .cat-item { position: relative; }
 .cat-link {
-  display: flex; align-items: center; gap: 4px;
-  padding: 0 12px; height: 40px; font-size: 13px; font-weight: 600;
-  color: #333; white-space: nowrap; cursor: pointer;
+  display: flex; 
+  align-items: center; 
+  gap: 4px;
+  padding: 0 15px; 
+  height: 45px; 
+  font-size: 13px; 
+  font-weight: 600;
+  color: #333; 
+  white-space: nowrap; 
+  cursor: pointer;
   border-bottom: 3px solid transparent;
-  transition: border-color .15s, color .15s;
+  transition: all .15s;
 }
-.cat-link:hover, .cat-link.active { color: #F68B1E; border-bottom-color: #F68B1E; text-decoration: none; }
+.cat-link:hover, .cat-link.active { 
+  color: #F68B1E; 
+  border-bottom-color: #F68B1E; 
+  text-decoration: none; 
+}
 
 /* ============================================
    BREADCRUMB
