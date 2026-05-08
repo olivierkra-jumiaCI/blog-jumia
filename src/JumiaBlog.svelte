@@ -1,23 +1,63 @@
 <script>
   import { onMount } from 'svelte';
+  import { db } from './lib/firebase';
+  import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
+
   let { onNavigate } = $props();
+  
+  let articles = $state([]);
+  let filteredArticles = $state([]);
+  let selectedCategory = $state('Tous');
+  let isLoading = $state(true);
+
+  // Mapping des catégories pour la correspondance avec Firestore
+  const catMap = {
+    'Tech': 'Tech & Smartphones',
+    'Maison': 'Maison & Électro',
+    'Agriculture': 'Agriculture',
+    'Sport': 'Sport',
+    'Beauté': 'Beauté & Mode',
+    'Bébé': 'Bébé & Enfant',
+    'Bons Plans': 'Bons Plans',
+    'Guides': 'Guides d\'achat'
+  };
+
+  async function fetchArticles() {
+    isLoading = true;
+    try {
+      const q = query(collection(db, "articles"), orderBy("createdAt", "desc"), limit(20));
+      const querySnapshot = await getDocs(q);
+      articles = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      applyFilter();
+    } catch (e) {
+      console.error("Erreur articles:", e);
+    }
+    isLoading = false;
+  }
+
+  function selectCategory(cat) {
+    selectedCategory = cat;
+    applyFilter();
+    window.scrollTo({ top: 300, behavior: 'smooth' });
+  }
+
+  function applyFilter() {
+    if (selectedCategory === 'Tous') {
+      filteredArticles = articles;
+    } else {
+      const dbCat = catMap[selectedCategory] || selectedCategory;
+      filteredArticles = articles.filter(a => a.category === dbCat);
+    }
+  }
+
+  function openArticle(slug) {
+    onNavigate(`/blog/${slug}`);
+  }
 
   onMount(() => {
-    const catLinks = document.querySelectorAll('.cat-link');
-    catLinks.forEach(l => {
-      l.addEventListener('focus', () => {
-        const p = l.closest('.cat-item');
-        if (p) {
-          const d = p.querySelector('.mega');
-          if (d) {
-            d.style.opacity = '1';
-            d.style.visibility = 'visible';
-            d.style.transform = 'translateY(0)';
-          }
-        }
-      });
-    });
+    fetchArticles();
 
+    // Logic for mega menu (existing)
     const handleDocumentClick = (e) => {
       if (!e.target.closest('.cat-item')) {
         document.querySelectorAll('.mega').forEach(d => {
@@ -27,20 +67,8 @@
         });
       }
     };
-
     document.addEventListener('click', handleDocumentClick);
-
-    const megaCats = document.querySelectorAll('.mega-cat');
-    megaCats.forEach(c => {
-      c.addEventListener('click', () => {
-        c.parentElement.querySelectorAll('.mega-cat').forEach(s => s.classList.remove('on'));
-        c.classList.add('on');
-      });
-    });
-
-    return () => {
-      document.removeEventListener('click', handleDocumentClick);
-    };
+    return () => document.removeEventListener('click', handleDocumentClick);
   });
 </script>
 
@@ -65,11 +93,11 @@
 <!-- CAT NAV BAR -->
 <nav class="cat-bar" aria-label="Catégories du blog">
   <div class="cat-bar-inner">
-    <div class="cat-all">☰ &nbsp;Toutes les catégories</div>
+    <div class="cat-all" onclick={() => selectCategory('Tous')} role="button" tabindex="0">☰ &nbsp;Toutes les catégories</div>
     <ul class="cat-list">
 
       <li class="cat-item">
-        <a href="/blog/tech/" class="cat-link active">📱 Tech &amp; Smartphones <span class="caret">▾</span></a>
+        <button class="cat-link {selectedCategory === 'Tech' ? 'active' : ''}" onclick={() => selectCategory('Tech')}>📱 Tech &amp; Smartphones <span class="caret">▾</span></button>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-left">
@@ -103,7 +131,7 @@
       </li>
 
       <li class="cat-item">
-        <a href="/blog/electromenager/" class="cat-link">🏠 Maison &amp; Électro <span class="caret">▾</span></a>
+        <button class="cat-link {selectedCategory === 'Maison' ? 'active' : ''}" onclick={() => selectCategory('Maison')}>🏠 Maison &amp; Électro <span class="caret">▾</span></button>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-left">
@@ -136,7 +164,7 @@
       </li>
 
       <li class="cat-item">
-        <a href="/blog/beaute/" class="cat-link">💄 Beauté &amp; Mode <span class="caret">▾</span></a>
+        <button class="cat-link {selectedCategory === 'Beauté' ? 'active' : ''}" onclick={() => selectCategory('Beauté')}>💄 Beauté &amp; Mode <span class="caret">▾</span></button>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-left">
@@ -160,7 +188,7 @@
       </li>
 
       <li class="cat-item">
-        <a href="/blog/bebe-enfant/" class="cat-link">👶 Bébé &amp; Enfant <span class="caret">▾</span></a>
+        <button class="cat-link {selectedCategory === 'Bébé' ? 'active' : ''}" onclick={() => selectCategory('Bébé')}>👶 Bébé &amp; Enfant <span class="caret">▾</span></button>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-left">
@@ -183,7 +211,7 @@
       </li>
 
       <li class="cat-item">
-        <a href="/blog/bons-plans/" class="cat-link">🏷️ Bons Plans <span class="caret">▾</span></a>
+        <button class="cat-link {selectedCategory === 'Bons Plans' ? 'active' : ''}" onclick={() => selectCategory('Bons Plans')}>🏷️ Bons Plans <span class="caret">▾</span></button>
         <div class="mega">
           <div class="mega-grid">
             <div class="mega-left">
@@ -206,7 +234,7 @@
       </li>
 
       <li class="cat-item">
-        <a href="/blog/guide-achat/" class="cat-link">📋 Guides d'achat</a>
+        <button class="cat-link" onclick={() => selectCategory('Guides')}>📋 Guides d'achat</button>
       </li>
 
     </ul>
@@ -237,32 +265,64 @@
   <!-- TOPIC PILLS -->
   <div class="pills">
     <span class="pills-lbl">Filtrer :</span>
-    <a href="/blog/" class="pill on">Tous</a>
-    <a href="/blog/tech/" class="pill">📱 Tech</a>
-    <a href="/blog/electromenager/" class="pill">🏠 Maison</a>
-    <a href="/blog/agriculture/" class="pill">🌾 Agriculture</a>
-    <a href="/blog/sport/" class="pill">⚽ Sport</a>
-    <a href="/blog/beaute/" class="pill">💄 Beauté</a>
-    <a href="/blog/bebe-enfant/" class="pill">👶 Bébé</a>
-    <a href="/blog/bons-plans/" class="pill">🏷️ Bons Plans</a>
-    <a href="/blog/guide-achat/" class="pill">📋 Guides</a>
+    <button class="pill {selectedCategory === 'Tous' ? 'on' : ''}" onclick={() => selectCategory('Tous')}>Tous</button>
+    <button class="pill {selectedCategory === 'Tech' ? 'on' : ''}" onclick={() => selectCategory('Tech')}>📱 Tech</button>
+    <button class="pill {selectedCategory === 'Maison' ? 'on' : ''}" onclick={() => selectCategory('Maison')}>🏠 Maison</button>
+    <button class="pill {selectedCategory === 'Agriculture' ? 'on' : ''}" onclick={() => selectCategory('Agriculture')}>🌾 Agriculture</button>
+    <button class="pill {selectedCategory === 'Sport' ? 'on' : ''}" onclick={() => selectCategory('Sport')}>⚽ Sport</button>
+    <button class="pill {selectedCategory === 'Beauté' ? 'on' : ''}" onclick={() => selectCategory('Beauté')}>💄 Beauté</button>
+    <button class="pill {selectedCategory === 'Bébé' ? 'on' : ''}" onclick={() => selectCategory('Bébé')}>👶 Bébé</button>
+    <button class="pill {selectedCategory === 'Bons Plans' ? 'on' : ''}" onclick={() => selectCategory('Bons Plans')}>🏷️ Bons Plans</button>
+    <button class="pill {selectedCategory === 'Guides' ? 'on' : ''}" onclick={() => selectCategory('Guides')}>📋 Guides</button>
   </div>
 
   <!-- MAIN + SIDEBAR -->
   <div class="content-grid">
 
     <main>
-      <!-- HERO -->
-      <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
-        <div class="hc-img" style="padding:0;overflow:hidden;"><img src="/hero_smartphones_cover.jpg" alt="Femme ivoirienne comparant des smartphones à moins de 100 000 FCFA" style="width:100%;height:100%;object-fit:cover;" loading="eager"/><span class="badge">Nouveau</span></div>
-        <div class="hc-body">
-          <div class="hc-cat">📱 Smartphones · Comparatif 2026</div>
-          <div class="hc-title">Smartphones à moins de 100 000 FCFA en Côte d'Ivoire : mon comparatif honnête 2026</div>
-          <p class="hc-excerpt">J'ai testé 8 modèles disponibles sur Jumia CI pour trouver le meilleur rapport qualité-prix. Le résultat m'a surprise — et pas toujours dans le bon sens.</p>
-          <div class="hc-meta"><div class="avc">V</div><span>Vanessa</span><span>·</span><span>3 mai 2026</span><span>·</span><span>5 min de lecture</span></div>
-          <span class="hc-cta">Lire l'article →</span>
+      {#if selectedCategory !== 'Tous' || filteredArticles.length > 0}
+        <div class="sec-h">
+          <span class="sec-h-title">
+            {selectedCategory === 'Tous' ? 'Dernières publications' : `Articles : ${catMap[selectedCategory] || selectedCategory}`}
+          </span>
         </div>
-      </a>
+        
+        {#if isLoading}
+          <div style="padding: 40px; text-align: center; color: #999;">Chargement des articles...</div>
+        {:else if filteredArticles.length === 0}
+          <div style="padding: 60px; text-align: center; background: #fff; border-radius: 8px; border: 1px dashed #ccc; margin-bottom: 20px;">
+            <div style="font-size: 40px; margin-bottom: 15px;">🔍</div>
+            <p style="color: #666;">Aucun article trouvé dans la catégorie <strong>{selectedCategory}</strong> pour le moment.</p>
+            <button class="pill on" style="margin-top: 15px; border: none; cursor: pointer;" onclick={() => selectCategory('Tous')}>Voir tout le blog</button>
+          </div>
+        {:else}
+          <div class="g2" style="margin-bottom:24px;">
+            {#each filteredArticles as art}
+              <article class="acard" onclick={() => openArticle(art.slug)} style="cursor: pointer;">
+                <div class="ac-img" style="background: #eee; overflow: hidden;">
+                  {#if art.coverImage}
+                    <img src={art.coverImage} alt={art.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                  {:else}
+                    <span>📄</span>
+                  {/if}
+                </div>
+                <div class="ac-body">
+                  <div class="ac-cat">{art.category}</div>
+                  <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
+                  <div class="ac-meta">
+                    <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
+                    <span>{new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</span>
+                  </div>
+                </div>
+              </article>
+            {/each}
+          </div>
+        {/if}
+      {/if}
+
+      {#if selectedCategory === 'Tous'}
+        <!-- HERO (ONLY ON HOME) -->
+        <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
 
       <!-- SÉLECTION SEMAINE -->
       <div class="sec-h"><span class="sec-h-title">✦ Sélection de la semaine</span><a href="/blog/tous-les-articles/" class="sec-h-link">Tous les articles →</a></div>
