@@ -471,7 +471,13 @@
       <div class="sb-block">
         <div class="sb-hdr">Les plus lus</div>
         <div class="sb-pop">
-          <a href="/blog/tech/smartphones-100000-fcfa/" class="sb-pop-item"><span class="sb-pop-n">01</span><div><div class="sb-pop-t">Smartphones à moins de 100 000 FCFA : comparatif 2026</div><div class="sb-pop-m">Vanessa · 5 min</div></div></a>
+          <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="sb-pop-item" onclick={(e) => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
+            <span class="sb-pop-n">01</span>
+            <div>
+              <div class="sb-pop-t">Smartphones à moins de 100 000 FCFA : mon comparatif honnête 2026</div>
+              <div class="sb-pop-m">Vanessa · 5 min</div>
+            </div>
+          </a>
           <a href="/blog/electromenager/climatiseur-ci/" class="sb-pop-item"><span class="sb-pop-n">02</span><div><div class="sb-pop-t">Choisir son climatiseur en CI sans se faire arnaquer</div><div class="sb-pop-m">Vanessa · 6 min</div></div></a>
           <a href="/blog/beaute/maquillage-peaux-noires/" class="sb-pop-item"><span class="sb-pop-n">03</span><div><div class="sb-pop-t">Maquillage pour peaux noires sur Jumia CI</div><div class="sb-pop-m">Vanessa · 4 min</div></div></a>
           <a href="/blog/paiement-mobile-money/" class="sb-pop-item"><span class="sb-pop-n">04</span><div><div class="sb-pop-t">Payer avec Wave, Orange Money, MTN MoMo sur Jumia CI</div><div class="sb-pop-m">Vanessa · 3 min</div></div></a>
@@ -740,10 +746,31 @@
   .sb-pop-item{display:flex;gap:8px;align-items:flex-start;padding:9px 12px;border-bottom:1px solid var(--border);transition:background .1s;}
   .sb-pop-item:last-child{border-bottom:none;}
   .sb-pop-item:hover{background:var(--orange-lt);}
-  .sb-pop-n{font-size:18px;font-weight:700;color:var(--border);line-height:1;flex-shrink:0;width:22px;}
-  .sb-pop-t{font-size:12px;font-weight:600;line-height:1.35;color:var(--text);margin-bottom:2px;}
-  .sb-pop-t:hover{color:var(--orange-dk);}
-  .sb-pop-m{font-size:11px;color:var(--text-xlt);}
+  .sb-pop-n {
+    font-size: 24px; 
+    font-weight: 800; 
+    color: var(--orange); 
+    line-height: 1; 
+    flex-shrink: 0; 
+    width: 32px;
+    opacity: 0.3;
+    transition: opacity .2s;
+  }
+  .sb-pop-item:hover .sb-pop-n {
+    opacity: 1;
+  }
+  .sb-pop-t {
+    font-size: 13px; 
+    font-weight: 600; 
+    line-height: 1.4; 
+    color: var(--text); 
+    margin-bottom: 3px;
+    transition: color .2s;
+  }
+  .sb-pop-item:hover .sb-pop-t {
+    color: var(--orange-dk);
+  }
+  .sb-pop-m { font-size: 11px; color: var(--text-xlt); }
   /* delivery */
   .sb-del-row{display:flex;align-items:flex-start;gap:7px;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text-lt);}
   .sb-del-row:last-child{border-bottom:none;padding-bottom:0;}
