@@ -404,6 +404,8 @@ details p { margin-top: 9px; font-size: 14px; color: #555; line-height: 1.65; ov
   .cta-block { text-align: center; }
   .prod-grid { grid-template-columns: repeat(5, 1fr); }
   .table-wrap { margin: 14px 0 20px; padding: 0; }
+}
+
 /* Suppression automatique des footers importés */
 .article-content footer, 
 .article-content .footer {
