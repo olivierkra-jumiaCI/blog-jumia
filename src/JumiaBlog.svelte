@@ -886,7 +886,7 @@
     .blog-banner{padding: 16px; flex-direction:column; align-items:flex-start; text-align: center;}
     .bb-left h1{font-size: 18px;}
     .g2,.g3{grid-template-columns:1fr;}
-    .carousel-item { flex: 0 0 100%; min-width: 100%; }
+    .carousel-item { flex: 0 0 85%; min-width: 85%; }
     .guide-grid{grid-template-columns:1fr;}
     .pills { overflow-x: auto; white-space: nowrap; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
     .hero-card .hc-title { font-size: 16px; }
