@@ -1,5 +1,5 @@
 <script>
-  import { db } from './lib/firebase';
+  import { db, auth } from './lib/firebase';
   import { collection, addDoc, updateDoc, doc, getDoc, serverTimestamp, Timestamp } from 'firebase/firestore';
   import { onMount } from 'svelte';
   let { onNavigate } = $props();
@@ -114,7 +114,8 @@
       coverImage,
       content: contentHtml,
       publishedAt: Timestamp.fromDate(pubDate),
-      updatedAt: serverTimestamp()
+      updatedAt: serverTimestamp(),
+      updatedByEmail: auth.currentUser?.email || 'Inconnu'
     };
 
     try {
@@ -122,6 +123,7 @@
         await updateDoc(doc(db, "articles", articleId), articleData);
       } else {
         articleData.createdAt = serverTimestamp();
+        articleData.createdByEmail = auth.currentUser?.email || 'Inconnu';
         await addDoc(collection(db, "articles"), articleData);
       }
       alert("Article enregistré avec succès !");

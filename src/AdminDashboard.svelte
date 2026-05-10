@@ -90,6 +90,8 @@
           <thead>
             <tr>
               <th>Titre</th>
+              <th>Création</th>
+              <th>Dernière modif.</th>
               <th>Catégorie</th>
               <th>Statut</th>
               <th>Actions</th>
@@ -99,6 +101,22 @@
             {#each articles as article}
               <tr>
                 <td><strong>{article.title}</strong></td>
+                <td style="font-size: 12px; color: #555;">
+                  {#if article.createdAt}
+                    {new Date(article.createdAt.seconds * 1000).toLocaleString('fr-FR', {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute:'2-digit'})}
+                    <br><span style="color: #888;">par {article.createdByEmail || 'Inconnu'}</span>
+                  {:else}
+                    -
+                  {/if}
+                </td>
+                <td style="font-size: 12px; color: #555;">
+                  {#if article.updatedAt && (!article.createdAt || Math.abs(article.updatedAt.seconds - article.createdAt.seconds) > 60)}
+                    {new Date(article.updatedAt.seconds * 1000).toLocaleString('fr-FR', {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute:'2-digit'})}
+                    <br><span style="color: #888;">par {article.updatedByEmail || 'Inconnu'}</span>
+                  {:else}
+                    -
+                  {/if}
+                </td>
                 <td><span class="badge category">{article.category}</span></td>
                 <td>
                   <span class="badge status {article.status === 'Publié' ? 'pub' : 'draft'}">
