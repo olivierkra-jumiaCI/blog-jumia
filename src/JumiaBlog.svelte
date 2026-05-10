@@ -357,6 +357,7 @@
 
       {#if selectedCategory === 'Tous'}
         <!-- HERO (ONLY ON HOME) -->
+        <div class="sec-h"><span class="sec-h-title">✦ Article à la une</span></div>
         <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="hero-card" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
           <div class="hc-img" style="padding:0;overflow:hidden;"><img src="/hero_smartphones_cover.jpg" alt="Femme ivoirienne comparant des smartphones à moins de 100 000 FCFA" style="width:100%;height:100%;object-fit:cover;" loading="eager"/><span class="badge">Nouveau</span></div>
           <div class="hc-body">
