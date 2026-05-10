@@ -305,27 +305,53 @@
             <button class="pill on" style="margin-top: 15px; border: none; cursor: pointer;" onclick={() => selectCategory('Tous')}>Voir tout le blog</button>
           </div>
         {:else}
-          <div class="g2" style="margin-bottom:24px;">
-            {#each filteredArticles as art}
-              <article class="acard" onclick={() => openArticle(art.slug)} style="cursor: pointer;">
-                <div class="ac-img" style="background: #eee; overflow: hidden;">
-                  {#if art.coverImage}
-                    <img src={art.coverImage} alt={art.title} style="width: 100%; height: 100%; object-fit: cover;" />
-                  {:else}
-                    <span>📄</span>
-                  {/if}
-                </div>
-                <div class="ac-body">
-                  <div class="ac-cat">{art.category}</div>
-                  <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
-                  <div class="ac-meta">
-                    <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
-                    <span>{new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</span>
+          {#if selectedCategory === 'Tous'}
+            <div class="carousel-container">
+              <div class="carousel-track">
+                {#each [...filteredArticles].sort((a, b) => (b.updatedAt?.seconds || b.createdAt?.seconds || 0) - (a.updatedAt?.seconds || a.createdAt?.seconds || 0)).slice(0, 5) as art}
+                  <article class="acard carousel-item" onclick={() => openArticle(art.slug)} style="cursor: pointer;">
+                    <div class="ac-img" style="background: #eee; overflow: hidden;">
+                      {#if art.coverImage}
+                        <img src={art.coverImage} alt={art.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                      {:else}
+                        <span>📄</span>
+                      {/if}
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-cat">{art.category}</div>
+                      <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
+                      <div class="ac-meta">
+                        <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
+                        <span>{new Date((art.updatedAt?.seconds || art.createdAt?.seconds) * 1000).toLocaleDateString('fr-FR')}</span>
+                      </div>
+                    </div>
+                  </article>
+                {/each}
+              </div>
+            </div>
+          {:else}
+            <div class="g2" style="margin-bottom:24px;">
+              {#each filteredArticles as art}
+                <article class="acard" onclick={() => openArticle(art.slug)} style="cursor: pointer;">
+                  <div class="ac-img" style="background: #eee; overflow: hidden;">
+                    {#if art.coverImage}
+                      <img src={art.coverImage} alt={art.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                    {:else}
+                      <span>📄</span>
+                    {/if}
                   </div>
-                </div>
-              </article>
-            {/each}
-          </div>
+                  <div class="ac-body">
+                    <div class="ac-cat">{art.category}</div>
+                    <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
+                    <div class="ac-meta">
+                      <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
+                      <span>{new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</span>
+                    </div>
+                  </div>
+                </article>
+              {/each}
+            </div>
+          {/if}
         {/if}
       {/if}
 
@@ -719,6 +745,15 @@
   .hc-cta{display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;padding:8px 16px;border-radius:var(--radius);font-size:13px;font-weight:600;align-self:flex-start;transition:background .15s;}
   .hc-cta:hover{background:var(--orange-dk);}
 
+  /* CAROUSEL */
+  .carousel-container { width: 100%; overflow: hidden; position: relative; margin-bottom: 24px; }
+  .carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+  .carousel-track::-webkit-scrollbar { height: 6px; }
+  .carousel-track::-webkit-scrollbar-track { background: var(--bg); border-radius: 3px; }
+  .carousel-track::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .carousel-track::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+  .carousel-item { scroll-snap-align: start; flex: 0 0 calc(50% - 8px); min-width: 280px; }
+
   /* ARTICLE CARDS */
   .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
@@ -850,6 +885,7 @@
     .blog-banner{padding: 16px; flex-direction:column; align-items:flex-start; text-align: center;}
     .bb-left h1{font-size: 18px;}
     .g2,.g3{grid-template-columns:1fr;}
+    .carousel-item { flex: 0 0 100%; min-width: 100%; }
     .guide-grid{grid-template-columns:1fr;}
     .pills { overflow-x: auto; white-space: nowrap; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
     .hero-card .hc-title { font-size: 16px; }
