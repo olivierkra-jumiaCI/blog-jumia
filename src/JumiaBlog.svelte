@@ -308,7 +308,7 @@
           {#if selectedCategory === 'Tous'}
             <div class="carousel-container">
               <div class="carousel-track">
-                {#each [...filteredArticles].sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)).slice(0, 5) as art}
+                {#each [...filteredArticles].sort((a, b) => (b.publishedAt?.seconds || b.createdAt?.seconds || 0) - (a.publishedAt?.seconds || a.createdAt?.seconds || 0)).slice(0, 5) as art}
                   <article class="acard carousel-item" onclick={() => openArticle(art.slug)} style="cursor: pointer;">
                     <div class="ac-img" style="background: #eee; overflow: hidden;">
                       {#if art.coverImage}
@@ -322,7 +322,7 @@
                       <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
                       <div class="ac-meta">
                         <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
-                        <span>{new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</span>
+                        <span>{new Date((art.publishedAt?.seconds || art.createdAt?.seconds) * 1000).toLocaleDateString('fr-FR')}</span>
                       </div>
                     </div>
                   </article>
@@ -345,7 +345,7 @@
                     <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
                     <div class="ac-meta">
                       <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
-                      <span>{new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</span>
+                      <span>{new Date((art.publishedAt?.seconds || art.createdAt?.seconds) * 1000).toLocaleDateString('fr-FR')}</span>
                     </div>
                   </div>
                 </article>

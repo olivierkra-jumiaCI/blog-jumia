@@ -1,6 +1,6 @@
 <script>
   import { db } from './lib/firebase';
-  import { collection, addDoc, updateDoc, doc, getDoc, serverTimestamp } from 'firebase/firestore';
+  import { collection, addDoc, updateDoc, doc, getDoc, serverTimestamp, Timestamp } from 'firebase/firestore';
   import { onMount } from 'svelte';
   let { onNavigate } = $props();
 
@@ -18,6 +18,7 @@
   let showPreview = $state(false);
   let articleId = $state(null);
   let isHtmlMode = $state(false);
+  let publishedDate = $state(new Date().toISOString().split('T')[0]);
 
   function toggleHtmlMode() {
     if (!isHtmlMode) {
@@ -58,6 +59,12 @@
         coverImage = data.coverImage;
         contentHtml = data.content;
         
+        if (data.publishedAt) {
+          publishedDate = new Date(data.publishedAt.seconds * 1000).toISOString().split('T')[0];
+        } else if (data.createdAt) {
+          publishedDate = new Date(data.createdAt.seconds * 1000).toISOString().split('T')[0];
+        }
+        
         // SÉCURITÉ : Si le contenu contient des balises complexes (html, style, script)
         // on active le mode HTML par défaut pour éviter que Quill ne nettoie le code.
         if (contentHtml && (contentHtml.includes('<html') || contentHtml.includes('<style') || contentHtml.includes('<script'))) {
@@ -96,6 +103,9 @@
   });
 
   async function save() {
+    const [year, month, day] = publishedDate.split('-');
+    const pubDate = new Date(year, month - 1, day, 12, 0, 0);
+
     const articleData = {
       title,
       slug,
@@ -103,6 +113,7 @@
       status,
       coverImage,
       content: contentHtml,
+      publishedAt: Timestamp.fromDate(pubDate),
       updatedAt: serverTimestamp()
     };
 
@@ -180,6 +191,13 @@
         <div class="form-group flex-1">
           <label for="cover">Image de couverture (URL)</label>
           <input type="text" id="cover" bind:value={coverImage} placeholder="https://..." />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group flex-1">
+          <label for="publishedDate">Date de publication</label>
+          <input type="date" id="publishedDate" bind:value={publishedDate} />
         </div>
         <div class="form-group flex-1">
           <label for="status">Statut</label>
