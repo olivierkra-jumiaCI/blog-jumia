@@ -669,21 +669,21 @@
 
 
 
-  /* CAT NAV BAR */
   .cat-bar { 
     background: var(--white); 
     border-bottom: 1px solid var(--border); 
     position: sticky;
     top: 0;
     z-index: 100;
+    will-change: transform;
+    transform: translateZ(0);
   }
   .cat-bar-inner {
     max-width: 1170px; 
     margin: 0 auto; 
     display: flex; 
     align-items: stretch;
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
   }
   .cat-bar-inner::-webkit-scrollbar {
     display: none;
