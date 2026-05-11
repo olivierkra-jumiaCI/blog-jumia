@@ -105,7 +105,6 @@
     // Logic for menu clicks (if any needed in future)
     return () => {};
   });
-  });
 </script>
 
 <svelte:head>
