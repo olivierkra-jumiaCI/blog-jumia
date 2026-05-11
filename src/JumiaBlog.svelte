@@ -102,18 +102,9 @@
     fetchArticles();
     fetchPopularArticles();
 
-    // Logic for mega menu (existing)
-    const handleDocumentClick = (e) => {
-      if (!e.target.closest('.cat-item')) {
-        document.querySelectorAll('.mega').forEach(d => {
-          d.style.opacity = '';
-          d.style.visibility = '';
-          d.style.transform = '';
-        });
-      }
-    };
-    document.addEventListener('click', handleDocumentClick);
-    return () => document.removeEventListener('click', handleDocumentClick);
+    // Logic for menu clicks (if any needed in future)
+    return () => {};
+  });
   });
 </script>
 
@@ -139,140 +130,23 @@
     <ul class="cat-list">
 
       <li class="cat-item">
-        <button class="cat-link {selectedCategory === 'Tech' ? 'active' : ''}" onclick={() => selectCategory('Tech')}>📱 Tech &amp; Smartphones <span class="caret">▾</span></button>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-left">
-              <div class="mega-cat on">📱 Smartphones</div>
-              <div class="mega-cat">💻 Ordinateurs</div>
-              <div class="mega-cat">📷 Photo &amp; Vidéo</div>
-              <div class="mega-cat">🎮 Gaming</div>
-              <div class="mega-cat">🔌 Accessoires</div>
-              <div class="mega-cat">📡 Réseau &amp; 5G</div>
-            </div>
-            <div class="mega-right">
-              <div class="mega-lbl">Articles populaires</div>
-              <div class="mega-links">
-                <a href="/blog/tech/smartphones-100000-fcfa/" class="mega-a">🔥 Smartphones à moins de 100 000 FCFA</a>
-                <a href="/blog/tech/meilleur-android-2026/" class="mega-a">⭐ Meilleur Android 2026 en CI</a>
-                <a href="/blog/tech/iphone-occasion-jumia/" class="mega-a">🍎 iPhone occasion : bonne affaire ?</a>
-                <a href="/blog/tech/4g-operateurs-ci/" class="mega-a">📶 4G par opérateur en CI</a>
-                <a href="/blog/tech/ordinateur-etudiant-ci/" class="mega-a">💻 PC portable étudiant 2026</a>
-                <a href="/blog/tech/samsung-vs-tecno/" class="mega-a">⚖️ Samsung vs Tecno comparatif</a>
-              </div>
-              <div class="mega-feat">
-                <div class="mega-feat-lbl">✦ À la une</div>
-                <a href="/blog/tech/smartphones-100000-fcfa-2026/" class="mega-feat-row" onclick={e => { e.preventDefault(); onNavigate('/blog/tech/smartphones-100000-fcfa-2026/'); }}>
-                  <div class="mega-feat-ico">📱</div>
-                  <div class="mega-feat-text"><h4>Smartphones à moins de 100 000 FCFA : comparatif honnête 2026</h4><p>Vanessa · 5 min · 3 mai 2026</p></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="cat-link {selectedCategory === 'Tech' ? 'active' : ''}" onclick={() => selectCategory('Tech')}>📱 Tech &amp; Smartphones</button>
       </li>
 
       <li class="cat-item">
-        <button class="cat-link {selectedCategory === 'Maison' ? 'active' : ''}" onclick={() => selectCategory('Maison')}>🏠 Maison &amp; Électro <span class="caret">▾</span></button>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-left">
-              <div class="mega-cat on">❄️ Climatisation</div>
-              <div class="mega-cat">⚡ Énergie &amp; Onduleurs</div>
-              <div class="mega-cat">🍳 Cuisine</div>
-              <div class="mega-cat">🧺 Linge &amp; Ménage</div>
-              <div class="mega-cat">🛋️ Mobilier</div>
-            </div>
-            <div class="mega-right">
-              <div class="mega-lbl">Guides pratiques</div>
-              <div class="mega-links">
-                <a href="/blog/electromenager/climatiseur-ci/" class="mega-a">❄️ Choisir son climatiseur en CI</a>
-                <a href="/blog/electromenager/onduleur-inverter/" class="mega-a">⚡ Onduleur vs inverter</a>
-                <a href="/blog/electromenager/frigo-300000-fcfa/" class="mega-a">🧊 Frigos à moins de 300 000 FCFA</a>
-                <a href="/blog/electromenager/solaire-maison/" class="mega-a">☀️ Énergie solaire à la maison</a>
-                <a href="/blog/electromenager/machine-laver/" class="mega-a">🧺 Machine à laver 2026</a>
-                <a href="/blog/electromenager/cuisiniere-gaz-elec/" class="mega-a">🍳 Gaz ou électrique en CI ?</a>
-              </div>
-              <div class="mega-feat">
-                <div class="mega-feat-lbl">✦ À la une</div>
-                <a href="/blog/electromenager/climatiseur-2026/" class="mega-feat-row">
-                  <div class="mega-feat-ico">❄️</div>
-                  <div class="mega-feat-text"><h4>Climatiseur en CI : comment choisir sans se faire arnaquer</h4><p>Vanessa · 6 min · 28 avr. 2026</p></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="cat-link {selectedCategory === 'Maison' ? 'active' : ''}" onclick={() => selectCategory('Maison')}>🏠 Maison &amp; Électro</button>
       </li>
 
       <li class="cat-item">
-        <button class="cat-link {selectedCategory === 'Beauté' ? 'active' : ''}" onclick={() => selectCategory('Beauté')}>💄 Beauté &amp; Mode <span class="caret">▾</span></button>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-left">
-              <div class="mega-cat on">💆 Soin visage &amp; corps</div>
-              <div class="mega-cat">💋 Maquillage</div>
-              <div class="mega-cat">👗 Mode femme</div>
-              <div class="mega-cat">👔 Mode homme</div>
-              <div class="mega-cat">👠 Chaussures</div>
-            </div>
-            <div class="mega-right">
-              <div class="mega-lbl">Tendances &amp; conseils</div>
-              <div class="mega-links">
-                <a href="/blog/beaute/maquillage-peaux-noires/" class="mega-a">💄 Maquillage peaux noires</a>
-                <a href="/blog/beaute/soin-corps/" class="mega-a">✨ Soins corps essentiels</a>
-                <a href="/blog/beaute/bureau-abidjan/" class="mega-a">👗 S'habiller pour le bureau</a>
-                <a href="/blog/beaute/chaussures-homme/" class="mega-a">👞 Chaussures cuir homme</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="cat-link {selectedCategory === 'Beauté' ? 'active' : ''}" onclick={() => selectCategory('Beauté')}>💄 Beauté &amp; Mode</button>
       </li>
 
       <li class="cat-item">
-        <button class="cat-link {selectedCategory === 'Bébé' ? 'active' : ''}" onclick={() => selectCategory('Bébé')}>👶 Bébé &amp; Enfant <span class="caret">▾</span></button>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-left">
-              <div class="mega-cat on">🍼 Bébé 0–2 ans</div>
-              <div class="mega-cat">🎒 École &amp; fournitures</div>
-              <div class="mega-cat">🧸 Jouets &amp; loisirs</div>
-              <div class="mega-cat">👟 Mode enfant</div>
-            </div>
-            <div class="mega-right">
-              <div class="mega-lbl">Guides parents</div>
-              <div class="mega-links">
-                <a href="/blog/bebe/poussette-abidjan/" class="mega-a">🛒 Choisir une poussette en CI</a>
-                <a href="/blog/bebe/couches-bebe/" class="mega-a">🍼 Couches bébé : meilleur rapport</a>
-                <a href="/blog/enfant/tablette-educative/" class="mega-a">📚 Tablettes éducatives 2026</a>
-                <a href="/blog/enfant/cartable-rentree/" class="mega-a">🎒 Cartables rentrée scolaire</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="cat-link {selectedCategory === 'Bébé' ? 'active' : ''}" onclick={() => selectCategory('Bébé')}>👶 Bébé &amp; Enfant</button>
       </li>
 
       <li class="cat-item">
-        <button class="cat-link {selectedCategory === 'Bons Plans' ? 'active' : ''}" onclick={() => selectCategory('Bons Plans')}>🏷️ Bons Plans <span class="caret">▾</span></button>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mega-left">
-              <div class="mega-cat on">🔥 Promos en cours</div>
-              <div class="mega-cat">🏅 Top ventes</div>
-              <div class="mega-cat">💸 Moins de 10 000 FCFA</div>
-              <div class="mega-cat">🎁 Idées cadeaux</div>
-            </div>
-            <div class="mega-right">
-              <div class="mega-lbl">Sélections du moment</div>
-              <div class="mega-links">
-                <a href="/blog/bons-plans/promo-mai-2026/" class="mega-a">⚡ Promos de la semaine</a>
-                <a href="/blog/bons-plans/produits-5000-fcfa/" class="mega-a">💰 Moins de 5 000 FCFA</a>
-                <a href="/blog/bons-plans/fete-des-meres/" class="mega-a">💐 Idées fête des mères</a>
-                <a href="/blog/bons-plans/top-ventes-mai/" class="mega-a">🏅 Top ventes mai 2026</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="cat-link {selectedCategory === 'Bons Plans' ? 'active' : ''}" onclick={() => selectCategory('Bons Plans')}>🏷️ Bons Plans</button>
       </li>
 
       <li class="cat-item">
@@ -683,7 +557,10 @@
     margin: 0 auto; 
     display: flex; 
     align-items: stretch;
-    flex-wrap: wrap;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   .cat-bar-inner::-webkit-scrollbar {
     display: none;
@@ -724,35 +601,10 @@
     border-bottom: 3px solid transparent; 
     transition: all .15s;
   }
-  .cat-link:hover, .cat-item:hover > .cat-link { 
+  .cat-link:hover, .cat-link.active { 
     color: var(--orange); 
     border-bottom-color: var(--orange); 
   }
-  .cat-link.active { 
-    color: var(--orange); 
-    border-bottom-color: var(--orange); 
-  }
-  .caret { font-size: 9px; transition: transform .2s; }
-  .cat-item:hover .caret { transform: rotate(180deg); }
-
-  /* MEGA DROPDOWN */
-  .mega{position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-top:3px solid var(--orange);box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:500px;z-index:300;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .18s,transform .18s,visibility .18s;}
-  .cat-item:hover .mega{opacity:1;visibility:visible;transform:translateY(0);}
-  .mega-grid{display:grid;grid-template-columns:170px 1fr;}
-  .mega-left{background:#FAFAFA;border-right:1px solid var(--border);padding:8px 0;}
-  .mega-cat{display:flex;align-items:center;gap:7px;padding:8px 14px;font-size:13px;color:var(--text-lt);cursor:pointer;border-left:3px solid transparent;transition:all .12s;}
-  .mega-cat:hover,.mega-cat.on{color:var(--orange);background:var(--white);border-left-color:var(--orange);font-weight:600;}
-  .mega-right{padding:14px 16px;}
-  .mega-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-xlt);font-weight:700;margin-bottom:8px;}
-  .mega-links{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:12px;}
-  .mega-a{display:flex;align-items:center;gap:5px;padding:6px 7px;font-size:13px;color:var(--text);border-radius:var(--radius);transition:background .1s,color .1s;}
-  .mega-a:hover{background:var(--orange-lt);color:var(--orange-dk);}
-  .mega-feat{border-top:1px solid var(--border);padding-top:10px;}
-  .mega-feat-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--orange);font-weight:700;margin-bottom:7px;}
-  .mega-feat-row{display:flex;gap:9px;align-items:flex-start;}
-  .mega-feat-ico{width:48px;height:48px;border-radius:var(--radius);background:var(--orange-lt);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-  .mega-feat-text h4{font-size:13px;font-weight:600;line-height:1.3;color:var(--text);margin-bottom:2px;}
-  .mega-feat-text p{font-size:11px;color:var(--text-xlt);}
 
   /* BREADCRUMB */
   .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:8px 0;}
