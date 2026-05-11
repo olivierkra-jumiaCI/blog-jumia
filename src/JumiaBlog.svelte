@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { db } from './lib/firebase';
-  import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
+  import { collection, query, where, getDocs, orderBy, limit, addDoc, serverTimestamp } from 'firebase/firestore';
 
   let { onNavigate } = $props();
   
@@ -10,6 +10,37 @@
   let popularArticles = $state([]);
   let selectedCategory = $state('Tous');
   let isLoading = $state(true);
+
+  // --- NEWSLETTER STATE ---
+  let nlPrenom = $state('');
+  let nlEmail = $state('');
+  let nlStatus = $state(''); // '', 'loading', 'success', 'error'
+  let nlMessage = $state('');
+
+  async function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    if (!nlEmail) return;
+    
+    nlStatus = 'loading';
+    nlMessage = '';
+
+    try {
+      await addDoc(collection(db, "newsletter_subscribers"), {
+        prenom: nlPrenom,
+        email: nlEmail,
+        subscribedAt: serverTimestamp()
+      });
+
+      nlStatus = 'success';
+      nlMessage = 'Inscription réussie ! Vous recevrez nos bons plans.';
+      nlPrenom = '';
+      nlEmail = '';
+    } catch (error) {
+      console.error('Newsletter error:', error);
+      nlStatus = 'error';
+      nlMessage = 'Erreur lors de l\'inscription. Veuillez réessayer.';
+    }
+  }
 
   // Mapping des catégories pour la correspondance avec Firestore
   const catMap = {
@@ -489,7 +520,21 @@
         <!-- NEWSLETTER BANNER -->
         <div class="nl-banner">
           <div><h2>Bons plans &amp; nouveaux articles chaque semaine</h2><p>Reçois les meilleurs conseils du Blog Jumia CI dans ta boîte mail. Zéro spam, désinscription en 1 clic.</p></div>
-          <div><form class="nl-form" onsubmit={(e) => e.preventDefault()}><input type="text" placeholder="Ton prénom"/><input type="email" placeholder="Ton adresse email" required/><button type="submit">✉️ S'inscrire gratuitement</button><span class="nl-note">🔒 Tes données sont protégées</span></form></div>
+          <div>
+            <form class="nl-form" onsubmit={handleNewsletterSubmit}>
+              <input type="text" placeholder="Ton prénom" bind:value={nlPrenom} disabled={nlStatus === 'loading'}/>
+              <input type="email" placeholder="Ton adresse email" required bind:value={nlEmail} disabled={nlStatus === 'loading'}/>
+              <button type="submit" disabled={nlStatus === 'loading'}>
+                {nlStatus === 'loading' ? '⏳ Inscription...' : '✉️ S\'inscrire gratuitement'}
+              </button>
+              <span class="nl-note">🔒 Tes données sont protégées</span>
+              {#if nlStatus === 'success'}
+                <div style="color: #4CAF50; font-size: 13px; font-weight: 600; margin-top: 8px;">✅ {nlMessage}</div>
+              {:else if nlStatus === 'error'}
+                <div style="color: #F44336; font-size: 13px; font-weight: 600; margin-top: 8px;">❌ {nlMessage}</div>
+              {/if}
+            </form>
+          </div>
         </div>
 
         <!-- GUIDES PRATIQUES -->
@@ -548,11 +593,20 @@
       <div class="sb-block">
         <div class="sb-hdr">✉️ Newsletter</div>
         <div class="sb-body sb-nl">
-          <h3>Bons plans chaque semaine</h3>
-          <p>Les meilleurs articles directement dans ta boîte mail.</p>
-          <input type="text" placeholder="Ton prénom"/>
-          <input type="email" placeholder="Ton email"/>
-          <button>S'inscrire gratuitement</button>
+          <form onsubmit={handleNewsletterSubmit}>
+            <h3>Bons plans chaque semaine</h3>
+            <p>Les meilleurs articles directement dans ta boîte mail.</p>
+            <input type="text" placeholder="Ton prénom" bind:value={nlPrenom} disabled={nlStatus === 'loading'}/>
+            <input type="email" placeholder="Ton email" required bind:value={nlEmail} disabled={nlStatus === 'loading'}/>
+            <button type="submit" disabled={nlStatus === 'loading'}>
+              {nlStatus === 'loading' ? '⏳ En cours...' : 'S\'inscrire gratuitement'}
+            </button>
+            {#if nlStatus === 'success'}
+              <div style="color: #4CAF50; font-size: 12px; font-weight: 600; margin-top: 8px; text-align: center;">✅ {nlMessage}</div>
+            {:else if nlStatus === 'error'}
+              <div style="color: #F44336; font-size: 12px; font-weight: 600; margin-top: 8px; text-align: center;">❌ {nlMessage}</div>
+            {/if}
+          </form>
         </div>
       </div>
 
