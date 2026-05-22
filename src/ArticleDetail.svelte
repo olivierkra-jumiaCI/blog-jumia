@@ -74,9 +74,9 @@
           <h1>{article.title}</h1>
 
           <div class="byline">
-            <div class="avatar">J</div>
+            <div class="avatar">V</div>
             <div>
-              <strong>Equipe Jumia CI</strong><br>
+              <strong>Vanessa de Jumia</strong><br>
               <span>Publié sur le Blog Jumia</span>
             </div>
           </div>

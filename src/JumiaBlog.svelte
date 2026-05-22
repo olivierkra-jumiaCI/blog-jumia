@@ -225,7 +225,7 @@
                       <div class="ac-cat">{art.category}</div>
                       <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
                       <div class="ac-meta">
-                        <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
+                        <div class="ac-author"><div class="avc">V</div><span>Vanessa de Jumia</span></div>
                         <span>{new Date((art.publishedAt?.seconds || art.createdAt?.seconds) * 1000).toLocaleDateString('fr-FR')}</span>
                       </div>
                     </div>
@@ -248,7 +248,7 @@
                     <div class="ac-cat">{art.category}</div>
                     <div class="ac-title" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">{art.title}</div>
                     <div class="ac-meta">
-                      <div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div>
+                      <div class="ac-author"><div class="avc">V</div><span>Vanessa de Jumia</span></div>
                       <span>{new Date((art.publishedAt?.seconds || art.createdAt?.seconds) * 1000).toLocaleDateString('fr-FR')}</span>
                     </div>
                   </div>
@@ -327,7 +327,7 @@
               <div class="ac-cat">🏷️ Bons Plans</div>
               <a href="/blog/bons-plans/promo-mai-2026/"><div class="ac-title">Promotions mai 2026 sur Jumia CI : les 12 deals à ne pas manquer</div></a>
               <p class="ac-excerpt">Smartphones, électro, beauté… on a sélectionné les vraies bonnes affaires de la semaine.</p>
-              <div class="ac-meta"><div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div><span>3 min · 4 mai</span></div>
+              <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa de Jumia</span></div><span>3 min · 4 mai</span></div>
             </div>
           </article>
         </div>
@@ -435,7 +435,7 @@
               <span class="sb-pop-n">0{i + 1}</span>
               <div>
                 <div class="sb-pop-t">{art.title}</div>
-                <div class="sb-pop-m">Équipe Jumia · {new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</div>
+                <div class="sb-pop-m">Vanessa de Jumia · {new Date(art.createdAt?.seconds * 1000).toLocaleDateString('fr-FR')}</div>
               </div>
             </a>
           {/each}

@@ -320,7 +320,7 @@
             <div class="ac-cat">🏷️ Bons Plans</div>
             <a href="/blog/bons-plans/promo-mai-2026/"><div class="ac-title">Promotions mai 2026 sur Jumia CI : les 12 deals à ne pas manquer</div></a>
             <p class="ac-excerpt">Smartphones, électro, beauté… on a sélectionné les vraies bonnes affaires de la semaine.</p>
-            <div class="ac-meta"><div class="ac-author"><div class="avc">J</div><span>Équipe Jumia</span></div><span>3 min · 4 mai</span></div>
+            <div class="ac-meta"><div class="ac-author"><div class="avc">V</div><span>Vanessa de Jumia</span></div><span>3 min · 4 mai</span></div>
           </div>
         </article>
       </div>
