@@ -779,7 +779,7 @@
   .gap{height:12px;}
 
   /* RESPONSIVE */
-  @media(max-width:1024px){
+  @media(max-width:850px){
     .content-grid{grid-template-columns:1fr; padding: 0 4px;}
     .hero-card{grid-template-columns:1fr;}
     .hc-img{min-height:160px;}
