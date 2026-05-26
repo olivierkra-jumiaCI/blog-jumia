@@ -630,6 +630,7 @@
 
   /* GRID */
   .content-grid{display:grid;grid-template-columns:1fr 276px;gap:14px;align-items:start;}
+  .content-grid > main { min-width: 0; }
 
   /* SEC HEADER */
   .sec-h{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--white);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:var(--radius);margin-bottom:10px;}
