@@ -35,6 +35,15 @@
     }
     isLoading = false;
   });
+  function setLinksTarget(node) {
+    const links = node.querySelectorAll('a');
+    links.forEach(link => {
+      if (!link.hasAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  }
 </script>
 
 <svelte:head>
@@ -85,7 +94,7 @@
             <img src={article.coverImage} alt={article.title} style="width: 100%; border-radius: 8px; margin: 20px 0;" loading="eager"/>
           {/if}
 
-          <div class="article-content">
+          <div class="article-content" use:setLinksTarget>
             {@html article.content}
           </div>
         </div>
