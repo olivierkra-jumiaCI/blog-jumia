@@ -27,7 +27,7 @@
       <span style="color:#2b2b2b;">JUMIA</span><span style="color:#F68B1E;">⭐</span> <span style="font-size: 14px; color: #777;">Admin</span>
     </div>
     
-    <form on:submit={handleLogin}>
+    <form onsubmit={handleLogin}>
       {#if error}
         <div class="error">{error}</div>
       {/if}
@@ -46,7 +46,7 @@
     </form>
     
     <div class="back-link">
-      <a href="/" on:click|preventDefault={() => onNavigate('/')}>← Retour au blog</a>
+      <a href="/" onclick={(e) => { e.preventDefault(); onNavigate('/'); }}>← Retour au blog</a>
     </div>
   </div>
 </div>

@@ -136,7 +136,7 @@
   </div>
 
   <div class="save-bar">
-    <button class="btn-primary" on:click={saveHome}>Appliquer les changements</button>
+    <button class="btn-primary" onclick={saveHome}>Appliquer les changements</button>
   </div>
 </div>
 

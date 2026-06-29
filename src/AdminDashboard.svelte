@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { db, auth } from './lib/firebase';
   import { collection, getDocs, deleteDoc, doc, orderBy, query, getDoc } from 'firebase/firestore';
+  import { onAuthStateChanged } from 'firebase/auth';
   import AdminHomeSettings from './AdminHomeSettings.svelte';
   import AdminUsers from './AdminUsers.svelte';
   import AdminMedia from './AdminMedia.svelte';
@@ -12,29 +13,36 @@
   let userRole = $state('writer'); // Par défaut rédacteur
   let isLoading = $state(true);
 
-  async function checkRole() {
-    const user = auth.currentUser;
-    if (user) {
-      const docSnap = await getDoc(doc(db, "users", user.uid));
-      if (docSnap.exists()) {
-        userRole = docSnap.data().role;
-      }
-    }
-    isLoading = false;
-  }
-
   async function loadArticles() {
-    const q = query(collection(db, "articles"), orderBy("createdAt", "desc"));
-    const querySnapshot = await getDocs(q);
-    articles = querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
+    try {
+      const q = query(collection(db, "articles"), orderBy("createdAt", "desc"));
+      const querySnapshot = await getDocs(q);
+      articles = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+    } catch (e) {
+      console.error("Erreur chargement articles:", e);
+    }
   }
 
-  onMount(async () => {
-    await checkRole();
-    loadArticles();
+  onMount(() => {
+    // Attendre que Firebase Auth soit prêt avant de vérifier le rôle
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          const docSnap = await getDoc(doc(db, "users", user.uid));
+          if (docSnap.exists()) {
+            userRole = docSnap.data().role;
+          }
+        } catch (e) {
+          console.error("Erreur lecture rôle:", e);
+        }
+      }
+      isLoading = false;
+      loadArticles();
+      unsubscribe();
+    });
   });
 
   async function deleteArticle(id) {
@@ -58,21 +66,21 @@
     <div class="logo">JUMIA <span style="font-size: 12px; color: #777;">Admin</span></div>
     {#if !isLoading}
       <nav>
-        <a href="/admin" class={currentTab === 'articles' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'articles'}>Articles</a>
+        <a href="/admin" class={currentTab === 'articles' ? 'active' : ''} onclick={(e) => { e.preventDefault(); currentTab = 'articles'; }}>Articles</a>
         
         {#if userRole === 'admin'}
-          <a href="/admin/home" class={currentTab === 'home' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'home'}>Gestion Accueil</a>
-          <a href="/admin/users" class={currentTab === 'users' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'users'}>Gestion Comptes</a>
+          <a href="/admin/home" class={currentTab === 'home' ? 'active' : ''} onclick={(e) => { e.preventDefault(); currentTab = 'home'; }}>Gestion Accueil</a>
+          <a href="/admin/users" class={currentTab === 'users' ? 'active' : ''} onclick={(e) => { e.preventDefault(); currentTab = 'users'; }}>Gestion Comptes</a>
         {/if}
 
-        <a href="/admin/media" class={currentTab === 'media' ? 'active' : ''} on:click|preventDefault={() => currentTab = 'media'}>Médiathèque</a>
+        <a href="/admin/media" class={currentTab === 'media' ? 'active' : ''} onclick={(e) => { e.preventDefault(); currentTab = 'media'; }}>Médiathèque</a>
       </nav>
     {/if}
     <div class="logout">
       <div class="user-info" style="font-size: 12px; color: #777; margin-bottom: 10px; padding: 0 5px;">
         Connecté en tant que : <strong>{userRole === 'admin' ? 'Administrateur' : 'Rédacteur'}</strong>
       </div>
-      <button on:click={onLogout}>Déconnexion</button>
+      <button onclick={onLogout}>Déconnexion</button>
     </div>
   </aside>
 
@@ -82,7 +90,7 @@
     {:else if currentTab === 'articles'}
       <header class="topbar">
         <h1>Tous les articles</h1>
-        <button class="btn-primary" on:click={newArticle}>+ Nouvel Article</button>
+        <button class="btn-primary" onclick={newArticle}>+ Nouvel Article</button>
       </header>
 
       <div class="table-container">
@@ -124,9 +132,9 @@
                   </span>
                 </td>
                 <td>
-                  <button class="btn-action view" on:click={() => window.open(`/blog/${article.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}/${article.slug}`, '_blank')}>Voir</button>
-                  <button class="btn-action edit" on:click={() => editArticle(article.id)}>Éditer</button>
-                  <button class="btn-action delete" on:click={() => deleteArticle(article.id)}>Supprimer</button>
+                  <button class="btn-action view" onclick={() => window.open(`/blog/${article.slug}`, '_blank')}>Voir</button>
+                  <button class="btn-action edit" onclick={() => editArticle(article.id)}>Éditer</button>
+                  <button class="btn-action delete" onclick={() => deleteArticle(article.id)}>Supprimer</button>
                 </td>
               </tr>
             {/each}

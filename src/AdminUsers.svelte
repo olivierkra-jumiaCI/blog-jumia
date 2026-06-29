@@ -86,7 +86,7 @@
     <!-- FORMULAIRE -->
     <div class="user-card">
       <h3>Ajouter un rédacteur</h3>
-      <form on:submit={createUser}>
+      <form onsubmit={createUser}>
         <div class="form-group">
           <label for="u-email">Adresse Email</label>
           <input type="email" id="u-email" bind:value={email} required placeholder="email@exemple.com" />
@@ -123,7 +123,7 @@
               <strong>{user.email}</strong>
               <span class="u-role-badge {user.role}">{user.role}</span>
             </div>
-            <button class="btn-del" on:click={() => deleteUser(user.id)}>Supprimer l'accès</button>
+            <button class="btn-del" onclick={() => deleteUser(user.id)}>Supprimer l'accès</button>
           </div>
         {/each}
       </div>

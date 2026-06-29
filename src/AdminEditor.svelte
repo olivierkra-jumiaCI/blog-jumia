@@ -147,7 +147,7 @@
   <aside class="sidebar">
     <div class="logo">JUMIA <span style="font-size: 12px; color: #777;">Admin</span></div>
     <nav>
-      <a href="/admin" on:click|preventDefault={() => onNavigate('/admin')}>← Retour aux articles</a>
+      <a href="/admin" onclick={(e) => { e.preventDefault(); onNavigate('/admin'); }}>← Retour aux articles</a>
     </nav>
   </aside>
 
@@ -155,12 +155,12 @@
     <header class="topbar">
       <h1>Éditer l'article</h1>
       <div class="actions">
-        <button class="btn-secondary" on:click={toggleHtmlMode}>
+        <button class="btn-secondary" onclick={toggleHtmlMode}>
           {isHtmlMode ? '📝 Mode Visuel' : '<> Mode HTML'}
         </button>
-        <button class="btn-secondary" on:click={togglePreview}>👁️ Prévisualiser</button>
-        <button class="btn-secondary" on:click={() => onNavigate('/admin')}>Annuler</button>
-        <button class="btn-primary" on:click={save}>Enregistrer</button>
+        <button class="btn-secondary" onclick={togglePreview}>👁️ Prévisualiser</button>
+        <button class="btn-secondary" onclick={() => onNavigate('/admin')}>Annuler</button>
+        <button class="btn-primary" onclick={save}>Enregistrer</button>
       </div>
     </header>
 
@@ -231,11 +231,11 @@
 </div>
 
 {#if showPreview}
-  <div class="preview-overlay" on:click={togglePreview}>
-    <div class="preview-modal" on:click|stopPropagation>
+  <div class="preview-overlay" onclick={togglePreview}>
+    <div class="preview-modal" onclick={(e) => e.stopPropagation()}>
       <div class="pm-header">
         <h2>Aperçu du brouillon</h2>
-        <button class="btn-close" on:click={togglePreview}>&times;</button>
+        <button class="btn-close" onclick={togglePreview}>&times;</button>
       </div>
       <div class="pm-body">
         <div class="article-preview">

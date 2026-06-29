@@ -67,8 +67,8 @@
       <p>Gérez vos images et fichiers média.</p>
     </div>
     <div class="header-right">
-      <input type="file" bind:this={fileInput} on:change={handleUpload} style="display:none" accept="image/*" />
-      <button class="btn-primary" on:click={() => fileInput.click()} disabled={isUploading}>
+      <input type="file" bind:this={fileInput} onchange={handleUpload} style="display:none" accept="image/*" />
+      <button class="btn-primary" onclick={() => fileInput.click()} disabled={isUploading}>
         {isUploading ? 'Chargement...' : '+ Ajouter une image'}
       </button>
     </div>
@@ -87,8 +87,8 @@
         <div class="media-info">
           <span class="file-name">{file.name}</span>
           <div class="media-actions">
-            <button class="btn-sm" on:click={() => copyUrl(file.url)}>Copier le lien</button>
-            <button class="btn-sm del" on:click={() => deleteFile(file.fullPath, file.name)}>Supprimer</button>
+            <button class="btn-sm" onclick={() => copyUrl(file.url)}>Copier le lien</button>
+            <button class="btn-sm del" onclick={() => deleteFile(file.fullPath, file.name)}>Supprimer</button>
           </div>
         </div>
       </div>
