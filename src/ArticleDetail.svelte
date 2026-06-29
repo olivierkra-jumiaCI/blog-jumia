@@ -48,8 +48,72 @@
 
 <svelte:head>
   {#if article}
-    <title>{article.title} | Jumia CI</title>
-    <meta name="description" content={article.title} />
+    {@const slug = window.location.pathname.split('/').filter(Boolean).pop()}
+    {@const pageUrl = `https://blog-jumia.vercel.app/blog/${slug}`}
+    {@const description = article.excerpt || article.title}
+
+    <title>{article.title} | Blog Jumia CI</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={pageUrl} />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={article.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content="Blog Jumia CI" />
+    <meta property="og:locale" content="fr_CI" />
+    {#if article.coverImage}
+      <meta property="og:image" content={article.coverImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+    {/if}
+    <meta property="article:published_time" content={new Date((article.publishedAt?.seconds || article.createdAt?.seconds || 0) * 1000).toISOString()} />
+    <meta property="article:author" content="Vanessa de Jumia CI" />
+    <meta property="article:section" content={article.category} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={article.title} />
+    <meta name="twitter:description" content={description} />
+    {#if article.coverImage}
+      <meta name="twitter:image" content={article.coverImage} />
+    {/if}
+
+    <!-- JSON-LD Structured Data (rich snippets Google) -->
+    {@html `<script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.title,
+      "description": description,
+      "image": article.coverImage || "",
+      "author": {
+        "@type": "Person",
+        "name": "Vanessa de Jumia CI"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Blog Jumia CI",
+        "url": "https://blog-jumia.vercel.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blog-jumia.vercel.app/logo.png"
+        }
+      },
+      "datePublished": new Date((article.publishedAt?.seconds || article.createdAt?.seconds || 0) * 1000).toISOString(),
+      "dateModified": new Date((article.updatedAt?.seconds || article.publishedAt?.seconds || 0) * 1000).toISOString(),
+      "url": pageUrl,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "articleSection": article.category,
+      "inLanguage": "fr-CI"
+    })}</script>`}
+  {:else}
+    <title>Article | Blog Jumia CI</title>
+    <meta name="robots" content="noindex" />
   {/if}
 </svelte:head>
 

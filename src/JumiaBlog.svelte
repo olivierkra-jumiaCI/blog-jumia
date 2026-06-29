@@ -116,16 +116,29 @@
 
 <svelte:head>
   <title>Blog Jumia CI — Conseils, Bons Plans &amp; Guides d'achat</title>
-  <meta name="description" content="Conseils d'achat, comparatifs tech, bons plans et guides pratiques pour acheter malin sur Jumia CI."/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://www.jumia.ci/blog/"/>
-  <meta property="og:title" content="Blog Jumia CI — Conseils &amp; Bons Plans"/>
-  <meta property="og:type" content="website"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Blog","name":"Blog Jumia CI","description":"Conseils d'achat, comparatifs et bons plans pour les consommateurs en Côte d'Ivoire.","url":"https://www.jumia.ci/blog/","publisher":{"@type":"Organization","name":"Jumia Côte d'Ivoire","url":"https://www.jumia.ci"},"inLanguage":"fr-CI"}
-  </script>
+  <meta name="description" content="Conseils d'achat, comparatifs tech, bons plans et guides pratiques pour acheter malin sur Jumia CI en Côte d'Ivoire." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blog-jumia.vercel.app/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog Jumia CI — Conseils &amp; Bons Plans" />
+  <meta property="og:description" content="Conseils d'achat, comparatifs tech, bons plans et guides pour acheter malin sur Jumia CI." />
+  <meta property="og:url" content="https://blog-jumia.vercel.app/blog/" />
+  <meta property="og:site_name" content="Blog Jumia CI" />
+  <meta property="og:locale" content="fr_CI" />
+  <meta property="og:image" content="https://blog-jumia.vercel.app/hero_smartphones_cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog Jumia CI — Conseils &amp; Bons Plans" />
+  <meta name="twitter:description" content="Conseils d'achat, comparatifs tech, bons plans et guides pour acheter malin sur Jumia CI." />
+  <meta name="twitter:image" content="https://blog-jumia.vercel.app/hero_smartphones_cover.jpg" />
+
+  <!-- JSON-LD Blog + BreadcrumbList -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Blog","name":"Blog Jumia CI","description":"Conseils d'achat, comparatifs et bons plans pour les consommateurs en Côte d'Ivoire.","url":"https://blog-jumia.vercel.app/blog/","publisher":{"@type":"Organization","name":"Jumia Côte d'Ivoire","url":"https://www.jumia.ci","logo":{"@type":"ImageObject","url":"https://blog-jumia.vercel.app/logo.png"}},"inLanguage":"fr-CI"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Jumia CI","item":"https://www.jumia.ci"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://blog-jumia.vercel.app/blog/"}]}]}</script>
 </svelte:head>
 
 
