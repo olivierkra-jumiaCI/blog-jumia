@@ -57,9 +57,16 @@
   async function fetchArticles() {
     isLoading = true;
     try {
-      const q = query(collection(db, "articles"), orderBy("createdAt", "desc"), limit(20));
+      // Pas de orderBy pour ne pas exclure les articles sans champ createdAt
+      const q = query(collection(db, "articles"), limit(50));
       const querySnapshot = await getDocs(q);
-      articles = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      articles = querySnapshot.docs
+        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .sort((a, b) => {
+          const aTime = a.publishedAt?.seconds || a.createdAt?.seconds || 0;
+          const bTime = b.publishedAt?.seconds || b.createdAt?.seconds || 0;
+          return bTime - aTime;
+        });
       applyFilter();
     } catch (e) {
       console.error("Erreur articles:", e);

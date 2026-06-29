@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { db, auth } from './lib/firebase';
-  import { collection, getDocs, deleteDoc, doc, orderBy, query, getDoc } from 'firebase/firestore';
+  import { collection, getDocs, deleteDoc, doc, query, getDoc } from 'firebase/firestore';
   import { onAuthStateChanged } from 'firebase/auth';
   import AdminHomeSettings from './AdminHomeSettings.svelte';
   import AdminUsers from './AdminUsers.svelte';
@@ -15,12 +15,17 @@
 
   async function loadArticles() {
     try {
-      const q = query(collection(db, "articles"), orderBy("createdAt", "desc"));
+      // Pas de orderBy pour ne pas exclure les articles sans champ createdAt
+      const q = query(collection(db, "articles"));
       const querySnapshot = await getDocs(q);
-      articles = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+      articles = querySnapshot.docs
+        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .sort((a, b) => {
+          // Tri par publishedAt, puis createdAt, puis 0
+          const aTime = a.publishedAt?.seconds || a.createdAt?.seconds || 0;
+          const bTime = b.publishedAt?.seconds || b.createdAt?.seconds || 0;
+          return bTime - aTime;
+        });
     } catch (e) {
       console.error("Erreur chargement articles:", e);
     }
