@@ -32,15 +32,20 @@
     };
     window.addEventListener('popstate', handlePopState);
 
-    // Intercepte tous les clics sur les liens internes <a href="/blog/...">
-    // pour éviter les rechargements de page complets (navigation SPA)
+    // Intercepte UNIQUEMENT les liens /blog/* pour la navigation SPA
+    // Les liens /admin/* sont gérés par leurs propres handlers onclick
     const handleClick = (e) => {
       const anchor = e.target.closest('a');
       if (!anchor) return;
       const href = anchor.getAttribute('href');
       if (!href) return;
-      // Seulement les liens internes (pas http://, mailto:, etc.)
-      if (href.startsWith('/') && !href.startsWith('//')) {
+      // Exclure les liens externes, admin, et ceux avec target
+      if (
+        href.startsWith('/') &&
+        !href.startsWith('//') &&
+        !href.startsWith('/admin') &&
+        !anchor.getAttribute('target')
+      ) {
         e.preventDefault();
         handleNavigate(href);
       }

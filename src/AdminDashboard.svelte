@@ -10,24 +10,28 @@
 
   let currentTab = $state('articles');
   let articles = $state([]);
-  let userRole = $state('writer'); // Par défaut rédacteur
+  let userRole = $state('writer');
   let isLoading = $state(true);
+  let loadError = $state('');
 
   async function loadArticles() {
+    loadError = '';
     try {
-      // Pas de orderBy pour ne pas exclure les articles sans champ createdAt
-      const q = query(collection(db, "articles"));
-      const querySnapshot = await getDocs(q);
+      const querySnapshot = await getDocs(collection(db, "articles"));
+      console.log("Docs trouvés:", querySnapshot.size);
       articles = querySnapshot.docs
-        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .map(d => ({ id: d.id, ...d.data() }))
         .sort((a, b) => {
-          // Tri par publishedAt, puis createdAt, puis 0
           const aTime = a.publishedAt?.seconds || a.createdAt?.seconds || 0;
           const bTime = b.publishedAt?.seconds || b.createdAt?.seconds || 0;
           return bTime - aTime;
         });
+      if (articles.length === 0) {
+        loadError = 'Aucun article retourné par Firestore (collection vide ou règles de sécurité bloquantes).';
+      }
     } catch (e) {
       console.error("Erreur chargement articles:", e);
+      loadError = `Erreur Firestore : ${e.code || e.message}`;
     }
   }
 
@@ -97,6 +101,13 @@
         <h1>Tous les articles</h1>
         <button class="btn-primary" onclick={newArticle}>+ Nouvel Article</button>
       </header>
+
+      {#if loadError}
+        <div style="background:#FFF0F0; border-left:4px solid #e53e3e; padding:14px 18px; border-radius:4px; margin-bottom:20px; font-size:13px; color:#c53030;">
+          ⚠️ <strong>Problème de chargement :</strong> {loadError}
+          <button onclick={loadArticles} style="margin-left:12px; background:#e53e3e; color:#fff; border:none; padding:5px 12px; border-radius:4px; cursor:pointer; font-size:12px;">Réessayer</button>
+        </div>
+      {/if}
 
       <div class="table-container">
         <table>
