@@ -13,8 +13,8 @@
   }
 
   onMount(async () => {
-    const pathParts = window.location.pathname.split('/');
-    const slug = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const slug = pathParts[pathParts.length - 1];
     
     if (slug) {
       const q = query(collection(db, "articles"), where("slug", "==", slug), limit(1));

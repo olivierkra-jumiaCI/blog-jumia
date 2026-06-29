@@ -51,8 +51,10 @@
   <div class="app-container">
     {#if currentPath === '/blog/' || currentPath === '/blog' || currentPath === '/'}
       <JumiaBlog onNavigate={handleNavigate} />
-    {:else if currentPath.startsWith('/blog/')}
-      <ArticleDetail onNavigate={handleNavigate} />
+    {:else if /^\/blog\/[^\/]+\/?$/.test(currentPath)}
+      {#key currentPath}
+        <ArticleDetail onNavigate={handleNavigate} />
+      {/key}
     {:else}
       <JumiaBlog onNavigate={handleNavigate} />
     {/if}
