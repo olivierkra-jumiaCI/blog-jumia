@@ -31,7 +31,26 @@
       currentPath = window.location.pathname;
     };
     window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+
+    // Intercepte tous les clics sur les liens internes <a href="/blog/...">
+    // pour éviter les rechargements de page complets (navigation SPA)
+    const handleClick = (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+      // Seulement les liens internes (pas http://, mailto:, etc.)
+      if (href.startsWith('/') && !href.startsWith('//')) {
+        e.preventDefault();
+        handleNavigate(href);
+      }
+    };
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener('click', handleClick);
+    };
   });
 </script>
 
@@ -51,7 +70,7 @@
   <div class="app-container">
     {#if currentPath === '/blog/' || currentPath === '/blog' || currentPath === '/'}
       <JumiaBlog onNavigate={handleNavigate} />
-    {:else if /^\/blog\/[^\/]+\/?$/.test(currentPath)}
+    {:else if currentPath.startsWith('/blog/')}
       {#key currentPath}
         <ArticleDetail onNavigate={handleNavigate} />
       {/key}
